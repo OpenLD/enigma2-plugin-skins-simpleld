@@ -533,41 +533,41 @@
   </screen>
   <!-- SCREENS -->
   <screen name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="PANEL_LD_TOP" />
-    <panel name="PANEL_LD_MINITV" />
-    <panel name="PANEL_BUTTONBAR_MENU" />
-    <panel name="PANEL_BUTTONBAR_RGYB_X" />
-    <eLabel position="0,75" zPosition="-10" size="1280,585" backgroundColor="layer-b-background" />
-    <eLabel position="426,58" zPosition="-1" size="835,612" backgroundColor="layer-a-background" />
-    <eLabel text="Channel selection" position="1,1" size="1,1" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
-    <widget source="Title" render="Label" position="360,6" size="550,45" font="Regular; 26" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
-    <widget name="list" position="435,62" size="820,604" scrollbarMode="showNever" colorServiceDescription="layer-a-accent1" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="#00555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;24" serviceNameFont="SetrixHD;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-accent2" backgroundColor="layer-a-background" itemHeight="30" />
-    <widget source="ServiceEvent" render="Label" position="10,260" size="400,50" font="SetrixHD; 28" backgroundColor="layer-b-background" transparent="1" noWrap="1" halign="center" valign="center">
-      <convert type="EventName">Name</convert>
-    </widget>
-    <widget source="ServiceEvent" render="Label" position="8,311" size="64,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1" halign="right">
-      <convert type="EventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
-    </widget>
-    <widget source="ServiceEvent" valign="bottom" render="NextEvent" position="16,595" size="389,61" font="Regular;18" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1" />
-    <widget source="ServiceEvent" render="Label" position="336,311" size="77,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1">
-      <convert type="EventTime">EndTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
-    </widget>
-    <eLabel position="77,325" size="256,1" backgroundColor="layer-b-accent1" foregroundColor="layer-b-accent1" />
-    <widget source="ServiceEvent" render="Progress" position="77,323" size="256,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
-      <convert type="EventTime">Progress</convert>
-    </widget>
-    <widget source="ServiceEvent" render="Label" position="16,340" size="390,248" font="Regular; 18" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
-      <convert type="EventName">ExtendedDescription</convert>
-    </widget>
-    <widget position="15,665" size="85,51" render="Picon" backgroundColor="transparent" transparent="0" source="ServiceEvent" alphatest="blend" zPosition="2">
-      <convert type="SimpleRefString">ServicelistRef</convert>
-    </widget>
-    <widget render="Label" position="112,665" size="215,50" font="Regular; 22" backgroundColor="transparent" transparent="0" noWrap="1" halign="left" valign="center" source="ServiceEvent">
-      <convert type="ServiceName">Name</convert>
-    </widget>
-  </screen>
+  <panel name="PANEL_LD_TOP" />
+  <panel name="PANEL_LD_MINITV" />
+  <panel name="PANEL_BUTTONBAR_MENU" />
+  <panel name="PANEL_BUTTONBAR_RGYB_X" />
+  <eLabel position="0,75" zPosition="-10" size="1280,585" backgroundColor="layer-b-background" />
+  <eLabel position="426,58" zPosition="-1" size="835,612" backgroundColor="layer-a-background" />
+  <eLabel text="Channel selection" position="1,1" size="1,1" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
+  <widget source="Title" render="Label" position="360,6" size="550,45" font="Regular; 26" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
+  <widget name="list" position="435,62" size="820,604" scrollbarMode="showNever" colorServiceDescription="layer-a-accent1" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="#00555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;24" serviceNameFont="SetrixHD;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-accent2" backgroundColor="layer-a-background" itemHeight="30" />
+  <widget source="ServiceEvent" render="Label" position="10,258" size="400,48" font="SetrixHD; 28" backgroundColor="layer-b-background" transparent="1" noWrap="1" halign="center" valign="center">
+    <convert type="EventName">Name</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="8,308" size="64,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1" halign="right">
+    <convert type="EventTime">StartTime</convert>
+    <convert type="ClockToText">Format:%H:%M</convert>
+  </widget>
+  <widget source="ServiceEvent" valign="bottom" render="NextEvent" position="16,590" size="389,65" font="Regular;18" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1" />
+  <widget source="ServiceEvent" render="Label" position="336,308" size="77,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1">
+    <convert type="EventTime">EndTime</convert>
+    <convert type="ClockToText">Format:%H:%M</convert>
+  </widget>
+  <eLabel position="77,322" size="256,1" backgroundColor="layer-b-accent1" foregroundColor="layer-b-accent1" />
+  <widget source="ServiceEvent" render="Progress" position="77,320" size="256,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
+    <convert type="EventTime">Progress</convert>
+  </widget>
+  <widget source="ServiceEvent" render="Label" position="16,337" size="390,248" font="Regular; 18" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
+    <convert type="EventName">ExtendedDescription</convert>
+  </widget>
+  <widget position="15,665" size="85,51" render="Picon" backgroundColor="transparent" transparent="0" source="ServiceEvent" alphatest="blend" zPosition="2">
+    <convert type="SimpleRefString">ServicelistRef</convert>
+  </widget>
+  <widget render="Label" position="112,665" size="215,50" font="Regular; 22" backgroundColor="transparent" transparent="0" noWrap="1" halign="left" valign="center" source="ServiceEvent">
+    <convert type="ServiceName">Name</convert>
+  </widget>
+</screen>
   <screen name="MoviePlayer" position="0,0" size="1283,723" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <widget source="session.CurrentService" render="Label" position="46,586" size="1214,60" font="SetrixHD; 46" transparent="0" valign="center" zPosition="0" backgroundColor="layer-a-background" noWrap="1">
@@ -1319,21 +1319,21 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="RassLogo" position="0,0" size="40,40" />
   </screen>
   <screen name="AboutOE" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="237,289" size="200,200" alphatest="blend" />
-  <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
-  <widget source="Title" render="Label" position="369,0" size="560,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
-  <eLabel position="645,91" zPosition="-1" size="590,581" backgroundColor="layer-a-background" />
-  <widget name="AboutScrollLabel" position="656,98" size="570,567" valign="top" font="Regular; 20" transparent="0" zPosition="1" />
-  <widget source="lab1" render="Label" position="126,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <widget source="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <widget source="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <widget source="lab2" render="Label" position="126,597" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <widget source="lab3" render="Label" position="656,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <panel name="PANEL_BUTTONBAR_INFO_OK_X" />
-  <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="237,289" size="200,200" alphatest="blend" />
+    <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+    <widget source="Title" render="Label" position="369,0" size="560,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
+    <eLabel position="645,91" zPosition="-1" size="590,581" backgroundColor="layer-a-background" />
+    <widget name="AboutScrollLabel" position="656,98" size="570,567" valign="top" font="Regular; 20" transparent="0" zPosition="1" />
+    <widget source="lab1" render="Label" position="126,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+    <widget source="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+    <widget source="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+    <widget source="lab2" render="Label" position="126,597" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+    <widget source="lab3" render="Label" position="656,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+    <panel name="PANEL_BUTTONBAR_INFO_OK_X" />
+    <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
+  </screen>
   <screen name="CommitInfo" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
