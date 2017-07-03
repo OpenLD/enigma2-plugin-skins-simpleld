@@ -1381,6 +1381,21 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="AboutScrollLabel" position="665,100" size="570,560" font="Regular;20" transparent="0" zPosition="1" />
     <panel name="PANEL_BUTTONBAR_OK_X" />
   </screen>
+  <screen name="Devices" position="0,0" size="1280,720" title="MemoryInfo" flags="wfNoBorder" backgroundColor="transparent">
+  <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+  <panel name="PANEL_LD_TOP" />
+  <panel name="PANEL_LD_MINITV" />
+  <widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 35" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
+  <ePixmap pixmap="SimpleLD/construct/menu/system/devices.png" position="237,289" size="200,200" alphatest="blend" />
+  <eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
+  <widget source="TunerHeader" render="Label" position="660,110" size="458,36" font="Regular;20" transparent="0" zPosition="1" />
+  <widget source="nims" render="Label" position="660,150" size="478,140" font="Regular;18" transparent="0" zPosition="1" />
+  <widget source="HDDHeader" render="Label" position="660,290" size="458,36" font="Regular;20" transparent="0" zPosition="1" />
+  <widget source="hdd" render="Label" position="660,330" size="560,140" font="Regular;18" transparent="0" zPosition="1" />
+  <widget source="MountsHeader" render="Label" position="660,470" size="458,36" font="Regular;20" transparent="0" zPosition="1" />
+  <widget source="mounts" render="Label" position="660,510" size="458,140" font="Regular;18" transparent="0" zPosition="1" />
+  <panel name="PANEL_BUTTONBAR_OK_X" />
+  </screen>
   <screen name="ExtensionsList" position="0,0" size="1280,720" title="Extensions" flags="wfNoBorder" backgroundColor="transparent">
     <ePixmap pixmap="SimpleLD/construct/menu/main/plugins.png" position="187,289" size="200,200" alphatest="blend" />
     <ePixmap name="menu-band" position="-50,265" size="1351,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
