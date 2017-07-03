@@ -492,7 +492,7 @@
   <screen name="PANEL_LD_MINITV">
     <ePixmap position="-16,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
     <!-- Start Mini TV in ChannelSelecion -->
-    <widget source="session.VideoPicture" render="Pig" position="15,67" zPosition="99" size="390,184" backgroundColor="transparent" foregroundColor="transparent" borderWidth="0" transparent="1" />
+    <widget source="session.VideoPicture" render="Pig" position="15,68" zPosition="99" size="390,184" backgroundColor="transparent" foregroundColor="transparent" borderWidth="0" transparent="1" />
     <ePixmap name="" position="12,63" size="396,190" pixmap="SimpleLD/construct/plugins/marco.png" />
     <!-- End Mini TV in ChannelSelecion -->
   </screen>
@@ -1323,16 +1323,21 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="RassLogo" position="0,0" size="40,40" />
   </screen>
   <screen name="AboutOE" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="PANEL_LD_TOP" />
-    <panel name="PANEL_LD_MINITV" />
-    <ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="237,289" size="200,200" alphatest="blend" />
-    <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
-    <widget source="Title" render="Label" position="369,0" size="560,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
-    <eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
-    <widget name="AboutScrollLabel" position="665,105" size="570,560" valign="top" font="Regular; 20" transparent="0" zPosition="1" />
-    <panel name="PANEL_BUTTONBAR_INFO_OK_X" />
-    <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
-  </screen>
+  <panel name="PANEL_LD_TOP" />
+  <panel name="PANEL_LD_MINITV" />
+  <ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="237,289" size="200,200" alphatest="blend" />
+  <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+  <widget source="Title" render="Label" position="369,0" size="560,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
+  <eLabel position="645,91" zPosition="-1" size="590,581" backgroundColor="layer-a-background" />
+  <widget name="AboutScrollLabel" position="656,98" size="570,567" valign="top" font="Regular; 20" transparent="0" zPosition="1" />
+  <widget source="lab1" render="Label" position="126,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <widget source="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <widget source="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <widget source="lab2" render="Label" position="126,597" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <widget source="lab3" render="Label" position="656,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <panel name="PANEL_BUTTONBAR_INFO_OK_X" />
+  <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
+</screen>
   <screen name="CommitInfo" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
@@ -2243,14 +2248,14 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
     <widget name="active" position="817,280" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" foregroundColor="layer-a-foreground" />
   </screen>
   <screen name="CronTimers" position="0, 0" flags="wfNoBorder" title="Cron Manager" transparent="0" backgroundColor="transparent" size="1280, 720">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_WINDOW_LARGE" />
-  <panel name="PANEL_BUTTONBAR_MENU" />
-  <ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
-  <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
-  <widget source="list" render="Listbox" position="495,110" size="700,510" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1">
-    <convert type="TemplatedMultiContent">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <panel name="PANEL_BUTTONBAR_MENU" />
+    <ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+    <widget source="list" render="Listbox" position="495,110" size="700,510" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1">
+      <convert type="TemplatedMultiContent">
 			{"template": [
 					MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 0), # index 0 is the name
 				],
@@ -2258,23 +2263,23 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
 			"itemHeight": 30
 			}
         </convert>
-  </widget>
-  <widget name="lab1" position="871,575" size="100,30" font="Regular;20" valign="center" halign="right" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="labdisabled" position="1035,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" transparent="0" />
-  <widget name="labactive" position="1035,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" transparent="0" />
-  <widget name="lab2" position="545,575" size="100,30" font="Regular;20" valign="center" halign="right" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="labstop" position="705,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" transparent="0" />
-  <widget name="labrun" position="705,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" transparent="0" />
-  <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
-  <ePixmap pixmap="SimpleLD/buttons/key_green.png" position="562,680" size="30,40" alphatest="blend" />
-  <ePixmap pixmap="SimpleLD/buttons/key_yellow.png" position="771,680" size="30,40" alphatest="blend" />
-  <ePixmap pixmap="SimpleLD/buttons/key_blue.png" position="976,680" size="30,40" alphatest="blend" />
-  <widget source="key_green" render="Label" position="585,685" size="180,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <widget source="key_yellow" render="Label" position="795,685" size="180,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <widget source="key_blue" render="Label" position="998,685" size="180,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <ePixmap name="" position="565,680" size="900,40" pixmap="SimpleLD/construct/general/button-back.png" zPosition="-2" alphatest="blend" />
-  <ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
-</screen>
+    </widget>
+    <widget name="lab1" position="871,575" size="100,30" font="Regular;20" valign="center" halign="right" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="labdisabled" position="1035,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" transparent="0" />
+    <widget name="labactive" position="1035,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" transparent="0" />
+    <widget name="lab2" position="545,575" size="100,30" font="Regular;20" valign="center" halign="right" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="labstop" position="705,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" transparent="0" />
+    <widget name="labrun" position="705,575" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" transparent="0" />
+    <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
+    <ePixmap pixmap="SimpleLD/buttons/key_green.png" position="562,680" size="30,40" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/buttons/key_yellow.png" position="771,680" size="30,40" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/buttons/key_blue.png" position="976,680" size="30,40" alphatest="blend" />
+    <widget source="key_green" render="Label" position="585,685" size="180,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+    <widget source="key_yellow" render="Label" position="795,685" size="180,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+    <widget source="key_blue" render="Label" position="998,685" size="180,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+    <ePixmap name="" position="565,680" size="900,40" pixmap="SimpleLD/construct/general/button-back.png" zPosition="-2" alphatest="blend" />
+    <ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
+  </screen>
   <screen name="AutoTimerOverview" position="0, 0" flags="wfNoBorder" title="AutoTimer Overview" transparent="0" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
