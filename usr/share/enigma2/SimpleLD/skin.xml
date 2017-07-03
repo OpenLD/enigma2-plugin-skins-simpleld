@@ -850,10 +850,6 @@
   </screen>
   <screen name="menu_information" position="0,0" size="1280,720" title="Information menu" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_MENU" />
-    <widget source="menu" render="Pixmap" pixmap="SimpleLD/construct/menu/info/supportchannel.png" position="237,289" size="200,200" alphatest="blend">
-      <convert type="MenuEntryCompare">supportchannel_YTChannel</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
     <widget source="menu" render="Pixmap" pixmap="SimpleLD/construct/menu/info/channel.png" position="237,289" size="200,200" alphatest="blend">
       <convert type="MenuEntryCompare">service_info_screen</convert>
       <convert type="ConditionalShowHide" />
