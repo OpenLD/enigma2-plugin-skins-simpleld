@@ -452,6 +452,11 @@
     <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
     <ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
   </screen>
+  <screen name="PANEL_BUTTONBAR_INFO_OK_X">
+    <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
+    <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
+    <ePixmap name="" position="1187,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
+  </screen>
   <screen name="PANEL_BUTTONBAR_X">
     <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="10" />
     <ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
@@ -1317,15 +1322,15 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="RtpText" position="100,650" size="1080,30" font="SetrixHD;24" halign="right" noWrap="1" backgroundColor="layer-a-background" shadowOffset="-2,-2" shadowColor="transpBlack" />
     <widget name="RassLogo" position="0,0" size="40,40" />
   </screen>
-  <screen name="About" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
+  <screen name="AboutOE" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
-    <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
     <ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="237,289" size="200,200" alphatest="blend" />
-    <widget source="AboutHeader" render="Label" position="369,0" size="560,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
+    <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+    <widget source="Title" render="Label" position="369,0" size="560,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
     <eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
-    <widget name="AboutScrollLabel" split="1" dividechar=":" position="665,105" size="570,560" valign="top" font="Regular; 20" backgroundColor="layer-a-background" transparent="1" halign="left" noWrap="1" />
-    <panel name="PANEL_BUTTONBAR_RGYB_X" />
+    <widget name="AboutScrollLabel" position="665,105" size="570,560" valign="top" font="Regular; 20" transparent="0" zPosition="1" />
+    <panel name="PANEL_BUTTONBAR_INFO_OK_X" />
     <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
   </screen>
   <screen name="CommitInfo" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
@@ -1336,9 +1341,9 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 35" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
     <eLabel position="524,66" zPosition="-1" size="722,595" backgroundColor="layer-a-background" />
     <widget name="AboutScrollLabel" font="SetrixHD; 18" position="535,80" size="700,565" zPosition="2" halign="left" backgroundColor="layer-a-background" transparent="1" />
-    <ePixmap position="1090,682" size="36,36" zPosition="10" pixmap="SimpleLD/construct/general/left.png" transparent="1" alphatest="blend" />
-    <ePixmap position="1140,682" size="36,36" zPosition="10" pixmap="SimpleLD/construct/general/right.png" transparent="1" alphatest="blend" />
-    <panel name="PANEL_BUTTONBAR_R_X" />
+    <ePixmap position="1010,682" size="36,36" zPosition="10" pixmap="SimpleLD/construct/general/left.png" transparent="1" alphatest="blend" />
+    <ePixmap position="1060,682" size="36,36" zPosition="10" pixmap="SimpleLD/construct/general/right.png" transparent="1" alphatest="blend" />
+    <panel name="PANEL_BUTTONBAR_OK_X" />
   </screen>
   <screen name="SystemNetworkInfo" position="0,0" size="1280,720" title="SystemNetworkInfo" flags="wfNoBorder" backgroundColor="transparent">
     <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
