@@ -1331,9 +1331,9 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
   <eLabel position="645,91" zPosition="-1" size="590,581" backgroundColor="layer-a-background" />
   <widget name="AboutScrollLabel" position="656,98" size="570,567" valign="top" font="Regular; 20" transparent="0" zPosition="1" />
   <widget source="lab1" render="Label" position="126,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <widget source="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <widget source="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-  <widget source="lab2" render="Label" position="126,597" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <widget source="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <widget source="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+  <widget source="lab2" render="Label" position="126,597" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
   <widget source="lab3" render="Label" position="656,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
   <panel name="PANEL_BUTTONBAR_INFO_OK_X" />
   <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
