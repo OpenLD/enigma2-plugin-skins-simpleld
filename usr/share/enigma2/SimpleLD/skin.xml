@@ -533,41 +533,41 @@
   </screen>
   <!-- SCREENS -->
   <screen name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_BUTTONBAR_MENU" />
-  <panel name="PANEL_BUTTONBAR_RGYB_X" />
-  <eLabel position="0,75" zPosition="-10" size="1280,585" backgroundColor="layer-b-background" />
-  <eLabel position="426,58" zPosition="-1" size="835,612" backgroundColor="layer-a-background" />
-  <eLabel text="Channel selection" position="1,1" size="1,1" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
-  <widget source="Title" render="Label" position="360,6" size="550,45" font="Regular; 26" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
-  <widget name="list" position="435,62" size="820,604" scrollbarMode="showNever" colorServiceDescription="layer-a-accent1" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="#00555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;24" serviceNameFont="SetrixHD;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-accent2" backgroundColor="layer-a-background" itemHeight="30" />
-  <widget source="ServiceEvent" render="Label" position="10,258" size="400,48" font="SetrixHD; 28" backgroundColor="layer-b-background" transparent="1" noWrap="1" halign="center" valign="center">
-    <convert type="EventName">Name</convert>
-  </widget>
-  <widget source="ServiceEvent" render="Label" position="8,308" size="64,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1" halign="right">
-    <convert type="EventTime">StartTime</convert>
-    <convert type="ClockToText">Format:%H:%M</convert>
-  </widget>
-  <widget source="ServiceEvent" valign="bottom" render="NextEvent" position="16,590" size="389,65" font="Regular;18" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1" />
-  <widget source="ServiceEvent" render="Label" position="336,308" size="77,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1">
-    <convert type="EventTime">EndTime</convert>
-    <convert type="ClockToText">Format:%H:%M</convert>
-  </widget>
-  <eLabel position="77,322" size="256,1" backgroundColor="layer-b-accent1" foregroundColor="layer-b-accent1" />
-  <widget source="ServiceEvent" render="Progress" position="77,320" size="256,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
-    <convert type="EventTime">Progress</convert>
-  </widget>
-  <widget source="ServiceEvent" render="Label" position="16,337" size="390,248" font="Regular; 18" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
-    <convert type="EventName">ExtendedDescription</convert>
-  </widget>
-  <widget position="15,665" size="85,51" render="Picon" backgroundColor="transparent" transparent="0" source="ServiceEvent" alphatest="blend" zPosition="2">
-    <convert type="SimpleRefString">ServicelistRef</convert>
-  </widget>
-  <widget render="Label" position="112,665" size="215,50" font="Regular; 22" backgroundColor="transparent" transparent="0" noWrap="1" halign="left" valign="center" source="ServiceEvent">
-    <convert type="ServiceName">Name</convert>
-  </widget>
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_BUTTONBAR_MENU" />
+    <panel name="PANEL_BUTTONBAR_RGYB_X" />
+    <eLabel position="0,75" zPosition="-10" size="1280,585" backgroundColor="layer-b-background" />
+    <eLabel position="426,58" zPosition="-1" size="835,612" backgroundColor="layer-a-background" />
+    <eLabel text="Channel selection" position="1,1" size="1,1" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
+    <widget source="Title" render="Label" position="360,6" size="550,45" font="Regular; 26" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
+    <widget name="list" position="435,62" size="820,604" scrollbarMode="showNever" colorServiceDescription="layer-a-accent1" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="#00555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;24" serviceNameFont="SetrixHD;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-accent2" backgroundColor="layer-a-background" itemHeight="30" />
+    <widget source="ServiceEvent" render="Label" position="10,258" size="400,48" font="SetrixHD; 28" backgroundColor="layer-b-background" transparent="1" noWrap="1" halign="center" valign="center">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="8,308" size="64,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1" halign="right">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="ServiceEvent" valign="bottom" render="NextEvent" position="16,590" size="389,65" font="Regular;18" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1" />
+    <widget source="ServiceEvent" render="Label" position="336,308" size="77,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <eLabel position="77,322" size="256,1" backgroundColor="layer-b-accent1" foregroundColor="layer-b-accent1" />
+    <widget source="ServiceEvent" render="Progress" position="77,320" size="256,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="16,337" size="390,248" font="Regular; 18" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <widget position="15,665" size="85,51" render="Picon" backgroundColor="transparent" transparent="0" source="ServiceEvent" alphatest="blend" zPosition="2">
+      <convert type="SimpleRefString">ServicelistRef</convert>
+    </widget>
+    <widget render="Label" position="112,665" size="215,50" font="Regular; 22" backgroundColor="transparent" transparent="0" noWrap="1" halign="left" valign="center" source="ServiceEvent">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+  </screen>
   <screen name="MoviePlayer" position="0,0" size="1283,723" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <widget source="session.CurrentService" render="Label" position="46,586" size="1214,60" font="SetrixHD; 46" transparent="0" valign="center" zPosition="0" backgroundColor="layer-a-background" noWrap="1">
@@ -601,22 +601,22 @@
     <eLabel text="Select a movie" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
     <eLabel position="0,100" zPosition="-10" size="1280,570" backgroundColor="layer-b-background" />
     <widget source="Title" render="Label" position="430,85" size="780,45" font="SetrixHD; 29" backgroundColor="layer-a-background" transparent="1" />
-    <widget name="list" position="430,138" size="780,482" scrollbarMode="showOnDemand" itemHeight="40" transparent="1" />
-    <widget name="freeDiskSpace" position="430,626" size="780,30" font="Regular; 22" valign="bottom" backgroundColor="layer-a-background" transparent="1" />
-    <widget source="Service" render="Label" position="34,258" size="352,83" font="SetrixHD; 26" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground">
+    <widget name="list" position="430,138" size="780,490" scrollbarMode="showOnDemand" itemHeight="40" transparent="1" />
+    <widget name="freeDiskSpace" position="430,636" size="780,30" font="Regular; 22" valign="bottom" backgroundColor="layer-a-background" transparent="1" />
+    <widget source="Service" render="Label" position="29,258" size="362,88" font="SetrixHD; 22" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground">
       <convert type="MovieInfo">ShortDescription</convert>
     </widget>
-    <widget source="Service" render="Label" position="34,344" size="352,30" font="Regular; 18" backgroundColor="layer-b-background" transparent="1" noWrap="1" foregroundColor="layer-b-foreground">
+    <widget source="Service" render="Label" position="29,354" size="362,30" font="Regular; 18" backgroundColor="layer-b-background" transparent="1" noWrap="1" foregroundColor="layer-b-foreground">
       <convert type="MovieInfo">RecordServiceName</convert>
     </widget>
-    <widget source="Service" render="Label" position="34,628" size=" 80, 24" font="Regular; 20" halign="left" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground">
+    <widget source="Service" render="Label" position="29,638" size=" 80, 24" font="Regular; 20" halign="left" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground">
       <convert type="ServiceTime">Duration</convert>
       <convert type="ClockToText">AsLength</convert>
     </widget>
-    <widget source="Service" render="Label" position="286,628" size="100, 24" font="Regular; 20" halign="right" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground">
+    <widget source="Service" render="Label" position="291,638" size="100, 24" font="Regular; 20" halign="right" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground">
       <convert type="MovieInfo">FileSize</convert>
     </widget>
-    <widget source="Service" render="Label" position="34,382" size="352,238" font="Regular; 17" foregroundColor="layer-b-foreground" backgroundColor="layer-b-background" transparent="1" valign="top">
+    <widget source="Service" render="Label" position="29,389" size="362,242" font="Regular; 17" foregroundColor="layer-b-foreground" backgroundColor="layer-b-background" transparent="1" valign="top">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <widget name="waitingtext" position="0,0" size="0,0" />
@@ -1026,6 +1026,17 @@
     <ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
     <!--Button */-->
   </screen>
+  <screen name="ParentalControlChangePin" position="0,0" size="1280,720" title="Parentalcontrol setup" flags="wfNoBorder" backgroundColor="transparent">
+  <panel name="PANEL_LD_TOP" />
+  <ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/menu/setup/parental.png" transparent="1" alphatest="blend" />
+  <panel name="PANEL_SETTINGS_SETUP" />
+</screen>
+  <screen name="ParentalControlEditor" position="0,0" size="1280,720" title="Parentalcontrol setup" flags="wfNoBorder" backgroundColor="transparent">
+  <panel name="PANEL_LD_TOP" />
+  <ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/menu/setup/parental.png" transparent="1" alphatest="blend" />
+  <panel name="PANEL_SETTINGS_SETUP" />
+  <widget name="servicelist" position="480,100" size="700,430" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+</screen>
   <screen name="Setup" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/menu/main/setup.png" transparent="1" alphatest="blend" />
