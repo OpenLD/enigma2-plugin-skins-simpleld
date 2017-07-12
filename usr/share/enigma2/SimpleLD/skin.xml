@@ -734,25 +734,25 @@
   </screen>
   <!-- EventViewSimple , optimized for MovieInfo (EMC)-->
   <screen name="EventViewSimple" position="0,0" size="1280,720" title="EventviewSimple" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_BUTTONBAR_MENU" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-  <widget name="epg_description" position="70,90" size="700,520" font="SetrixHD; 24" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="channel" position="832,212" size="370,70" font="SetrixHD; 26" halign="center" valign="bottom" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" />
-  <widget source="Service" render="XPicon" position="907,80" size="220,132" zPosition="5" transparent="1" alphatest="blend">
-    <convert type="MovieInfo">RecordServiceRef</convert>
-  </widget>
-  <eLabel position="859,310" size="315,1" backgroundColor="layer-b-progress" />
-  <widget source="session.CurrentService" render="Progress" position="859,308" size="315,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
-    <convert type="ServicePosition">Position</convert>
-  </widget>
-  <widget name="datetime" position="882,337" size="270,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" />
-  <widget name="duration" position="882,377" size="270,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" />
-  <widget source="Service" render="Label" position="882,417" size="270,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1">
-    <convert type="MovieInfo">FileSize</convert>
-  </widget>
-  <eLabel text="EventviewSimple" position="0,550" size="1273,124" font="SetrixHD; 150" noWrap="0" backgroundColor="text-background" transparent="1" foregroundColor="background-text" valign="top" zPosition="-20" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_BUTTONBAR_MENU" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+    <widget name="epg_description" position="70,90" size="700,520" font="SetrixHD; 24" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="channel" position="832,212" size="370,70" font="SetrixHD; 26" halign="center" valign="bottom" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" />
+    <widget source="Service" render="XPicon" position="907,80" size="220,132" zPosition="5" transparent="1" alphatest="blend">
+      <convert type="MovieInfo">RecordServiceRef</convert>
+    </widget>
+    <eLabel position="859,310" size="315,1" backgroundColor="layer-b-progress" />
+    <widget source="session.CurrentService" render="Progress" position="859,308" size="315,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
+      <convert type="ServicePosition">Position</convert>
+    </widget>
+    <widget name="datetime" position="882,337" size="270,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" />
+    <widget name="duration" position="882,377" size="270,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" />
+    <widget source="Service" render="Label" position="882,417" size="270,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1">
+      <convert type="MovieInfo">FileSize</convert>
+    </widget>
+    <eLabel text="EventviewSimple" position="0,550" size="1273,124" font="SetrixHD; 150" noWrap="0" backgroundColor="text-background" transparent="1" foregroundColor="background-text" valign="top" zPosition="-20" />
+  </screen>
   <screen name="Menu" position="0,0" size="1280,720" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_MENU" />
     <ePixmap pixmap="SimpleLD/construct/menu/main/setup.png" position="237,289" size="200,200" alphatest="blend" transparent="1" />
@@ -1043,30 +1043,30 @@
     <widget name="list" position="477,131" size="743,515" scrollbarMode="showNever" colorServiceDescription="layer-a-accent2" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="selection-background" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;26" serviceNameFont="SetrixHD;26" serviceInfoFont="Regular;22" transparent="1" backgroundColor="layer-a-background" itemHeight="50" />
   </screen>
   <screen name="SlimChannelSelection" position="center,center" size="560,600">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_WINDOW_LARGE" />
-  <widget name="list" position="110,0" size="560,420" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" colorServiceDescription="layer-a-selection-background" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="layer-a-selection-background" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;20" serviceNameFont="SetrixHD;20" serviceInfoFont="Regular;20" transparent="0" itemHeight="30" />
-  <widget source="ServiceEvent" render="Label" position="112,430" zPosition="2" size="60,25" font="SetrixHD; 19" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" halign="right" noWrap="1" valign="top" transparent="0">
-    <convert type="EventTime">StartTime</convert>
-    <convert type="ClockToText">Format:%H:%M </convert>
-  </widget>
-  <widget source="ServiceEvent" render="Label" position="172,430" zPosition="2" size="73,25" font="SetrixHD; 19" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" noWrap="1" valign="top" transparent="0">
-    <convert type="EventTime">EndTime</convert>
-    <convert type="ClockToText">Format: - %H:%M</convert>
-  </widget>
-  <widget source="ServiceEvent" render="Label" position="125,455" size="533,93" font="Regular; 17" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" valign="top" zPosition="2" transparent="0">
-    <convert type="EventName">FullDescription</convert>
-  </widget>
-  <ePixmap pixmap="SimpleLD/buttons/key_red.png" position="110,0" size="30,40" zPosition="2" alphatest="blend" />
-  <ePixmap pixmap="SimpleLD/buttons/key_green.png" position="235,0" size="30,40" zPosition="2" alphatest="blend" />
-  <ePixmap pixmap="SimpleLD/buttons/key_yellow.png" position="380,0" size="30,40" zPosition="2" alphatest="blend" />
-  <ePixmap pixmap="SimpleLD/buttons/key_blue.png" position="530,0" size="30,40" zPosition="2" alphatest="blend" />
-  <widget name="key_red" position="135,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
-  <widget name="key_green" position="280,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
-  <widget name="key_yellow" position="425,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
-  <widget name="key_blue" position="560,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <widget name="list" position="110,0" size="560,420" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" colorServiceDescription="layer-a-selection-background" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="layer-a-selection-background" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;20" serviceNameFont="SetrixHD;20" serviceInfoFont="Regular;20" transparent="0" itemHeight="30" />
+    <widget source="ServiceEvent" render="Label" position="112,430" zPosition="2" size="60,25" font="SetrixHD; 19" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" halign="right" noWrap="1" valign="top" transparent="0">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M </convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="172,430" zPosition="2" size="73,25" font="SetrixHD; 19" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" noWrap="1" valign="top" transparent="0">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format: - %H:%M</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="125,455" size="533,93" font="Regular; 17" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" valign="top" zPosition="2" transparent="0">
+      <convert type="EventName">FullDescription</convert>
+    </widget>
+    <ePixmap pixmap="SimpleLD/buttons/key_red.png" position="110,0" size="30,40" zPosition="2" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/buttons/key_green.png" position="235,0" size="30,40" zPosition="2" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/buttons/key_yellow.png" position="380,0" size="30,40" zPosition="2" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/buttons/key_blue.png" position="530,0" size="30,40" zPosition="2" alphatest="blend" />
+    <widget name="key_red" position="135,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
+    <widget name="key_green" position="280,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
+    <widget name="key_yellow" position="425,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
+    <widget name="key_blue" position="560,0" zPosition="1" size="140,40" font="SetrixHD;20" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-button-foreground" transparent="0" />
+  </screen>
   <screen name="Volume" position="0,0" size="1280,53" title="Volume" zPosition="10" flags="wfNoBorder" transparent="0" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <widget name="Volume" position="425,22" size="390,5" zPosition="3" foregroundColor="layer-a-progress" transparent="1" />
@@ -1416,16 +1416,16 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="list" position="557,78" size="672,576" scrollbarMode="showOnDemand" itemHeight="50" />
   </screen>
   <screen name="FileBrowser" position="0,0" size="1280,720" title="DVD File Browser" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
-  <ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" alphatest="blend" />
-  <ePixmap name="menu-band" position="-50,265" size="1341,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
-  <ePixmap pixmap="SimpleLD/construct/menu/main/dvd.png" position="187,289" size="200,200" alphatest="blend" />
-  <eLabel position="542,65" zPosition="-1" size="700,600" backgroundColor="layer-a-background" />
-  <eLabel text="DVD File Browser" noWrap="1" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
-  <widget name="filelist" position="552,78" size="680,570" itemHeight="30" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" transparent="1" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
+    <ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" alphatest="blend" />
+    <ePixmap name="menu-band" position="-50,265" size="1341,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+    <ePixmap pixmap="SimpleLD/construct/menu/main/dvd.png" position="187,289" size="200,200" alphatest="blend" />
+    <eLabel position="542,65" zPosition="-1" size="700,600" backgroundColor="layer-a-background" />
+    <eLabel text="DVD File Browser" noWrap="1" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
+    <widget name="filelist" position="552,78" size="680,570" itemHeight="30" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" transparent="1" />
+  </screen>
   <screen name="DVDPlayer" position="0,0" size="1283,723" title="InfoBar" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <widget source="session.CurrentService" render="Label" noWrap="1" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background">
@@ -1608,14 +1608,14 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="number" position="966,337" size="180,100" halign="left" valign="center" font="SetrixHD; 50" backgroundColor="layer-b-background" foregroundColor="layer-b-foreground" transparent="1" />
   </screen>
   <screen name="NumberZapWithName" position="0,0" size="1280,720" title="QuickZap" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <ePixmap pixmap="SimpleLD/construct/plugins/numberzap.png" position="237,289" size="200,200" alphatest="blend" />
-  <eLabel text="QuickZap" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
-  <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
-  <widget name="servicenumber" position="583,288" size="387,60" font="SetrixHD; 35" halign="right" backgroundColor="layer-b-background" transparent="1" valign="center" foregroundColor="layer-b-foreground" zPosition="-1" />
-  <widget name="servicename" position="560,361" size="500,60" font="SetrixHD; 40" halign="left" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground" />
-  <widget name="servicebouquet" position="531,435" size="396,53" font="Regular; 35" halign="left" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/numberzap.png" position="237,289" size="200,200" alphatest="blend" />
+    <eLabel text="QuickZap" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
+    <ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+    <widget name="servicenumber" position="583,288" size="387,60" font="SetrixHD; 35" halign="right" backgroundColor="layer-b-background" transparent="1" valign="center" foregroundColor="layer-b-foreground" zPosition="-1" />
+    <widget name="servicename" position="560,361" size="500,60" font="SetrixHD; 40" halign="left" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground" />
+    <widget name="servicebouquet" position="531,435" size="396,53" font="Regular; 35" halign="left" backgroundColor="layer-b-background" transparent="1" foregroundColor="layer-b-foreground" />
+  </screen>
   <screen name="picshow" position="0,0" size="1280,720" title="PicturePlayer" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
@@ -2008,41 +2008,41 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="introduction" position="652,627" size="398,44" font="Regular; 22" halign="center" backgroundColor="layer-a-background" transparent="1" />
   </screen>
   <screen name="SelectSatsEntryScreen" position="0,0" size="1280,720" title="Select Sats Entry" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <ePixmap pixmap="SimpleLD/construct/plugins/dvd-back.png" position="0,0" zPosition="-20" size="1280,720" alphatest="blend" transparent="1" />
-  <eLabel text="Select Sats Entry" position="369,2" foregroundColor="layer-a-title-foreground" size="525,50" valign="bottom" font="SetrixHD;34" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="list" position="70,110" size="700,510" itemHeight="30" font="Regular; 20" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
-  <widget source="hint" render="Label" position="825,425" size="380,175" font="SetrixHD; 20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-  <ePixmap position="890,175" size="256,256" zPosition="2" pixmap="SimpleLD/icons/menu_scan_tuner_setup.png" transparent="1" alphatest="blend" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/dvd-back.png" position="0,0" zPosition="-20" size="1280,720" alphatest="blend" transparent="1" />
+    <eLabel text="Select Sats Entry" position="369,2" foregroundColor="layer-a-title-foreground" size="525,50" valign="bottom" font="SetrixHD;34" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="list" position="70,110" size="700,510" itemHeight="30" font="Regular; 20" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+    <widget source="hint" render="Label" position="825,425" size="380,175" font="SetrixHD; 20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+    <ePixmap position="890,175" size="256,256" zPosition="2" pixmap="SimpleLD/icons/menu_scan_tuner_setup.png" transparent="1" alphatest="blend" />
+  </screen>
   <screen name="PositionerSetup" position="0,0" size="1280,720" title="Positioner setup..." flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <ePixmap pixmap="SimpleLD/construct/plugins/dvd-back.png" position="0,0" zPosition="-20" size="1280,720" alphatest="blend" transparent="1" />
-  <eLabel text="Positioner setup..." position="378,1" foregroundColor="layer-a-title-foreground" size="525,50" font="SetrixHD;35" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="list" position="220,120" size="400,180" itemHeight="30" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="snr_db" position="160,405" size="200,25" halign="center" valign="center" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="SNR:" position=" 70,440" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="snr_bar" position="160,440" size="200,25" borderWidth="1" transparent="1" />
-  <widget name="snr_percentage" position="370,440" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="BER:" position=" 70,475" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="ber_bar" position="160,475" size="200,25" borderWidth="1" transparent="1" />
-  <widget name="ber_value" position="370,475" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="Lock:" position=" 70,510" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="lock_state" position="160,510" size="200,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="Status:" position=" 70,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="status_bar" position="160,545" size="300,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="Frequency:" position="490,440" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="frequency_value" position="650,440" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="Symbolrate:" position="490,475" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="symbolrate_value" position="650,475" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="FEC:" position="490,510" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="fec_value" position="650,510" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <eLabel text="Polarisation:" position="490,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="polarisation" position="650,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
-  <ePixmap position="890,175" size="256,256" zPosition="2" pixmap="SimpleLD/icons/menu_scan_positioner_setup.png" transparent="1" alphatest="blend" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/dvd-back.png" position="0,0" zPosition="-20" size="1280,720" alphatest="blend" transparent="1" />
+    <eLabel text="Positioner setup..." position="378,1" foregroundColor="layer-a-title-foreground" size="525,50" font="SetrixHD;35" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="list" position="220,120" size="400,180" itemHeight="30" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="snr_db" position="160,405" size="200,25" halign="center" valign="center" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="SNR:" position=" 70,440" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="snr_bar" position="160,440" size="200,25" borderWidth="1" transparent="1" />
+    <widget name="snr_percentage" position="370,440" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="BER:" position=" 70,475" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="ber_bar" position="160,475" size="200,25" borderWidth="1" transparent="1" />
+    <widget name="ber_value" position="370,475" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="Lock:" position=" 70,510" size="80,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="lock_state" position="160,510" size="200,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="Status:" position=" 70,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="status_bar" position="160,545" size="300,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="Frequency:" position="490,440" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="frequency_value" position="650,440" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="Symbolrate:" position="490,475" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="symbolrate_value" position="650,475" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="FEC:" position="490,510" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="fec_value" position="650,510" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <eLabel text="Polarisation:" position="490,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="polarisation" position="650,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
+    <ePixmap position="890,175" size="256,256" zPosition="2" pixmap="SimpleLD/icons/menu_scan_positioner_setup.png" transparent="1" alphatest="blend" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+  </screen>
   <screen name="CIselectMainMenu" position="0,0" size="1280,720" title="CI Assignment" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="CiList" position="620,82" size="523,565" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
     <panel name="PANEL_LD_TOP" />
@@ -2834,18 +2834,18 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget source="Canvas" render="Canvas" position="140,70" size="1000,576" />
   </screen>
   <screen name="PluginDownloadBrowser" position="0, 0" flags="wfNoBorder" title="Downloadable plugins" transparent="0" backgroundColor="transparent" size="1280, 720">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_WINDOW_LARGE" />
-  <panel name="PANEL_BUTTONBAR_OK_X" />
-  <ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
-  <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
-  <widget name="list" position="480,100" size="730,560" zPosition="4" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
-  <widget name="text" position="21,515" size="418,129" font="SetrixHD;20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
-  <widget source="global.CurrentTime" render="Label" position="825,65" size="380,30" font="SetrixHD;20" foregroundColor="layer-a-extendedinfo3" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1">
-    <convert type="STBinfo">FLASHfree</convert>
-  </widget>
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <panel name="PANEL_BUTTONBAR_OK_X" />
+    <ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+    <widget name="list" position="480,100" size="730,560" zPosition="4" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+    <widget name="text" position="21,515" size="418,129" font="SetrixHD;20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
+    <widget source="global.CurrentTime" render="Label" position="825,65" size="380,30" font="SetrixHD;20" foregroundColor="layer-a-extendedinfo3" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1">
+      <convert type="STBinfo">FLASHfree</convert>
+    </widget>
+  </screen>
   <screen name="VirtualKeyBoard" position="0, 0" flags="wfNoBorder" zPosition="100" transparent="0" title="Virtual KeyBoard" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
@@ -2899,8 +2899,9 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
   <screen name="GraphicalEPGPIG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder" backgroundColor="transparent">
   <panel name="PANEL_LD_TOP" />
   <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_MENU_X" />
+  <ePixmap pixmap="SimpleLD/construct/plugins/dvd-back.png" position="0,0" zPosition="-20" size="1280,720" alphatest="blend" transparent="1" />
   <!--<eLabel text="Electronic Program Guide" position="470,33" size="499,50" font="SetrixHD;22" halign="center" backgroundColor="epg-background" foregroundColor="layer-a-title-foreground" transparent="1" />/-->
-  <widget source="Title" render="Label" position="365,0" foregroundColor="layer-a-title-foreground" size="400,50" noWrap="1" valign="bottom" font="SetrixHD;25" backgroundColor="epg-background" transparent="1" />
+  <widget source="Title" render="Label" position="365,0" foregroundColor="layer-a-title-foreground" size="540,50" noWrap="1" valign="bottom" font="SetrixHD; 33" backgroundColor="epg-background" transparent="1" />
   <widget source="Event" render="Label" position="120,91" size="700,40" font="SetrixHD; 22" halign="center" backgroundColor="epg-background" foregroundColor="epg-event-foreground" transparent="0">
     <convert type="EventName">Name</convert>
   </widget>
@@ -2934,53 +2935,53 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="timeline4" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" />
     <widget name="timeline5" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" /-->
   <widget name="timeline_now" position="60,325" zPosition="2" size="16,307" pixmap="SimpleLD/epg/timeline-now.png" alphatest="blend" />
-  <widget name="bouquetlist" position="0,95" size="1280,590" foregroundColorSelected="black" scrollbarMode="showNever" zPosition="2" transparent="0" />
+  <widget name="bouquetlist" position="0,95" size="1280,551" foregroundColorSelected="black" scrollbarMode="showNever" zPosition="2" transparent="0" />
   <widget name="key_red" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
   <widget name="key_green" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
   <widget name="key_yellow" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
   <widget name="key_blue" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
 </screen>
   <screen name="GraphicalEPG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-  <eLabel text="Electronic Program Guide" position="350,2" size="563,50" font="SetrixHD; 36" backgroundColor="layer-a-background" foregroundColor="layer-a-title-foreground" transparent="1" />
-  <widget source="Event" render="Label" position="235,91" size="700,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1">
-    <convert type="EventName">Name</convert>
-  </widget>
-  <widget source="Event" render="Label" position="70,123" size=" 65, 22" font="Regular; 18" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1">
-    <convert type="EventTime">StartTime</convert>
-    <convert type="ClockToText">Format:%H:%M </convert>
-  </widget>
-  <widget source="Event" render="Label" position="1142,123" size=" 80, 22" font="Regular; 18" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" halign="center">
-    <convert type="EventTime">EndTime</convert>
-    <convert type="ClockToText">Format:%H:%M</convert>
-  </widget>
-  <eLabel position="146,135" size="990,1" backgroundColor="layer-a-accent1" foregroundColor="layer-a-accent1" zPosition="1" />
-  <widget source="Event" render="Progress" position="146,133" size="990,5" borderWidth="0" backgroundColor="layer-a-background" foregroundColor="layer-a-progress" transparent="1" zPosition="2">
-    <convert type="EventTime">Progress</convert>
-  </widget>
-  <eLabel position="60,160" zPosition="0" size="1165,125" backgroundColor="epg-eventdescription-background" transparent="0" />
-  <widget source="Event" render="Label" position="65,160" size="1155,125" font="RegularLight; 19" backgroundColor="epg-eventdescription-background" foregroundColor="epg-eventdescription-foreground" transparent="1" valign="top" zPosition="1">
-    <convert type="EventName">ExtendedDescription</convert>
-  </widget>
-  <widget name="lab1" position="60,455" size="1165,35" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="timeline_text" position="60,295" size="1165,30" foregroundColor="epg-timeline-foreground" selectionDisabled="1" transparent="1" />
-  <widget name="list" position="60,330" size="1165,300" itemHeight="60" EntryForegroundColor="epg-event-foreground" EntryBorderColor="white" EntryBackgroundColor="black" EntryBackgroundColorSelected="grey" scrollbarMode="showNever" transparent="1" />
-  <!--widget name="timeline0" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" />
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+    <eLabel text="Electronic Program Guide" position="350,2" size="563,50" font="SetrixHD; 36" backgroundColor="layer-a-background" foregroundColor="layer-a-title-foreground" transparent="1" />
+    <widget source="Event" render="Label" position="235,91" size="700,40" font="SetrixHD; 24" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget source="Event" render="Label" position="70,123" size=" 65, 22" font="Regular; 18" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1">
+      <convert type="EventTime">StartTime</convert>
+      <convert type="ClockToText">Format:%H:%M </convert>
+    </widget>
+    <widget source="Event" render="Label" position="1142,123" size=" 80, 22" font="Regular; 18" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" halign="center">
+      <convert type="EventTime">EndTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <eLabel position="146,135" size="990,1" backgroundColor="layer-a-accent1" foregroundColor="layer-a-accent1" zPosition="1" />
+    <widget source="Event" render="Progress" position="146,133" size="990,5" borderWidth="0" backgroundColor="layer-a-background" foregroundColor="layer-a-progress" transparent="1" zPosition="2">
+      <convert type="EventTime">Progress</convert>
+    </widget>
+    <eLabel position="60,160" zPosition="0" size="1165,125" backgroundColor="epg-eventdescription-background" transparent="0" />
+    <widget source="Event" render="Label" position="65,160" size="1155,125" font="RegularLight; 19" backgroundColor="epg-eventdescription-background" foregroundColor="epg-eventdescription-foreground" transparent="1" valign="top" zPosition="1">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <widget name="lab1" position="60,455" size="1165,35" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="timeline_text" position="60,295" size="1165,30" foregroundColor="epg-timeline-foreground" selectionDisabled="1" transparent="1" />
+    <widget name="list" position="60,330" size="1165,300" itemHeight="60" EntryForegroundColor="epg-event-foreground" EntryBorderColor="white" EntryBackgroundColor="black" EntryBackgroundColorSelected="grey" scrollbarMode="showNever" transparent="1" />
+    <!--widget name="timeline0" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" />
     <widget name="timeline1" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" />
     <widget name="timeline2" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" />
     <widget name="timeline3" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" />
     <widget name="timeline4" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" />
     <widget name="timeline5" position="0,398" zPosition="1" size="1,230" pixmap="SimpleLD/epg/timeline.png" /-->
-  <widget name="timeline_now" position="60,325" zPosition="2" size="16,307" pixmap="SimpleLD/epg/timeline-now.png" alphatest="blend" />
-  <widget name="bouquetlist" position="0,95" size="1280,590" foregroundColorSelected="black" scrollbarMode="showNever" zPosition="2" transparent="0" />
-  <widget name="key_red" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="key_green" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="key_yellow" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="key_blue" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <ePixmap position="1045,635" size="81,40" zPosition="10" pixmap="SimpleLD/buttons/key_info.png" transparent="1" alphatest="on" />
-  <ePixmap position="1140,635" size="81,40" zPosition="10" pixmap="SimpleLD/buttons/key_menu.png" transparent="1" alphatest="on" />
-</screen>
+    <widget name="timeline_now" position="60,325" zPosition="2" size="16,307" pixmap="SimpleLD/epg/timeline-now.png" alphatest="blend" />
+    <widget name="bouquetlist" position="0,95" size="1280,590" foregroundColorSelected="black" scrollbarMode="showNever" zPosition="2" transparent="0" />
+    <widget name="key_red" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="key_green" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="key_yellow" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="key_blue" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+    <ePixmap position="1045,635" size="81,40" zPosition="10" pixmap="SimpleLD/buttons/key_info.png" transparent="1" alphatest="on" />
+    <ePixmap position="1140,635" size="81,40" zPosition="10" pixmap="SimpleLD/buttons/key_menu.png" transparent="1" alphatest="on" />
+  </screen>
   <screen name="GraphicalInfoBarEPG" title="InfoBar EPG" position="0,490" size="1280,230" backgroundColor="transparent" flags="wfNoBorder">
     <eLabel name="new eLabel" position="0,10" zPosition="-10" size="1280,220" backgroundColor="layer-a-background" transparent="0" />
     <widget source="global.CurrentTime" render="Label" position="1145,1" size="140,55" font="SetrixHD; 50" halign="left" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
@@ -3300,30 +3301,30 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="infotext" position="483,115" size="700,550" font="SetrixHD; 18" zPosition="3" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="0" />
   </screen>
   <screen name="FTPBrowser" title="FTP-Browser Fensterwechsel mit CH+/- , Menu=Config" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap position="-16,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" alphatest="blend" />
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-  <widget source="Title" render="Label" position="354,3" size="551,46" font="SetrixHD; 30" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
-  <eLabel position="11,65" zPosition="-2" size="1252,603" backgroundColor="un444444" transparent="0" />
-  <widget source="localText" render="Label" position="20,73" size="613,40" font="Regular; 30" text="locales Verzeichniss" />
-  <widget name="local" position="18,118" size="615,479" scrollbarMode="showOnDemand" />
-  <widget source="remoteText" render="Label" position="639,73" size="614,40" font="Regular; 30" foregroundColor="green" backgroundColor="black" text="FTP-Server" />
-  <widget name="remote" position="639,118" size="615,479" scrollbarMode="showOnDemand" />
-  <widget source="eta" render="Label" position="17,621" size="615,40" font="Regular;23" foregroundColor="white" backgroundColor="black" text="Time:" />
-  <widget source="speed" render="Label" position="641,621" size="615,40" halign="left" font="Regular; 23" foregroundColor="green" backgroundColor="black" text="Speed:" />
-  <widget source="progress" render="Progress" position="18,600" size="1237,15" />
-  <ePixmap name="" position="274,680" size="94,40" pixmap="SimpleLD/buttons/key_menu.png" alphatest="blend" zPosition="10" />
-</screen>
+    <ePixmap position="-16,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" alphatest="blend" />
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+    <widget source="Title" render="Label" position="354,3" size="551,46" font="SetrixHD; 30" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+    <eLabel position="11,65" zPosition="-2" size="1252,603" backgroundColor="un444444" transparent="0" />
+    <widget source="localText" render="Label" position="20,73" size="613,40" font="Regular; 30" text="locales Verzeichniss" />
+    <widget name="local" position="18,118" size="615,479" scrollbarMode="showOnDemand" />
+    <widget source="remoteText" render="Label" position="639,73" size="614,40" font="Regular; 30" foregroundColor="green" backgroundColor="black" text="FTP-Server" />
+    <widget name="remote" position="639,118" size="615,479" scrollbarMode="showOnDemand" />
+    <widget source="eta" render="Label" position="17,621" size="615,40" font="Regular;23" foregroundColor="white" backgroundColor="black" text="Time:" />
+    <widget source="speed" render="Label" position="641,621" size="615,40" halign="left" font="Regular; 23" foregroundColor="green" backgroundColor="black" text="Speed:" />
+    <widget source="progress" render="Progress" position="18,600" size="1237,15" />
+    <ePixmap name="" position="274,680" size="94,40" pixmap="SimpleLD/buttons/key_menu.png" alphatest="blend" zPosition="10" />
+  </screen>
   <screen name="FTPQueueManager" title="FTP Warteschlange" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_WINDOW_LARGE" />
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_BUTTONBAR_OK_X" />
-  <widget source="Title" render="Label" position="354,3" size="551,46" font="SetrixHD; 30" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
-  <eLabel name="" position="471,72" size="749,40" text="offene Downloads:" font="SetrixHD; 30" />
-  <widget source="list" render="Listbox" position="478,132" size="740,512" scrollbarMode="showAlways">
-    <convert type="TemplatedMultiContent">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_BUTTONBAR_OK_X" />
+    <widget source="Title" render="Label" position="354,3" size="551,46" font="SetrixHD; 30" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+    <eLabel name="" position="471,72" size="749,40" text="offene Downloads:" font="SetrixHD; 30" />
+    <widget source="list" render="Listbox" position="478,132" size="740,512" scrollbarMode="showAlways">
+      <convert type="TemplatedMultiContent">
 		{"template": [
 		MultiContentEntryText(pos=(35,1), size=(510,19), text = 0, font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
 		MultiContentEntryText(pos=(35,20), size=(510,18), text = 1, font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
@@ -3333,8 +3334,8 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 		"itemHeight": 50
 		}
 			</convert>
-  </widget>
-</screen>
+    </widget>
+  </screen>
   <screen name="FTPServerManager" title="FTPServerManager" position="0,0" size="1280,715" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
@@ -3579,20 +3580,20 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="description" position="482,536" size="728,130" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" transparent="1" zPosition="1" foregroundColor="unfcc000" font="Regular; 20" />
   </screen>
   <screen name="SleepTimerSetup" position="0, 0" flags="wfNoBorder" title="SleepTimerSetup" transparent="0" backgroundColor="transparent" size="1280, 720">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
-  <eLabel position="440,70" zPosition="-1" size="820,585" backgroundColor="layer-a-background" />
-  <ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
-  <widget source="Title" render="Label" position="348,3" size="570,45" font="Regular; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
-  <ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
-  <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
-  <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
-  <ePixmap name="" position="583,680" size="900,40" pixmap="SimpleLD/construct/general/button-back.png" zPosition="-2" alphatest="blend" />
-  <ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
-  <widget name="config" position="450,79" size="800,466" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" font="Regular; 18" />
-  <widget name="description" position="450,550" size="800,90" font="Regular; 18" halign="left" backgroundColor="layer-a-background" transparent="1" zPosition="2" foregroundColor="unfcc000" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
+    <eLabel position="440,70" zPosition="-1" size="820,585" backgroundColor="layer-a-background" />
+    <ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+    <widget source="Title" render="Label" position="348,3" size="570,45" font="Regular; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
+    <ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
+    <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
+    <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
+    <ePixmap name="" position="583,680" size="900,40" pixmap="SimpleLD/construct/general/button-back.png" zPosition="-2" alphatest="blend" />
+    <ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
+    <widget name="config" position="450,79" size="800,466" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" font="Regular; 18" />
+    <widget name="description" position="450,550" size="800,90" font="Regular; 18" halign="left" backgroundColor="layer-a-background" transparent="1" zPosition="2" foregroundColor="unfcc000" />
+  </screen>
   <screen name="OMBManagerList" position="0, 0" flags="wfNoBorder" title="OMBManagerList" transparent="0" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
@@ -3739,12 +3740,12 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <panel name="PANEL_BUTTONBAR_OK_X" />
   </screen>
   <screen name="ServiceInfoSimple" position="0,0" size="1280, 720" title="Serviceinfo" flags="wfNoBorder" backgroundColor="transparent">
-  <ePixmap position="-16,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" alphatest="blend" />
-  <widget source="Title" render="Label" position="0,0" size="1280,46" font="SetrixHD; 35" backgroundColor="layer-a-background" transparent="0" noWrap="1" halign="center" />
-  <eLabel position="46,99" zPosition="-1" size="1191,516" backgroundColor="layer-a-background" />
-  <widget name="infolist" font="SetrixHD; 22" itemHeight="30" enableWrapAround="1" selectionDisabled="1" position="54,106" size="1173,500" backgroundColor="layer-a-background" transparent="1" />
-  <panel name="PANEL_BUTTONBAR_R_X" />
-</screen>
+    <ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" alphatest="blend" />
+    <widget source="Title" render="Label" position="0,0" size="1280,46" font="SetrixHD; 35" backgroundColor="layer-a-background" transparent="0" noWrap="1" halign="center" />
+    <eLabel position="46,99" zPosition="-1" size="1191,516" backgroundColor="layer-a-background" />
+    <widget name="infolist" font="SetrixHD; 22" itemHeight="30" enableWrapAround="1" selectionDisabled="1" position="54,106" size="1173,500" backgroundColor="layer-a-background" transparent="1" />
+    <panel name="PANEL_BUTTONBAR_R_X" />
+  </screen>
   <!-- BufferIndicator -->
   <screen name="BufferIndicator" title="Channel" position="540,45" size="320,35" backgroundColor="transparent" flags="wfNoBorder">
     <widget name="status" position="0,0" size="320,35" backgroundColor="transparent" transparent="1" font="Regular;26" borderColor="black" borderWidth="2" valign="center" halign="center" zPosition="100" />
@@ -3756,18 +3757,18 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
   <panel name="PANEL_WINDOW_LARGE" />
   <ePixmap pixmap="SimpleLD/construct/menu/info/streamingclients.png" position="137,289" size="200,200" alphatest="blend" />
   <widget source="Title" render="Label" position="365,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="list" position="500,90" size="700,505" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+  <widget name="list" position="500,90" size="700,555" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
   <widget source="statusbar" render="Label" position="40,514" size="395,130" font="SetrixHD;20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
   <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 </screen>
   <screen name="ServerEditor" position="0,0" size="1280,720" title="Server Editor" flags="wfNoBorder" backgroundColor="transparent">
-  <panel name="PANEL_LD_TOP" />
-  <panel name="PANEL_LD_MINITV" />
-  <panel name="PANEL_WINDOW_LARGE" />
-  <ePixmap pixmap="SimpleLD/construct/menu/main/setup.png" position="137,289" size="200,200" alphatest="blend" />
-  <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
-  <widget name="config" position="494,88" size="700,505" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
-  <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-</screen>
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <ePixmap pixmap="SimpleLD/construct/menu/main/setup.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+    <widget name="config" position="494,88" size="700,505" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+  </screen>
   <!-- RemoteChannelStreamConverter -->
 </skin>
