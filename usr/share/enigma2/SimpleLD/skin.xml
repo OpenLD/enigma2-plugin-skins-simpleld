@@ -300,10 +300,10 @@
     <eLabel text="Bitrate video:" position="505,672" size="85,15" font="Regular; 12" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="5" />
     <eLabel text="Bitrate audio:" position="655,672" size="85,15" font="Regular; 12" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="5" />
     <widget source="session.CurrentService" render="Label" position="577,672" size="100,15" font="Regular; 12" zPosition="6" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1">
-      <convert type="Bitrate2">%V Kb/s</convert>
+      <convert type="LdBitrate">%V Kb/s</convert>
     </widget>
     <widget source="session.CurrentService" render="Label" position="729,672" size="100,15" font="Regular; 12" zPosition="6" backgroundColor="layer-a-background" transparent="1" halign="left" foregroundColor="layer-a-extendedinfo1">
-      <convert type="Bitrate2">%A Kb/s</convert>
+      <convert type="LdBitrate">%A Kb/s</convert>
     </widget>
   </screen>
   <screen name="PANEL_BUTTONBAR_MENUEDIT">
