@@ -4237,7 +4237,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
       <convert type="STBinfo">RAMfree</convert>
     </widget>
     <widget position="468,84" size="757,590" name="config" scrollbarMode="showOnDemand" transparent="1" zPosition="2" />
-    <panel name="PANEL_BUTTONBAR_SOURCE_RGB_X" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
   </screen>
   <screen name="Viewmhw" position="0,0" size="1280,720" title="View mhw2equiv.conf (/etc/mhw2equiv.conf)" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
