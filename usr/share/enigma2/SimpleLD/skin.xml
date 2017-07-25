@@ -826,7 +826,27 @@
       <convert type="MenuEntryCompare">language_setup</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget pixmap="SimpleLD/construct/menu/system/usage_setup.png" source="menu" render="Pixmap" position="237,289" size="200,200" alphatest="blend" transparent="1" zPosition="1">
+    <widget source="menu" render="Pixmap" pixmap="SimpleLD/construct/menu/system/gui.png" position="237,289" size="200,200" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">skin_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="SimpleLD/construct/menu/system/guisettings.png" position="237,289" size="200,200" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">numzapext_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="SimpleLD/construct/menu/system/guisettings.png" position="237,289" size="200,200" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">autores_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="SimpleLD/construct/menu/system/settings-2.png" position="237,289" size="200,200" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">fansetup_config</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="SimpleLD/construct/menu/system/settings-2.png" position="237,289" size="200,200" alphatest="blend" zPosition="1">
+      <convert type="MenuEntryCompare">tempfancontrol</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" pixmap="SimpleLD/construct/menu/system/usage_setup.png" render="Pixmap" position="237,289" size="200,200" alphatest="blend" transparent="1" zPosition="1">
       <convert type="MenuEntryCompare">usage_setup</convert>
       <convert type="ConditionalShowHide" />
     </widget>
@@ -2657,6 +2677,25 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
     <widget name="help1" position="1,94" size="200,30" font="Console;22" halign="center" valign="center" />
     <widget name="key0" position="202,94" size="200,30" font="Console;17" halign="center" valign="center" />
     <widget name="help2" position="403,94" size="200,30" font="Console;22" halign="center" valign="center" />
+  </screen>
+  <screen name="InetdRecovery" position="0, 0" flags="wfNoBorder" transparent="0" title="Nameserver Setup" backgroundColor="transparent" size="1280, 720">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+    <widget name="config" position="482,84" size="728,501" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
+  </screen>
+  <screen name="NetworkMountsMenu" position="0, 0" flags="wfNoBorder" transparent="0" title="Nameserver Setup" backgroundColor="transparent" size="1280, 720">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+    <widget name="menulist" position="482,84" size="728,501" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
+    <widget source="introduction" render="Label" position="482,597" size="728,50" font="Regular;19" backgroundColor="layer-a-background" transparent="1" />
   </screen>
   <screen name="NameserverSetup" position="0, 0" flags="wfNoBorder" transparent="0" title="Nameserver Setup" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
@@ -5208,7 +5247,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (40, 40), png = 1),
       <convert type="STBinfo">RAMfree</convert>
     </widget>
     <widget name="lab1" position="465,79" size="762,487" font="Regular;18" transparent="0" />
-    <widget name="lab2" position="545,575" size="300,30" font="Regular;20" valign="center" halign="right" transparent="0"/>
+    <widget name="lab2" position="545,575" size="300,30" font="Regular;20" valign="center" halign="right" transparent="0" />
     <widget name="labstop" position="705,575" size="260,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" zPosition="1" transparent="0" />
     <widget name="labrun" position="705,575" size="260,30" font="Regular;20" valign="center" halign="center" backgroundColor="green" zPosition="2" transparent="0" />
     <ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
@@ -5260,5 +5299,45 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
     </widget>
     <panel name="PANEL_BUTTONBAR_OK_X" />
     <eLabel name="" position="461,58" size="770,595" borderWidth="2" borderColor="layer-a-background" />
+  </screen>
+  <!--Volume Adjust-->
+  <screen name="Volume_adjust" position="0,0" size="1280,720" title="Volume Adjust" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+    <ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget name="ServiceList.desc" position="471,100" size="749,30" font="SetrixHD;26" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+    <widget name="ServiceList" position="472,135" size="748,515" font="Regular;20" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+    <widget source="press_menu" render="Label" position="17,518" size="421,123" font="SetrixHD;20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+  </screen>
+  <screen name="Change_volume" position="0,0" size="1280,720" title="Change Volume offset" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+    <ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget name="config" position="473,88" size="747,558" font="Regular;20" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
+  </screen>
+  <screen name="Volume_Config" position="0,0" size="1280,720" title="Volume Config" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+    <ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget name="config" position="470,86" size="750,559" font="Regular;20" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+    <widget source="infotext" render="Label" position="18,520" size="427,124" font="SetrixHD;20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
+  </screen>
+  <screen name="mySmallChannelSelection" position="0,0" size="1280,720" title="Select service to add..." flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+    <ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget name="list" position="471,85" size="753,558" font="Regular;20" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
   </screen>
 </skin>
