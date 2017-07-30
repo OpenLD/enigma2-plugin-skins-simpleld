@@ -2085,7 +2085,7 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
     <eLabel text="Polarisation:" position="490,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
     <widget name="polarisation" position="650,545" size="150,25" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
     <ePixmap position="890,175" size="256,256" zPosition="2" pixmap="SimpleLD/icons/menu_scan_positioner_setup.png" transparent="1" alphatest="blend" />
-    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+    <panel name="PANEL_BUTTONBAR_RGYB_X" />
   </screen>
   <screen name="CIselectMainMenu" position="0,0" size="1280,720" title="CI Assignment" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="CiList" position="620,82" size="523,565" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
