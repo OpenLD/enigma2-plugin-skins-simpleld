@@ -181,11 +181,14 @@
     <widget source="global.CurrentTime" render="Label" position="224,2" size="115,28" font="RegularLight; 28" backgroundColor="layer-a-background" transparent="1" zPosition="1" halign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" position="229,31" size="75,18" font="Regular; 14" halign="left" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
+    <widget source="global.CurrentTime" render="Label" position="223,31" size="75,18" font="Regular; 14" halign="left" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
       <convert type="ClockToText">Format:%A</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" position="289,31" size="55,18" font="Regular; 14" halign="left" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
-      <convert type="ClockToText">Format:%e. %B</convert>
+    <widget source="global.CurrentTime" render="Label" position="279,31" size="55,18" font="Regular; 14" halign="left" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
+      <convert type="ClockToText">Format:%e</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="295,31" size="62,18" font="Regular; 14" halign="left" tforegroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
+      <convert type="ClockToText">Format:%B</convert>
     </widget>
     <ePixmap pixmap="SimpleLD/construct/menu-top.png" name="menu-top" position="0,0" size="942,53" alphatest="blend" transparent="1" zPosition="-2" />
     <!-- /* WEATHER WIDGET -->
@@ -195,10 +198,10 @@
       <convert type="SimpleWeather">currentDataValid</convert>
       <convert type="ConditionalShowHide">Invert</convert>
     </widget>
-    <widget backgroundColor="layer-a-background" font="RegularLight; 46" foregroundColor="layer-a-foreground" halign="right" noWrap="1" position="950,-4" render="Label" size="52,49" source="global.CurrentTime" transparent="1" valign="top" zPosition="10">
+    <widget backgroundColor="layer-a-background" font="RegularLight; 36" foregroundColor="layer-a-foreground" halign="center" noWrap="1" position="950,3" render="Label" size="130,28" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
       <convert type="SimpleWeather">currentWeatherTemp</convert>
     </widget>
-    <widget backgroundColor="layer-a-background" font="Regular; 14" foregroundColor="layer-a-foreground" halign="left" noWrap="1" position="1003,5" render="Label" size="32,26" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
+    <widget backgroundColor="layer-a-background" font="Regular; 14" foregroundColor="layer-a-foreground" halign="left" noWrap="1" position="1037,-3" render="Label" size="32,26" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
       <convert type="SimpleWeather">CF</convert>
     </widget>
     <widget backgroundColor="layer-c-background" font="Meteo; 46" foregroundColor="layer-b-foreground" halign="left" noWrap="1" position="1210,2" render="Label" size="48,48" source="global.CurrentTime" transparent="1" valign="center" zPosition="15">
@@ -210,7 +213,7 @@
     <widget backgroundColor="layer-c-background" font="Regular; 16" foregroundColor="layer-b-foreground" halign="left" noWrap="1" position="1142,24" render="Label" size="44,26" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
       <convert type="SimpleWeather">forecastTodayTempMin</convert>
     </widget>
-    <widget backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" font="Regular; 12" halign="left" noWrap="1" position="1013,22" render="Label" size="80,26" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
+    <widget backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" font="Regular; 14" halign="center" noWrap="1" position="950,28" render="Label" size="130,26" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
       <convert type="SimpleWeather">currentLocation</convert>
     </widget>
     <!-- WEATHER WIDGET */ -->
@@ -2252,7 +2255,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (80, 80), png = 2),
     <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
     <ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
     <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
-    <widget name="hddlist" position="70,130" size="700,275" itemHeight="30" transparent="1" />
+    <widget name="hddlist" position="495,110" size="700,275" itemHeight="30" transparent="1" />
   </screen>
   <screen name="HddPartitions" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
@@ -2502,7 +2505,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
     <panel name="PANEL_BUTTONBAR_RGY_X" />
-    <ePixmap pixmap="SimpleLD/construct/plugins/swap.png" position="237,289" size="200,200" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/swap.png" position="137,289" size="200,200" alphatest="blend" />
     <ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-3" />
     <eLabel position="645,91" zPosition="-2" size="450,500" backgroundColor="layer-a-background" foregroundColor="layer-a-background" />
     <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2936,8 +2939,8 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
     <ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
     <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
     <widget name="list" position="480,100" size="730,560" zPosition="4" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
-    <widget name="text" position="21,515" size="418,129" font="SetrixHD;20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
-    <widget source="global.CurrentTime" render="Label" position="825,65" size="380,30" font="SetrixHD;20" foregroundColor="layer-a-extendedinfo3" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1">
+    <widget name="text" position="21,558" size="418,86" font="SetrixHD;20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
+    <widget source="global.CurrentTime" render="Label" position="37,519" size="380,30" font="SetrixHD;20" foregroundColor="layer-a-extendedinfo3" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1">
       <convert type="STBinfo">FLASHfree</convert>
     </widget>
   </screen>
@@ -3117,8 +3120,8 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
     <widget name="channel" position="50,50" size="850,45" font="SetrixHD; 35" transparent="1" foregroundColor="layer-a-foreground" backgroundColor="layer-a-background" zPosition="2" />
     <widget name="datetime" position="980,45" size="250,30" font="SetrixHD; 22" foregroundColor="layer-a-foreground" backgroundColor="layer-a-background" transparent="0" noWrap="1" valign="top" halign="right" zPosition="2" />
     <widget name="duration" position="1080,75" size="150,30" font="SetrixHD; 22" foregroundColor="layer-a-foreground" backgroundColor="layer-a-background" transparent="0" noWrap="1" valign="top" halign="right" zPosition="2" />
-    <eLabel name="new eLabel" position="50,120" zPosition="-9" size="1180,330" backgroundColor="epg-eventdescription-background" transparent="0" />
-    <widget name="epg_description" position="55,120" size="1170,330" font="Regular; 22" scrollbarMode="showNever" foregroundColor="epg-eventdescription-foreground" backgroundColor="epg-eventdescription-background" transparent="0" zPosition="1" />
+    <eLabel name="new eLabel" position="50,120" zPosition="-9" size="1180,330" backgroundColor="layer-b-background" transparent="0" />
+    <widget name="epg_description" position="55,120" size="1170,330" font="Regular; 22" scrollbarMode="showNever" foregroundColor="epg-eventdescription-foreground" backgroundColor="layer-b-background" transparent="0" zPosition="1" />
   </screen>
   <screen name="PluginDetails" position="0, 0" flags="wfNoBorder" transparent="0" title="Plugin details" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
@@ -3286,7 +3289,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
     <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-    <ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="127,281" size="200,200" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="129,285" size="200,200" alphatest="blend" />
     <ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
     <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
     <eLabel position="477,66" zPosition="-1" size="769,600" backgroundColor="layer-a-background" />
@@ -3299,7 +3302,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
     <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-    <ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="127,283" size="200,200" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="129,285" size="200,200" alphatest="blend" />
     <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
     <ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
     <eLabel position="477,66" zPosition="-1" size="769,600" backgroundColor="layer-a-background" />
@@ -3310,7 +3313,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
     <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-    <ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="127,283" size="200,200" alphatest="blend" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="129,285" size="200,200" alphatest="blend" />
     <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
     <ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
     <eLabel position="477,66" zPosition="-1" size="769,600" backgroundColor="layer-a-background" />
@@ -3604,28 +3607,28 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
     <widget source="session.CurrentService" render="Label" position="369,3" size="550,45" font="Regular;26" valign="center" halign="center" noWrap="1" backgroundColor="black" transparent="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/rec-off.png" position="716,580" size="59,30" zPosition="1" />
-    <widget position="716,580" render="Pixmap" pixmap="SimpleLD/construct/iconbar/rec.png" size="59,30" source="session.RecordState" zPosition="2" alphatest="blend">
+    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/rec-off.png" position="716,569" size="59,50" zPosition="1" />
+    <widget position="716,569" render="Pixmap" pixmap="SimpleLD/construct/iconbar/rec.png" size="59,50" source="session.RecordState" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide">Blink</convert>
     </widget>
-    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/subtitle-off.png" position="509,580" size="59,30" />
-    <widget alphatest="blend" pixmap="SimpleLD/construct/iconbar/subtitle.png" position="509,580" render="Pixmap" size="59,30" source="session.CurrentService" zPosition="1">
+    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/subtitle-off.png" position="509,569" size="59,50" />
+    <widget alphatest="blend" pixmap="SimpleLD/construct/iconbar/subtitle.png" position="509,569" render="Pixmap" size="59,50" source="session.CurrentService" zPosition="1">
       <convert type="ServiceInfo">SubservicesAvailable</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/dolby-off.png" position="560,580" size="59,30" zPosition="1" />
-    <widget alphatest="blend" pixmap="SimpleLD/construct/iconbar/dolby.png" position="560,580" render="Pixmap" size="59,30" source="session.CurrentService" zPosition="2">
+    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/dolby-off.png" position="560,569" size="59,50" zPosition="1" />
+    <widget alphatest="blend" pixmap="SimpleLD/construct/iconbar/dolby.png" position="560,569" render="Pixmap" size="59,50" source="session.CurrentService" zPosition="2">
       <convert type="ServiceInfo">IsMultichannel</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/hd-off.png" position="664,580" size="59,30" zPosition="1" />
-    <widget pixmap="SimpleLD/construct/iconbar/hd.png" position="664,580" render="Pixmap" size="59,30" source="session.CurrentService" zPosition="2" alphatest="blend">
+    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/hd-off.png" position="664,569" size="59,50" zPosition="1" />
+    <widget pixmap="SimpleLD/construct/iconbar/hd.png" position="664,569" render="Pixmap" size="59,50" source="session.CurrentService" zPosition="2" alphatest="blend">
       <convert type="ServiceInfo">VideoWidth</convert>
       <convert type="ValueRange">721,1980</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/wide-off.png" position="612,580" size="59,30" zPosition="1" />
-    <widget alphatest="blend" pixmap="SimpleLD/construct/iconbar/wide.png" position="612,580" render="Pixmap" size="59,30" source="session.CurrentService" zPosition="2">
+    <ePixmap alphatest="blend" pixmap="SimpleLD/construct/iconbar/wide-off.png" position="612,569" size="59,50" zPosition="1" />
+    <widget alphatest="blend" pixmap="SimpleLD/construct/iconbar/wide.png" position="612,569" render="Pixmap" size="59,50" source="session.CurrentService" zPosition="2">
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide" />
     </widget>
