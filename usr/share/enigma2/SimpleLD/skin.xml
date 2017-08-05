@@ -2329,7 +2329,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
 		<panel name="PANEL_WINDOW_MEDIUM" />
-		<panel name="PANEL_BUTTONBAR_RG_X" />
+		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/backup.png" position="237,289" size="200,200" alphatest="blend" />
 		<eLabel text="Image Backup" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<widget name="info-hdd" position="615,87" zPosition="1" size="534,233" font="SetrixHD; 22" halign="left" valign="top" transparent="1" backgroundColor="layer-a-background" />
