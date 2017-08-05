@@ -1776,6 +1776,27 @@ MultiContentEntryText(pos = (15, 5), size = (383, 30), flags = RT_HALIGN_LEFT, t
 			</convert>
 		</widget>
 	</screen>
+	<screen name="RestorePlugins" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_BUTTONBAR_MENU" />
+		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
+		<eLabel text="Restore Plugins" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
+		<eLabel position="651,66" zPosition="-1" size="511,600" backgroundColor="layer-a-background" />
+		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" zPosition="10" position="237,289" size="200,200" alphatest="blend" />
+		<widget source="menu" render="Listbox" position="673,81" size="471,571" foregroundColor="layer-a-foreground" backgroundColor="layer-a-background" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [
+MultiContentEntryText(pos = (50, 3), size = (650, 23), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
+],
+"fonts": [gFont("Regular", 19), gFont("Regular", 16)],
+"itemHeight": 30
+}
+			</convert>
+		</widget>
+	</screen>
 	<screen name="UpdatePlugin" position="0,0" size="1280,720" title="Software Update..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
