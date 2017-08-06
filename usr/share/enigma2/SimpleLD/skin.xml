@@ -204,7 +204,7 @@
 		<widget backgroundColor="layer-a-background" font="Regular; 14" foregroundColor="layer-a-foreground" halign="left" noWrap="1" position="1037,-3" render="Label" size="32,26" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
 			<convert type="SimpleWeather">CF</convert>
 		</widget>
-		<widget backgroundColor="layer-c-background" font="Meteo; 46" foregroundColor="layer-b-foreground" halign="left" noWrap="1" position="1210,2" render="Label" size="48,48" source="global.CurrentTime" transparent="1" valign="center" zPosition="15">
+		<widget backgroundColor="layer-c-background" font="Meteo; 48" foregroundColor="layer-b-foreground" halign="left" noWrap="1" position="1210,2" render="Label" size="48,49" source="global.CurrentTime" transparent="1" valign="center" zPosition="15">
 			<convert type="SimpleWeather">currentWeatherCode</convert>
 		</widget>
 		<widget backgroundColor="layer-c-background" font="Regular; 16" foregroundColor="layer-b-foreground" halign="left" noWrap="1" position="1148,1" render="Label" size="44,26" source="global.CurrentTime" transparent="1" valign="center" zPosition="10">
