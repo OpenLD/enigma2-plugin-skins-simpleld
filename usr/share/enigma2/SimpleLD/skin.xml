@@ -3,7 +3,7 @@
 	<!-- SimpleLD skin is based initial on GigabluePAX (mostly), GigablueUniverseHD and MetrixHD. -->
 	<!-- You can modify and redistribute it as long as you keep this license and the original author for the skin and all of your modifications -->
 	<output id="0">
-		<resolution xres="1280" yres="720" bpp="32" />
+		<resolution bpp="32" xres="1280" yres="720" />
 	</output>
 	<colors>
 		<color name="background" value="#40000000" />
@@ -151,14 +151,14 @@
 		<color name="WindowTitleForeground" color="title-foreground" />
 		<color name="WindowTitleBackground" color="title-background" />
 		<borderset name="bsWindow">
-			<pixmap pos="bpTopLeft" filename="SimpleLD/construct/window/bs_tl.png" alphatest="blend" />
-			<pixmap pos="bpTop" filename="SimpleLD/construct/window/bs_t.png" alphatest="blend" />
-			<pixmap pos="bpTopRight" filename="SimpleLD/construct/window/bs_tr.png" alphatest="blend" />
-			<pixmap pos="bpLeft" filename="SimpleLD/construct/window/bs_l.png" alphatest="blend" />
-			<pixmap pos="bpRight" filename="SimpleLD/construct/window/bs_r.png" alphatest="blend" />
-			<pixmap pos="bpBottomLeft" filename="SimpleLD/construct/window/bs_bl.png" alphatest="blend" />
-			<pixmap pos="bpBottom" filename="SimpleLD/construct/window/bs_b.png" alphatest="blend" />
-			<pixmap pos="bpBottomRight" filename="SimpleLD/construct/window/bs_br.png" alphatest="blend" />
+			<pixmap pos="bpTopLeft" filename="SimpleLD/construct/window/b_tl.png" />
+			<pixmap pos="bpTop" filename="SimpleLD/construct/window/b_t.png" />
+			<pixmap pos="bpTopRight" filename="SimpleLD/construct/window/b_tr.png" />
+			<pixmap pos="bpLeft" filename="SimpleLD/construct/window/b_ll.png" />
+			<pixmap pos="bpRight" filename="SimpleLD/construct/window/b_lr.png" />
+			<pixmap pos="bpBottomLeft" filename="SimpleLD/construct/window/b_bl.png" />
+			<pixmap pos="bpBottom" filename="SimpleLD/construct/window/b_b.png" />
+			<pixmap pos="bpBottomRight" filename="SimpleLD/construct/window/b_br.png" />
 		</borderset>
 	</windowstyle>
 	<windowstyle type="skinned" id="1">
@@ -3961,7 +3961,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 		<eLabel text="Settings" position="960,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 	</screen>
-	<screen name="startstopCam" position="center,center" size="600,200">
+	<screen name="startstopCam" position="center,center" size="600,200" title="SoftCam">
 		<ePixmap position="10,45" size="160,100" pixmap="SimpleLD/icons/smartcard.png" alphatest="blend" zPosition="1" />
 		<widget name="lab1" position="182,10" size="398,180" font="Regular;25" halign="center" valign="center" backgroundColor="header" transparent="1" zPosition="1" />
 	</screen>
