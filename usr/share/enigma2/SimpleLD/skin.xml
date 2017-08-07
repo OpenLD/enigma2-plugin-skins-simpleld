@@ -61,6 +61,7 @@
 		<color name="simpleAccent2" value="#00ffffff" />
 		<color name="simpleBackground" value="#3c000000" />
 		<color name="simpleBackground2" value="#3c00236b" />
+		<color name="simpleBackground3" value="#00001212" />
 		<color name="simpleBlue" value="#001677d2" />
 		<color name="simpleCyan" value="#00149baf" />
 		<color name="simpleDeepGrey" value="#00222222" />
@@ -217,6 +218,54 @@
 			<convert type="SimpleWeather">currentLocation</convert>
 		</widget>
 		<!-- WEATHER WIDGET */ -->
+	</screen>
+	<screen name="PANEL_LD_BACKGROUND">
+		<eLabel name="" position="center,center" size="1280,720" backgroundColor="simpleBackground3" foregroundColor="simpleBackground3" zPosition="-20" transparent="0" />
+		<eLabel name="" position="0,651" size="1280,70" backgroundColor="black" foregroundColor="black" zPosition="-20" transparent="0" />
+	</screen>
+	<screen name="PANEL_LD_MINITV">
+		<!-- Start Mini TV in ChannelSelecion -->
+		<eLabel position="13,66" size="394,188" zPosition="2" backgroundColor="un279e9fa4" foregroundColor="un31000000" />
+		<widget source="session.VideoPicture" render="Pig" position="15,68" size="390,184" zPosition="3" backgroundColor="unff000000" />
+		<!-- <ePixmap name="" position="12,63" size="396,190" pixmap="SimpleLD/construct/plugins/marco.png" /> -->
+		<!-- End Mini TV in ChannelSelecion -->
+	</screen>
+	<screen name="PANEL_SETTINGS_SETUP">
+		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
+		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="-100,265" size="1381,242" alphatest="blend" transparent="1" zPosition="-2" />
+		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
+		<widget name="config" position="470,90" size="720,453" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
+		<eLabel position="450,70" zPosition="-1" size="760,585" backgroundColor="layer-a-background" />
+		<!-- /*Buttons-->
+		<ePixmap pixmap="SimpleLD/buttons/key_exit.png" name="" position="1183,680" size="94,40" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="580,680" size="30,40" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="SimpleLD/buttons/key_green.png" position="882,680" size="30,40" alphatest="blend" transparent="1" />
+		<widget name="key_red" position="603,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+		<widget name="key_green" position="907,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+		<widget source="key_red" render="Label" position="603,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+		<widget source="key_green" render="Label" position="907,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
+		<ePixmap pixmap="SimpleLD/construct/general/button-back.png" name="" position="583,680" size="900,40" zPosition="-2" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="SimpleLD/construct/general/button-back-light.png" name="" position="1187,680" size="200,40" zPosition="-1" alphatest="blend" transparent="1" />
+		<!--Button */-->
+		<widget name="description" position="473,559" size="720,90" font="Regular; 18" halign="left" backgroundColor="layer-a-background" transparent="1" zPosition="2" foregroundColor="unfcc000" />
+	</screen>
+	<screen name="PANEL_MENU">
+		<panel name="PANEL_LD_TOP" />
+		<!-- <panel name="PANEL_BUTTONBAR_MENUEDIT"/> */-->
+		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
+		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="0,265" size="1280,242" alphatest="blend" transparent="1" zPosition="-2" />
+		<eLabel position="645,91" zPosition="-11" size="412,565" backgroundColor="layer-a-background" foregroundColor="layer-a-background" />
+		<widget source="title" render="Label" position="369,10" size="540,35" font="SetrixHD; 28" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
+		<widget source="menu" render="Listbox" position="636,97" size="429,555" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+{"template": [ MultiContentEntryText(pos = (30, 5), size = (420, 50), flags = RT_HALIGN_LEFT, text = 0) ],
+"fonts": [gFont("SetrixHD", 30)],
+"itemHeight": 60
+}
+			</convert>
+		</widget>
 	</screen>
 	<screen name="LDINFOBAREXTENDEDINFO" position="0,0" size="1280,720">
 		<!-- /* ECM -->
@@ -524,53 +573,11 @@
 		<ePixmap name="" position="278,680" size="900,40" pixmap="SimpleLD/construct/general/button-back.png" zPosition="-2" alphatest="blend" />
 		<ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
 	</screen>
-	<screen name="PANEL_LD_MINITV">
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
-		<!-- Start Mini TV in ChannelSelecion -->
-		<eLabel position="13,66" size="394,188" zPosition="2" backgroundColor="un279e9fa4" foregroundColor="un31000000" />
-		<widget source="session.VideoPicture" render="Pig" position="15,68" size="390,184" zPosition="3" backgroundColor="unff000000" />
-		<!-- <ePixmap name="" position="12,63" size="396,190" pixmap="SimpleLD/construct/plugins/marco.png" /> -->
-		<!-- End Mini TV in ChannelSelecion -->
-	</screen>
-	<screen name="PANEL_SETTINGS_SETUP">
-		<panel name="PANEL_LD_MINITV" />
-		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="-100,265" size="1381,242" alphatest="blend" transparent="1" zPosition="-2" />
-		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
-		<widget name="config" position="470,90" size="720,453" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
-		<eLabel position="450,70" zPosition="-1" size="760,585" backgroundColor="layer-a-background" />
-		<!-- /*Buttons-->
-		<ePixmap pixmap="SimpleLD/buttons/key_exit.png" name="" position="1183,680" size="94,40" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="580,680" size="30,40" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="SimpleLD/buttons/key_green.png" position="882,680" size="30,40" alphatest="blend" transparent="1" />
-		<widget name="key_red" position="603,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-		<widget name="key_green" position="907,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-		<widget source="key_red" render="Label" position="603,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-		<widget source="key_green" render="Label" position="907,685" size="270,26" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
-		<ePixmap pixmap="SimpleLD/construct/general/button-back.png" name="" position="583,680" size="900,40" zPosition="-2" alphatest="blend" transparent="1" />
-		<ePixmap pixmap="SimpleLD/construct/general/button-back-light.png" name="" position="1187,680" size="200,40" zPosition="-1" alphatest="blend" transparent="1" />
-		<!--Button */-->
-		<widget name="description" position="473,559" size="720,90" font="Regular; 18" halign="left" backgroundColor="layer-a-background" transparent="1" zPosition="2" foregroundColor="unfcc000" />
-	</screen>
-	<screen name="PANEL_MENU">
-		<panel name="PANEL_LD_TOP" />
-		<!-- <panel name="PANEL_BUTTONBAR_MENUEDIT"/> */-->
-		<panel name="PANEL_LD_MINITV" />
-		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="0,265" size="1280,242" alphatest="blend" transparent="1" zPosition="-2" />
-		<eLabel position="645,91" zPosition="-11" size="412,565" backgroundColor="layer-a-background" foregroundColor="layer-a-background" />
-		<widget source="title" render="Label" position="369,10" size="540,35" font="SetrixHD; 28" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
-		<widget source="menu" render="Listbox" position="636,97" size="429,555" scrollbarMode="showNever" enableWrapAround="1" transparent="1">
-			<convert type="TemplatedMultiContent">
-{"template": [ MultiContentEntryText(pos = (30, 5), size = (420, 50), flags = RT_HALIGN_LEFT, text = 0) ],
-"fonts": [gFont("SetrixHD", 30)],
-"itemHeight": 60
-}
-			</convert>
-		</widget>
-	</screen>
 	<!-- SCREENS -->
 	<screen name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<eLabel position="0,75" zPosition="-10" size="1280,585" backgroundColor="layer-b-background" />
@@ -632,6 +639,7 @@
 	<screen name="MovieSelection" position="0,0" size="1280,720" title="Select a movie" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<eLabel text="Select a movie" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
@@ -702,6 +710,7 @@
 	<screen name="EPGSelectionMulti" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/epgselectionmulti.png" position="137,289" size="200,200" alphatest="blend" transparent="1" />
@@ -724,6 +733,7 @@
 	<screen name="EventView" position="0,0" size="1280,720" title="Eventview" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/eventview.png" position="187,289" size="200,200" alphatest="blend" transparent="1" />
@@ -747,6 +757,7 @@
 	<!-- EventViewSimple , optimized for MovieInfo (EMC)-->
 	<screen name="EventViewSimple" position="0,0" size="1280,720" title="EventviewSimple" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
@@ -776,6 +787,7 @@
 		<!-- MENU-TOP -->
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/ci.png" position="237,289" size="200,200" alphatest="blend" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="0,265" size="1280,242" alphatest="blend" transparent="1" zPosition="-2" />
 		<eLabel position="607,65" zPosition="-1" size="550,605" backgroundColor="layer-a-background" />
@@ -786,6 +798,7 @@
 	<screen name="CIconfigMenu" position="0,0" size="1280,720" title="CI Assignments" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/ci.png" position="237,289" size="200,200" alphatest="blend" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="0,265" size="1280,242" alphatest="blend" transparent="1" zPosition="-2" />
@@ -930,6 +943,7 @@
 	<screen name="menu_frontpanel_menu" position="0,0" size="1280,720" title="Frontpanel menu" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENUEDIT" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/frontpanel.png" position="237,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -1047,6 +1061,7 @@
 	<screen name="SimpleWeatherSetup" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="-100,265" size="1381,242" alphatest="blend" zPosition="-2" transparent="1" />
 		<eLabel text="Setup" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
 		<widget name="config" position="492,86" size="700,555" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
@@ -1070,6 +1085,7 @@
 	<screen name="SimpleChannelSelection" position="0,0" size="1280,721" title="Channel Selection" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/eventview.png" position="137,289" size="200,200" zPosition="2" transparent="1" alphatest="blend" />
@@ -1080,6 +1096,7 @@
 	<screen name="SlimChannelSelection" position="center,center" size="560,600">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget name="list" position="110,0" size="560,420" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" colorServiceDescription="layer-a-selection-background" colorServiceDescriptionSelected="layer-a-foreground" colorEventProgressbarBorder="layer-a-selection-background" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="#00555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;20" serviceNameFont="SetrixHD;20" serviceInfoFont="Regular;20" transparent="0" itemHeight="30" />
 		<widget source="ServiceEvent" render="Label" position="112,430" zPosition="2" size="60,25" font="SetrixHD; 19" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" halign="right" noWrap="1" valign="top" transparent="0">
@@ -1123,6 +1140,7 @@
 	<screen name="PluginBrowser" position="0,0" size="1280,721" title="Plugin browser" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<eLabel text="Plugin Browser" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
 		<ePixmap pixmap="SimpleLD/construct/menu-band.png" name="menu-band" position="0,265" size="1280,242" alphatest="blend" transparent="1" zPosition="-2" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/plugins.png" position="237,289" size="200,200" alphatest="blend" transparent="1" />
@@ -1142,8 +1160,8 @@
 	</screen>
 	<screen name="MediaPlayer" position="center,center" size="1280,720" title="MediaPlayer" flags="wfNoBorder" transparent="0" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<eLabel text="Media Player" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 		<eLabel position="417,65" zPosition="-10" size="833,606" backgroundColor="layer-a-background" transparent="1" />
 		<eLabel position="432,315" size="500,40" text="Playlist" font="SetrixHD; 22" backgroundColor="layer-a-background" transparent="1" />
 		<eLabel name="" position="21,412" size="387,1" backgroundColor="layer-a-accent1" foregroundColor="layer-a-accent1" zPosition="-1" />
@@ -1449,6 +1467,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 	<screen name="ZapHistoryBrowser" position="0,0" size="1280,721" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap name="menu-band" position="-50,265" size="1341,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/zaphistory.png" position="187,289" size="200,200" alphatest="blend" />
@@ -1459,6 +1478,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 	<screen name="FileBrowser" position="0,0" size="1280,720" title="DVD File Browser" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" alphatest="blend" />
 		<ePixmap name="menu-band" position="-50,265" size="1341,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -1498,6 +1518,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 	<screen name="AboutOE" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="237,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<widget source="Title" render="Label" position="369,0" size="560,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
@@ -1514,6 +1535,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 	<screen name="CommitInfo" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="187,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="-50,265" size="1351,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
@@ -1527,6 +1549,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/network.png" position="237,289" size="200,200" alphatest="blend" />
 		<eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
@@ -1553,6 +1576,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/system.png" position="237,289" size="200,200" alphatest="blend" />
 		<eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
@@ -1563,6 +1587,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/devices.png" position="237,289" size="200,200" alphatest="blend" />
 		<eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
@@ -1579,6 +1604,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 		<ePixmap name="menu-band" position="-50,265" size="1351,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<eLabel text="Please choose an extension..." position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
 		<eLabel position="529,66" zPosition="-1" size="717,605" backgroundColor="layer-a-background" />
 		<widget name="list" position="538,83" size="700,573" font="SetrixHD; 32" zPosition="3" itemHeight="35" scrollbarMode="showOnDemand" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="0" />
@@ -1586,6 +1612,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 	<screen name="AudioSelection" title="Audio" position="center,center" size="1280,720" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/audio.png" position="187,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="-50,265" size="1351,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -1660,6 +1687,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="picshow" position="0,0" size="1280,720" title="PicturePlayer" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/picshow.png" position="137,289" size="200,200" alphatest="blend" />
@@ -1673,6 +1701,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="Pic_Exif" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_R_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/picshow.png" position="137,289" size="200,200" alphatest="blend" />
 		<eLabel text="PicturePlayer-ExifInfo" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -1690,6 +1719,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/eventview.png" position="137,289" size="200,200" alphatest="blend" transparent="1" />
@@ -1710,6 +1740,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="HdmiCECSetupScreen" position="0,0" size="1280,720" title="HDMI-CEC Configuration" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/hdmicec.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -1722,6 +1753,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="OpenWebifConfig" position="0,0" size="1280,721" title="OpenWebif Configuration" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/openwebif.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -1733,6 +1765,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="ChoiceBox" position="0,0" size="1308,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" />
 		<ePixmap name="" position="1187,680" size="200,40" pixmap="SimpleLD/construct/general/button-back-light.png" zPosition="-1" alphatest="blend" />
 		<ePixmap pixmap="SimpleLD/construct/general/choicebox.png" position="137,289" size="200,200" alphatest="blend" />
@@ -1745,6 +1778,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="GBAspectRatioSwitchSetup" position="0,0" size="1308,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<eLabel text="GBAspectRatioSwitch Setup" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<eLabel position="477,66" zPosition="-1" size="769,600" backgroundColor="layer-a-background" />
@@ -1762,6 +1796,7 @@ MultiContentEntryPixmapAlphaBlend(pos=(30, 9), size=(85, 51), png=6, flags = BT_
 	<screen name="UpdatePluginMenu" position="0,0" size="1280,720" title="Softwaremanager..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<eLabel text="Softwaremanager" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -1781,6 +1816,7 @@ MultiContentEntryText(pos = (15, 5), size = (383, 30), flags = RT_HALIGN_LEFT, t
 	<screen name="RestorePlugins" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<eLabel text="Restore Plugins" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -1802,6 +1838,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 	<screen name="UpdatePlugin" position="0,0" size="1280,720" title="Software Update..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" zPosition="1" halign="left" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -1831,6 +1868,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 	</screen>
 	<screen name="DefaultWizard" position="0,0" size="1280,720" title="Welcome..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
 		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="794,680" size="30,40" alphatest="blend" />
@@ -1851,10 +1889,10 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 			</convert>
 		</widget>
 		<widget name="config" position="486,382" size="752,272" itemHeight="36" zPosition="14" scrollbarMode="showOnDemand" transparent="1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="StartWizard" position="0,0" size="1280,720" title="Welcome..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
 		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="794,680" size="30,40" alphatest="blend" />
@@ -1875,11 +1913,11 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 			</convert>
 		</widget>
 		<widget name="config" position="486,382" size="752,272" itemHeight="36" zPosition="14" scrollbarMode="showOnDemand" transparent="1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="SkinSelector" position="0,0" size="1280,720" title="Skin Selector" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_OK_X" />
 		<eLabel position="632,66" zPosition="-2" size="469,600" backgroundColor="layer-a-background" />
 		<eLabel position="0,279" zPosition="-3" size="1280,210" backgroundColor="layer-b-background" foregroundColor="background" />
@@ -1889,6 +1927,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 	</screen>
 	<screen name="RestoreWizard" position="0,0" size="1280,720" title="Welcome..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
 		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="794,680" size="30,40" alphatest="blend" />
@@ -1908,10 +1947,10 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 			</convert>
 		</widget>
 		<widget name="config" position="471,382" size="752,272" itemHeight="36" zPosition="14" scrollbarMode="showOnDemand" transparent="1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="ImageWizard" position="0,0" size="1280,720" title="Welcome..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
 		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="794,680" size="30,40" alphatest="blend" />
@@ -1931,10 +1970,10 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 			</convert>
 		</widget>
 		<widget name="config" position="471,382" size="752,272" itemHeight="36" zPosition="14" scrollbarMode="showOnDemand" transparent="1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="NetworkWizard" position="0,0" size="1280,720" title="Welcome..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
 		<ePixmap name="" position="794,680" size="30,40" pixmap="SimpleLD/buttons/key_red.png" alphatest="blend" />
@@ -1954,30 +1993,30 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 			</convert>
 		</widget>
 		<widget name="config" position="471,382" size="752,272" itemHeight="36" zPosition="14" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="black" transparent="0" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="ScanSimple" position="0,0" size="1280,720" title="Service scan" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/scan.png" position="137,289" size="200,200" alphatest="blend" />
 		<eLabel text="Service scan" position="369,-1" size="540,46" font="SetrixHD; 32" valign="top" backgroundColor="black" zPosition="-2" transparent="0" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget name="header" position="482,82" size="725,28" font="Regular;24" backgroundColor="black" transparent="0" />
 		<widget name="config" position="482,125" size="725,485" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="black" transparent="0" />
 		<widget name="footer" position="482,626" size="725,25" font="Regular; 22" halign="center" backgroundColor="black" transparent="0" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="ScanSetup" position="0,0" size="1280,720" title="Service scan" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/scan.png" position="137,289" size="200,200" alphatest="blend" />
 		<eLabel text="Service scan" position="369,-1" size="540,46" font="SetrixHD; 32" valign="top" backgroundColor="black" zPosition="-2" transparent="0" />
 		<widget name="header" position="482,82" size="725,28" font="Regular;24" backgroundColor="black" transparent="0" />
 		<widget name="config" position="482,125" size="725,485" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="black" transparent="0" />
 		<widget name="introduction" position="482,626" size="725,25" font="Regular; 22" halign="center" backgroundColor="black" transparent="0" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="ServiceScan" position="0,0" size="1280,720" title="Service Scan" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/scan.png" position="137,289" size="200,200" alphatest="blend" />
 		<eLabel text="Service scan" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<panel name="PANEL_WINDOW_LARGE" />
@@ -1988,11 +2027,11 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
 		<widget name="scan_progress" position="482,270" size="725,5" backgroundColor="layer-a-progress" pixmap="SimpleLD/colors/00a61d4d.png" transparent="0" zPosition="10" alphatest="blend" />
 		<widget name="servicelist" position="482,286" size="725,361" itemHeight="30" selectionDisabled="1" transparent="0" />
 		<eLabel name="" position="482,272" size="725,1" backgroundColor="layer-a-accent1" zPosition="-1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="NimSelection" position="0,0" size="1280,720" title="Choose Tuner" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/scan.png" position="137,289" size="200,200" alphatest="blend" />
 		<eLabel text="Choose Tuner" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<panel name="PANEL_WINDOW_LARGE" />
@@ -2012,6 +2051,7 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
 	<screen name="NimSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/scan.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
 		<panel name="PANEL_WINDOW_LARGE" />
@@ -2020,11 +2060,11 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
 	</screen>
 	<screen name="Satfinder" position="0,0" size="1280,720" title="Satfinder" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/scan.png" position="137,289" size="200,200" alphatest="blend" transparent="1" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-a-background" />
 		<widget name="header" position="485,71" size="720,28" font="Regular; 24" backgroundColor="layer-a-background" transparent="1" halign="center" noWrap="1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 		<widget source="Frontend" render="Label" position="625,220" size="80,30" zPosition="2" font="Regular; 21" backgroundColor="layer-a-background" halign="left" transparent="1">
 			<convert type="FrontendInfo">SNRdB</convert>
 		</widget>
@@ -2066,7 +2106,7 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
 	</screen>
 	<screen name="SelectSatsEntryScreen" position="0,0" size="1280,720" title="Select Sats Entry" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<eLabel text="Select Sats Entry" position="369,2" foregroundColor="layer-a-title-foreground" size="525,50" valign="bottom" font="SetrixHD;34" backgroundColor="layer-a-background" transparent="1" />
 		<widget name="list" position="70,110" size="700,510" itemHeight="30" font="Regular; 20" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="1" />
 		<widget source="hint" render="Label" position="825,425" size="380,175" font="SetrixHD; 20" foregroundColor="layer-b-foreground" halign="center" backgroundColor="layer-b-background" valign="center" transparent="1" />
@@ -2075,7 +2115,7 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
 	</screen>
 	<screen name="PositionerSetup" position="0,0" size="1280,720" title="Positioner setup..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<eLabel text="Positioner setup..." position="378,1" foregroundColor="layer-a-title-foreground" size="525,50" font="SetrixHD;35" backgroundColor="layer-a-background" transparent="1" />
 		<widget name="list" position="220,120" size="400,180" itemHeight="30" backgroundColor="layer-a-background" transparent="1" />
 		<widget name="snr_db" position="160,405" size="200,25" halign="center" valign="center" font="SetrixHD;19" backgroundColor="layer-a-background" transparent="1" />
@@ -2104,6 +2144,7 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
 		<widget name="CiList" position="620,82" size="523,565" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/ci.png" position="237,289" size="200,200" alphatest="blend" />
 		<panel name="PANEL_WINDOW_MEDIUM" />
@@ -2112,6 +2153,7 @@ MultiContentEntryText(pos = (50, 43), size = (640, 60), font = 1, flags = RT_HAL
 	<screen name="PluginManager" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2137,6 +2179,7 @@ MultiContentEntryText(pos = (15, 46), size = (565, 25), font=1, flags = RT_HALIG
 	<screen name="VFD_GigaSetup" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_MEDIUM" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="237,289" size="200,200" alphatest="blend" />
@@ -2146,6 +2189,7 @@ MultiContentEntryText(pos = (15, 46), size = (565, 25), font=1, flags = RT_HALIG
 	<screen name="RecordPathsSettings" position="0,0" size="1280,720" title="Recording paths..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/movie.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2155,6 +2199,7 @@ MultiContentEntryText(pos = (15, 46), size = (565, 25), font=1, flags = RT_HALIG
 	<screen name="InputDeviceSelection" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/remote.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2175,6 +2220,7 @@ MultiContentEntryText(pos = (100, 6), size = (690, 54), font=0, flags = RT_HALIG
 	<screen name="AdapterSetup" position="0,0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2198,6 +2244,7 @@ MultiContentEntryText(pos = (100, 6), size = (690, 54), font=0, flags = RT_HALIG
 	<screen name="AdapterSetupConfiguration" position="0,0" size="1280,720" title="Network Configuration..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_R_X" />
 		<eLabel text="Network Configuration" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2209,6 +2256,7 @@ MultiContentEntryText(pos = (100, 6), size = (690, 54), font=0, flags = RT_HALIG
 	<screen name="VideoEnhancementSetup" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/video.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2219,6 +2267,7 @@ MultiContentEntryText(pos = (100, 6), size = (690, 54), font=0, flags = RT_HALIG
 	<screen name="VideoEnhancementPreview" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="menu-band" position="0,420" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-3" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/video.png" position="232,439" size="200,200" alphatest="blend" />
@@ -2229,6 +2278,7 @@ MultiContentEntryText(pos = (100, 6), size = (690, 54), font=0, flags = RT_HALIG
 	<screen name="HddMount" position="0, 0" title="Mount Manager" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2251,6 +2301,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (80, 80), png = 2),
 	<screen name="DevicePanelConf" position="0,0" size="1280,720" title="Mount Manager Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2261,6 +2312,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (80, 80), png = 2),
 	<screen name="HarddiskSelection" position="0,0" size="1280,720" title="Select HDD" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2270,6 +2322,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (80, 80), png = 2),
 	<screen name="HddPartitions" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2291,6 +2344,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 	<screen name="HddSetup" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2311,6 +2365,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 	<screen name="FlashOnline" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_MEDIUM" />
 		<panel name="PANEL_BUTTONBAR_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/flashonline.png" position="237,289" size="200,200" alphatest="blend" />
@@ -2321,6 +2376,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 	<screen name="doFlashImage" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_MEDIUM" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/flashonline.png" position="237,289" size="200,200" alphatest="blend" />
@@ -2330,6 +2386,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 	<screen name="ImageBackup" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_MEDIUM" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/backup.png" position="237,289" size="200,200" alphatest="blend" />
@@ -2340,6 +2397,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 	<screen name="Console" position="0, 0" flags="wfNoBorder" transparent="0" title="Command execution..." backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/console.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2348,6 +2406,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 	<screen name="PacketManager" position="0, 0" flags="wfNoBorder" transparent="0" title="PacketManager" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2369,6 +2428,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="IPKGMenu" position="0, 0" flags="wfNoBorder" transparent="0" title="IPKGMenu" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2378,6 +2438,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="IPKGSource" position="0, 0" flags="wfNoBorder" transparent="0" title="IPKGSource" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2387,6 +2448,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="BackupSelection" position="0, 0" flags="wfNoBorder" transparent="0" title="Select files/folders to backup..." backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/backup.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2396,6 +2458,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="RestoreMenu" position="0, 0" flags="wfNoBorder" transparent="0" title="Restore Backups" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/backup.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2456,6 +2519,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="EventViewContextMenu" position="0,0" size="1280,720" title="Eventview menu" flags="wfNoBorder" transparent="0" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<eLabel position="645,51" zPosition="-11" size="482,558" backgroundColor="layer-a-background" transparent="0" />
 		<eLabel position="36,265" zPosition="-1" size="340,260" backgroundColor="layer-a-background" transparent="0" />
 		<widget name="menu" position="636,60" size="499,545" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-selection-foreground" transparent="0" enableWrapAround="1" scrollbarMode="showOnDemand">
@@ -2471,6 +2535,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="ChannelContextMenu" position="0, 0" flags="wfNoBorder" transparent="0" title="Channellist menu" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_SMALL" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/eventview.png" position="237,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2479,6 +2544,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="GraphMultiEpgSetup" position="0, 0" flags="wfNoBorder" transparent="0" title="Electronic Program Guide Setup" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2495,6 +2561,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="ServiceInfo" position="0,0" size="1280, 720" title="Serviceinfo" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<ePixmap pixmap="SimpleLD/construct/menu/info/channel.png" position="237,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
@@ -2505,6 +2572,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="OSD3DSetupScreen" position="0, 0" flags="wfNoBorder" title="OSD 3D setup" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RG_X" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2521,6 +2589,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="SwapManager" position="0, 0" flags="wfNoBorder" title="Swap File Manager" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/swap.png" position="137,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-3" />
@@ -2540,6 +2609,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 58), size = (0, 0), png = 5), # index
 	<screen name="CronTimers" position="0, 0" flags="wfNoBorder" title="Cron Manager" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2573,6 +2643,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="AutoTimerOverview" position="0, 0" flags="wfNoBorder" title="AutoTimer Overview" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2591,6 +2662,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="AutoTimerImporter" position="0, 0" flags="wfNoBorder" title="Import AutoTimer" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2600,6 +2672,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="AutoTimerEditor" position="0, 0" flags="wfNoBorder" title="Edit AutoTimer" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2611,6 +2684,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="AutoTimerFilterEditor" position="0, 0" flags="wfNoBorder" title="Edit AutoTimer Filters" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2620,6 +2694,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="AutoTimerServiceEditor" position="0, 0" flags="wfNoBorder" title="Edit AutoTimer Services" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2629,6 +2704,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="AutoTimerSettings" position="0, 0" flags="wfNoBorder" title="AutoTimer Settings" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2639,6 +2715,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="MPHelp" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/info.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2648,6 +2725,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="TimerEntry" position="0, 0" flags="wfNoBorder" title="Timer entry" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2664,6 +2742,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="TimerEditList" position="0, 0" flags="wfNoBorder" title="Timer Editor" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2677,6 +2756,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="TimerLog" position="0, 0" flags="wfNoBorder" title="Timer Editor" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/timer.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2701,6 +2781,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="InetdRecovery" position="0, 0" flags="wfNoBorder" transparent="0" title="Nameserver Setup" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2710,6 +2791,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="NetworkMountsMenu" position="0, 0" flags="wfNoBorder" transparent="0" title="Nameserver Setup" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2720,6 +2802,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="NameserverSetup" position="0, 0" flags="wfNoBorder" transparent="0" title="Nameserver Setup" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2730,6 +2813,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="NetworkAdapterTest" position="0, 0" flags="wfNoBorder" transparent="0" title="Network test..." backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2770,6 +2854,7 @@ MultiContentEntryText(pos = (5, 2), size = (695, 28), font=0, flags = RT_HALIGN_
 	<screen name="NetworkAdapterSelection" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2792,6 +2877,7 @@ MultiContentEntryText(pos = (100, 42), size = (520, 25), font=1, flags = RT_HALI
 	<screen name="ScanIP" position="0, 0" flags="wfNoBorder" title="Network Neighbourhood" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2801,6 +2887,7 @@ MultiContentEntryText(pos = (100, 42), size = (520, 25), font=1, flags = RT_HALI
 	<screen name="AutoMountManager" position="0, 0" flags="wfNoBorder" title="AutoMountManager" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_R_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2822,6 +2909,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 3), # ind
 	<screen name="AutoMountEdit" position="0, 0" flags="wfNoBorder" title="MountEdit" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_R_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2833,6 +2921,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 3), # ind
 	<screen name="AutoMountView" position="0, 0" flags="wfNoBorder" title="MountView" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2861,6 +2950,7 @@ MultiContentEntryPixmapAlphaTest(pos = (630, 6), size = (48, 48), png = 5), # in
 	<screen name="UserManager" position="0, 0" flags="wfNoBorder" title="UserManager" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2881,6 +2971,7 @@ MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 3), # ind
 	<screen name="NetworkBrowser" position="0, 0" flags="wfNoBorder" title="Network Neighbourhood" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2905,6 +2996,7 @@ MultiContentEntryPixmapAlphaTest(pos = (110, 6), size = (48, 48), png = 6), # in
 	<screen name="NetworkMacSetup" position="0, 0" title="MAC-adress settings" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" transparent="1" />
@@ -2915,6 +3007,7 @@ MultiContentEntryPixmapAlphaTest(pos = (110, 6), size = (48, 48), png = 6), # in
 	<screen name="IPv6Setup" position="0, 0" title="IPv6 setup" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" transparent="1" />
@@ -2925,6 +3018,7 @@ MultiContentEntryPixmapAlphaTest(pos = (110, 6), size = (48, 48), png = 6), # in
 	<screen name="LanguageSelection" position="0, 0" flags="wfNoBorder" transparent="0" title="Setup Language" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<widget name="key_red" position="0,0" size="0,0" zPosition="1" font="Regular; 20" halign="left" backgroundColor="layer-a-background" transparent="1" />
@@ -2951,6 +3045,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="PluginDownloadBrowser" position="0, 0" flags="wfNoBorder" title="Downloadable plugins" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_OK_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -2964,6 +3059,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="VirtualKeyBoard" position="0, 0" flags="wfNoBorder" zPosition="100" transparent="0" title="Virtual KeyBoard" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/keyboard.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -2976,6 +3072,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="JobView" position="0, 0" flags="wfNoBorder" transparent="0" title="JobView" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3013,8 +3110,8 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<!-- EPG Screens -->
 	<screen name="GraphicalEPGPIG" position="0,0" size="1280,720" title="Electronic Program Guide" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_RGYB_MENU_X" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 		<!--<eLabel text="Electronic Program Guide" position="470,33" size="499,50" font="SetrixHD;22" halign="center" backgroundColor="epg-background" foregroundColor="layer-a-title-foreground" transparent="1" />/-->
 		<widget source="Title" render="Label" position="365,0" foregroundColor="layer-a-title-foreground" size="540,50" noWrap="1" valign="bottom" font="SetrixHD; 33" backgroundColor="epg-background" transparent="1" />
 		<widget source="Event" render="Label" position="67,76" size="822,32" font="Regular; 20" halign="center" backgroundColor="epg-background" foregroundColor="epg-event-foreground" transparent="1">
@@ -3139,6 +3236,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="PluginDetails" position="0, 0" flags="wfNoBorder" transparent="0" title="Plugin details" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3152,6 +3250,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="PluginManagerInfo" position="0, 0" flags="wfNoBorder" title="Plugin manager activity" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3174,6 +3273,7 @@ MultiContentEntryText(pos = (90, 33), size = (565, 38), font=1, flags = RT_HALIG
 	<screen name="Ipkg" position="0, 0" flags="wfNoBorder" title="Installing Software..." transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3189,6 +3289,7 @@ MultiContentEntryText(pos = (90, 33), size = (565, 38), font=1, flags = RT_HALIG
 	<screen name="IpkgInstaller" position="0, 0" flags="wfNoBorder" title="IpkgInstaller" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/software_management.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3238,6 +3339,7 @@ MultiContentEntryText(pos = (90, 33), size = (565, 38), font=1, flags = RT_HALIG
 	</screen>
 	<screen name="LanguageWizard" position="0, 0" flags="wfNoBorder" title="Welcome..." transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
 		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="794,680" size="30,40" alphatest="blend" />
@@ -3259,10 +3361,10 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 		</widget>
 		<widget name="text" position="471,75" size="752,300" font="SetrixHD;30" backgroundColor="layer-a-background" transparent="1" />
 		<widget name="wizard" position="471,382" size="752,272" itemHeight="36" zPosition="14" scrollbarMode="showOnDemand" transparent="1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="VideoWizard" position="0,0" size="1280,720" title="Welcome..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="" position="1183,680" size="94,40" pixmap="SimpleLD/buttons/key_exit.png" alphatest="blend" zPosition="1" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
 		<ePixmap pixmap="SimpleLD/buttons/key_red.png" position="794,680" size="30,40" alphatest="blend" />
@@ -3283,10 +3385,10 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 			</convert>
 		</widget>
 		<widget name="config" position="486,382" size="752,272" itemHeight="36" zPosition="14" scrollbarMode="showOnDemand" transparent="1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<screen name="AutoDiseqc" position="0, 0" flags="wfNoBorder" title="AutoDiseqc" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<eLabel text="AutoDiseqc" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/scan.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3295,12 +3397,12 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 		<widget name="config" position="486,382" size="752,272" zPosition="10" scrollbarMode="showOnDemand" transparent="0" backgroundColorSelected="layer-a-selection-background" />
 		<widget source="statusbar" render="Label" position="486,90" zPosition="10" size="750,60" halign="center" valign="center" font="Regular; 24" transparent="0" shadowColor="layer-a-background" shadowOffset="-1,-1" />
 		<widget source="tunerstatusbar" render="Label" position="486,182" zPosition="10" size="750,50" halign="center" valign="center" font="Regular; 24" transparent="0" shadowColor="layer-a-background" shadowOffset="-1,-1" />
-		<ePixmap position="0,0" zPosition="-20" size="1280,720" pixmap="SimpleLD/construct/plugins/dvd-back.png" />
 	</screen>
 	<!-- VLC Player -->
 	<screen name="VlcMediaListScreen" position="center,center" size="1280,720" title="VLC Media List" flags="wfNoBorder" backgroundColor="layer-b-background">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="129,285" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -3314,6 +3416,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="VlcServerListScreen" position="0,0" size="1280,720" title="VLC Server List" flags="wfNoBorder" backgroundColor="layer-b-background">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="129,285" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3325,6 +3428,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="VlcServerConfigScreen" position="center,center" size="1280,720" title="Edit VLC Server" flags="wfNoBorder" backgroundColor="layer-b-background">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/vlc.png" position="129,285" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3336,6 +3440,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="MovieContextMenu" position="center,center" size="1280,720" title="Film Bearbeitung" flags="wfNoBorder" backgroundColor="layer-b-background">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<eLabel position="463,57" zPosition="-11" size="796,610" backgroundColor="layer-a-background" foregroundColor="layer-a-background" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3351,6 +3456,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="MovieBrowserConfiguration" position="center,center" size="1280,720" title="Film Liste Einstellungen" flags="wfNoBorder" backgroundColor="layer-b-background">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<eLabel position="463,57" zPosition="-11" size="796,610" backgroundColor="layer-a-background" foregroundColor="layer-a-background" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -3367,6 +3473,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="BouquetSelector" position="center,center" size="1280,720" title="Bouquets add services" flags="wfNoBorder" backgroundColor="layer-b-background">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<eLabel position="463,57" zPosition="-11" size="796,610" backgroundColor="layer-a-background" foregroundColor="layer-a-background" />
@@ -3379,6 +3486,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="NetworkSamba" title="Samba Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3392,6 +3500,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="NetworkNfs" title="NFS Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3407,6 +3516,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="NetworkLog" title="Network Log" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_OK_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3431,6 +3541,7 @@ MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is 
 	<screen name="FTPQueueManager" title="FTP Warteschlange" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_BUTTONBAR_OK_X" />
@@ -3452,6 +3563,7 @@ MultiContentEntryText(pos=(35,20), size=(510,18), text = 1, font = 0, flags = RT
 	<screen name="FTPServerManager" title="FTPServerManager" position="0,0" size="1280,715" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3471,6 +3583,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="FTPServerEditor" title="FTPServerEditor" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3480,6 +3593,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="EnhancedMovieCenterMenu" position="center,center" size="1280,720" title="EnhancedMovieCenterMenu" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3491,6 +3605,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="EMCImdbScan" position="center,center" size="1280,720" title="EMC Cover search" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<!-- Info: Amount of searched Covers -->
@@ -3523,6 +3638,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="imdbSetup" position="center,center" size="1280,720" title="EMC Cover search setup" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_SMALL" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3532,6 +3648,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="getCover" position="center,center" size="1280,720" title="EMC Cover Selecter" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_OK_X" />
 		<widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3542,6 +3659,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="DownloadMovieInfo" position="center,center" size="1280,720" title="Movie Information Download (TMDb)" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_INFO_MENU_OK_X" />
 		<widget source="Title" render="Label" position="369,-1" size="550,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3553,6 +3671,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="MovieInfoPreview" position="center,center" size="1280,720" title="Movie Information Preview" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_X" />
 		<widget source="Title" render="Label" position="369,-1" size="550,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3563,6 +3682,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="MovieInfoSetup" position="center,center" size="1280,720" title="Movie Information Download Setup" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RG_X" />
 		<widget source="Title" render="Label" position="369,-1" size="550,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
@@ -3572,6 +3692,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="EMCSelection" position="center,center" size="1280,720" title="Enhanced Movie Center" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_MENU_X" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<eLabel text="E n h a n c e d	M o v i e	C e n t e r" position="369,-1" size="550,46" font="SetrixHD;35" foregroundColor="foreground" backgroundColor="un444444" transparent="1" />
@@ -3594,6 +3715,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="MovieMenu" position="0,0" size="1280,720" title="EMC menu" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_OK_X" />
 		<panel name="PANEL_WINDOW_MEDIUM" />
 		<eLabel text="E n h a n c e d	M o v i e	C e n t e r" position="369,-1" size="550,46" font="SetrixHD;35" foregroundColor="foreground" backgroundColor="un444444" transparent="1" />
@@ -3680,6 +3802,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="GBIpboxMenu" position="0, 0" flags="wfNoBorder" title="GigaBlue IPBox Client" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-3" />
 		<ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/ok.png" alphatest="blend" zPosition="0" />
@@ -3695,6 +3818,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="SleepTimerSetup" position="0, 0" flags="wfNoBorder" title="SleepTimerSetup" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<eLabel position="440,70" zPosition="-1" size="820,585" backgroundColor="layer-a-background" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -3710,6 +3834,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="OMBManagerList" position="0, 0" flags="wfNoBorder" title="OMBManagerList" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3722,6 +3847,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="HotkeySetup" position="0,0" size="1280,720" title="Input" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/plugins/remote.png" transparent="1" alphatest="blend" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<widget name="list" position="492,86" size="350,555" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="layer-a-background" transparent="1" />
@@ -3742,6 +3868,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="AnimationSetupScreen" title="Animations Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3751,6 +3878,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="AnimationSetupConfig" title="Animations Speed" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3765,6 +3893,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="CIHelper" title="CIHelper Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_MENU_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/ci.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3785,6 +3914,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="CIHelperSetup" title="CIHelper Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_R_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/ci.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3794,6 +3924,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="SoftcamStartup" title="SoftcamSetup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RG_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/setup/ci.png" position="128,285" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="-100,265" size="1381,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-3" />
@@ -3806,6 +3937,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="StreamingClientsInfo" position="0,0" size="1280, 720" flags="wfNoBorder" title="StreamingClientsInfo" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<ePixmap pixmap="SimpleLD/construct/menu/info/streamingclients.png" position="237,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
@@ -3817,6 +3949,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="MenuSort" position="0,0" size="1280,720" title="MenuSort" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -3835,6 +3968,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="TranslationInfo" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/infopanel.png" position="187,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="-50,265" size="1351,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
@@ -3846,6 +3980,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<ePixmap pixmap="SimpleLD/construct/menu/info/about.png" position="237,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
 		<eLabel position="645,91" zPosition="0" size="590,580" backgroundColor="layer-a-background" />
@@ -3867,6 +4002,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="StreamingChannelFromServerScreen" position="0,0" size="1280,720" title="Streaming Channel from Server" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/menu/info/streamingclients.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="365,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
@@ -3877,6 +4013,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="ServerEditor" position="0,0" size="1280,720" title="Server Editor" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/setup.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
@@ -3887,6 +4024,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="LDBluePanel" position="0,0" size="1280,720" title="Blue Panel" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<widget source="session.CurrentService" render="Label" position="730,6" size="250,20" font="Regular; 16" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="center">
@@ -3973,6 +4111,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="LdsysInfo" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="237,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
@@ -3987,6 +4126,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 	<screen name="LDSettings" position="0,0" size="1280,720" title="OpenLD Settings" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4027,6 +4167,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="LdEpgPanel" position="0,0" size="1280,720" title="OpenLD EPG Panel" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4058,6 +4199,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="LDmemoria" position="0,0" size="1280,720" title="Clear Memory" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<widget source="session.CurrentService" render="Label" position="730,6" size="250,20" font="Regular; 16" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="center">
@@ -4089,6 +4231,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="Ceparted" position="0,0" size="1280,720" title="eParted OpenLD" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4118,6 +4261,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="AddPart" position="0,0" size="1280,720" title="add Partition" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4147,6 +4291,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="Cpart" position="0,0" size="1280,720" title="eParted" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4192,6 +4337,7 @@ MultiContentEntryText(pos = (510,5), size = (160, 30), font=0, flags = RT_HALIGN
 	<screen name="Cpartexe" position="0,0" size="1280,720" title=" " flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4231,6 +4377,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="LDepgScreen" position="0,0" size="1280,720" title="EPG Options" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4260,6 +4407,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="Viewmhw" position="0,0" size="1280,720" title="View mhw2equiv.conf (/etc/mhw2equiv.conf)" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4289,6 +4437,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="Ipkuninstall" position="0,0" size="1280,720" title="IPK Uninstall Tool" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4319,6 +4468,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="EPGImportConfig" position="0,0" size="1280,720" title="EPG Import Configuration" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4350,6 +4500,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="EPGImportSources" position="0,0" size="1280,720" title="EPG Import Sources" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4379,6 +4530,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="EPGImportProfile" position="0,0" size="1280,720" title="EPGImportProfile" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4408,6 +4560,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="EPGImportLog" position="0,0" size="1280,720" title="EPG Import Log" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4437,6 +4590,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="TranscodingSetup" position="0,0" size="1280,720" title="Transcoding Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4468,6 +4622,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="Swap" position="0,0" size="1280,720" title="Swap File Manager" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4508,6 +4663,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="OscamInfoMenu" position="0,0" size="1280,720" title="OscamInfo" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4538,6 +4694,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="OscamInfoConfigScreen" position="0,0" size="1280,720" title=" " flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4570,6 +4727,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="NcamInfoMenu" position="0,0" size="1280,720" title="NcamInfo" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4600,6 +4758,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="NcamInfoConfigScreen" position="0,0" size="1280,720" title=" " flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4649,6 +4808,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="oscECMInfo" position="0,0" size="1280,720" title="ECM Info" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 27" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4679,6 +4839,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 5), size = (35,35), png=1),
 	<screen name="oscReaderStats" position="0,0" size="1280,720" title="Reader Stats" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 27" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4737,6 +4898,7 @@ MultiContentEntryText(pos = (740, 1), size = (100, 24), font=1, flags = RT_HALIG
 	<screen name="oscEntitlements" position="0,0" size="1280,720" title="Reader Stats" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 27" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4800,6 +4962,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoMain" position="0,0" size="1280,720" title="CCcam Info" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4829,6 +4992,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoRemoteBoxMenu" position="0,0" size="1280,720" title="CCcam Remote Info" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4858,6 +5022,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoSubMenu" position="0,0" size="1280,720" title="CCcamInfo SubMenu" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4888,6 +5053,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoServerMenu" position="0,0" size="1280,720" title="CCcam Server Info" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4918,6 +5084,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoMenuConfig" position="0,0" size="1280,720" title="CCcam Info Config" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4947,6 +5114,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamShareViewMenu" position="0,0" size="1280,720" title="CCcam Share Menu" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -4981,6 +5149,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoShareInfo" position="0,0" size="1280,720" title="CCcam Share Info" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5010,6 +5179,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoConfigSwitcher" position="0,0" size="1280,720" title="CCcam Config Switcher" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5039,6 +5209,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoConfigMenu" position="0,0" size="1280,720" title="CCcam Info Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5068,6 +5239,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoEcmInfoSelection" position="0,0" size="1280,720" title="CCcam ECM Info" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5097,6 +5269,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="CCcamInfoInfoScreen" position="0,0" size="1280,720" title="CCcam Info" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD; 26" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5126,6 +5299,7 @@ MultiContentEntryText(pos = (520, 1), size = (770, 45), font=1, flags = RT_HALIG
 	<screen name="LDPluginPanel" position="0,0" size="1280,720" title="OpenLD Plugins Panel" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5169,6 +5343,7 @@ MultiContentEntryPixmapAlphaTest(pos = (6, 5), size = (100, 40), png = 2),
 	<screen name="LDScripts" position="0,0" size="1280,720" title="OpenLD Scripts Panel" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5201,6 +5376,7 @@ MultiContentEntryPixmapAlphaTest(pos = (6, 5), size = (100, 40), png = 2),
 	<screen name="LDUtiles" position="0,0" size="1280,720" title="OpenLD LDUtiles Panel" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5240,6 +5416,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (40, 40), png = 1),
 	<screen name="TunerServer" position="0, 0" flags="wfNoBorder" title="Tuner Server OpenLD" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_X" />
 		<ePixmap pixmap="SimpleLD/construct/menu/info/streamingclients.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5281,6 +5458,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (40, 40), png = 1),
 	<screen name="LDServices" position="0,0" size="1280,720" title="OpenLD Services" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5322,6 +5500,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="Volume_adjust" position="0,0" size="1280,720" title="Volume Adjust" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5333,6 +5512,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="Change_volume" position="0,0" size="1280,720" title="Change Volume offset" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5342,6 +5522,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="Volume_Config" position="0,0" size="1280,720" title="Volume Config" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5352,6 +5533,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="mySmallChannelSelection" position="0,0" size="1280,720" title="Select service to add..." flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/audio.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5361,6 +5543,7 @@ MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (39, 39), png = 1),
 	<screen name="WlanScan" position="0,0" size="1280,720" title="Choose a Wireless Network" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/wlan.png" position="137,289" size="200,200" alphatest="blend" />
@@ -5384,6 +5567,7 @@ MultiContentEntryText(pos = (450, 43), size = (220, 25), font=1, flags = RT_HALI
 	<screen name="WlanStatus" position="0,0" size="1280,720" title="Wireless Network State" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/wlan.png" position="137,289" size="200,200" alphatest="blend" />
