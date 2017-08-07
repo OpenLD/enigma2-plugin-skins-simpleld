@@ -665,13 +665,13 @@
 		</widget>
 		<eLabel position="1231,83" size="1,140" backgroundColor="layer-b-background" zPosition="3" />
 		<widget source="Service" render="Cover" position="445,545" size="93,91" zPosition="4" alphatest="blend" transparent="1" />
-		<ePixmap position="442,544" zPosition="1" size="95,90" alphatest="blend" pixmap="SimpleLD/construct/icons/movie_small.png" />
+		<ePixmap position="442,544" zPosition="1" size="95,90" pixmap="SimpleLD/construct/icons/movie_small.png" alphatest="blend" transparent="1" />
 		<widget name="waitingtext" position="0,0" size="0,0" />
 		<eLabel position="428,65" zPosition="-5" size="816,608" backgroundColor="layer-a-background" />
 		<widget name="chosenletter" position="546,544" size="684,94" foregroundColor="yellow" font="Regular;22" halign="center" valign="center" transparent="1" zPosition="4" />
 		<widget name="DescriptionBorder" position="20,600" size="660,0" zPosition="3" transparent="1" />
-		<widget name="movie_sort" position="1105,668" size="35,20" pixmaps="icons/az.png,icons/newtop.png,icons/shuffle.png,icons/za.png,icons/oldtop.png,icons/faz.png,icons/fza.png" zPosition="10" transparent="1" alphatest="on" />
-		<widget name="movie_off" position="1145,668" size="35,20" pixmaps="icons/ask.png,icons/movielist.png,icons/quit.png,icons/pause.png,icons/playlist.png,icons/playlistquit.png,icons/loop.png,icons/rep.png" zPosition="10" transparent="1" alphatest="on" />
+		<widget name="movie_sort" position="1105,668" size="35,20" pixmaps="SimpleLD/skin_default/icons/az.png,SimpleLD/skin_default/icons/newtop.png,SimpleLD/skin_default/icons/shuffle.png,SimpleLD/skin_default/icons/za.png,SimpleLD/skin_default/icons/oldtop.png,SimpleLD/skin_default/icons/faz.png,SimpleLD/skin_default/icons/fza.png" zPosition="10" transparent="1" alphatest="on"/>
+		<widget name="movie_off" position="1145,668" size="35,20" pixmaps="SimpleLD/skin_default/icons/ask.png,SimpleLD/skin_default/icons/movielist.png,SimpleLD/skin_default/icons/quit.png,SimpleLD/skin_default/icons/pause.png,SimpleLD/skin_default/icons/playlist.png,SimpleLD/skin_default/icons/playlistquit.png,SimpleLD/skin_default/icons/loop.png,SimpleLD/skin_default/icons/rep.png" zPosition="10" transparent="1" alphatest="on"/>
 	</screen>
 	<screen name="QuickEPG" title="InfoBar QuickEPG" position="0,490" size="1280,230" backgroundColor="transparent" flags="wfNoBorder">
 		<eLabel name="new eLabel" position="0,10" zPosition="-10" size="1280,220" backgroundColor="layer-a-background" transparent="0" />
