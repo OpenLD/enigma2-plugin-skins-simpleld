@@ -4116,12 +4116,12 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 		<ePixmap pixmap="SimpleLD/construct/menu/main/bluepanel.png" position="237,289" size="200,200" alphatest="blend" />
 		<ePixmap name="menu-band" position="0,265" size="1280,242" pixmap="SimpleLD/construct/menu-band.png" alphatest="blend" zPosition="-2" />
 		<eLabel position="595,61" zPosition="-1" size="640,615" backgroundColor="layer-a-background" />
-		<widget name="lab1" position="598,62" size="635,614" font="RegularLight; 15" scrollbarMode="showNever" transparent="1" zPosition="2" />
+		<widget name="lab1" position="598,62" size="635,614" font="Regular; 20" scrollbarMode="showNever" transparent="1" zPosition="2" />
 		<!-- <widget name="lab2" render="Label" position="126,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
 		<widget name="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
 		<widget name="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
 		<widget name="lab3" render="Label" position="126,597" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" /> -->
-		<panel name="PANEL_BUTTONBAR_OK_X" />
+		<panel name="PANEL_BUTTONBAR_RG_X" />
 	</screen>
 	<screen name="LDSettings" position="0,0" size="1280,720" title="OpenLD Settings" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
