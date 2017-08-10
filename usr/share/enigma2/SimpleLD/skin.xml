@@ -2386,6 +2386,72 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 		<widget source="Title" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<widget name="wait" position="491,100" size="708,546" transparent="1" />
 	</screen>
+	<screen name="LdAboutTeam" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
+		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
+		<panel name="PANEL_WINDOW_LARGE" />
+		<panel name="PANEL_BUTTONBAR_OK_X" />
+		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
+		<eLabel text="AboutTeam" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+		<eLabel text="Developer:" position="486,105" size="108,20" font="Regular; 18" halign="left" />
+		<eLabel text="Javilonas (Javier Sayago)" position="580,138" size="244,24" font="Regular; 20" halign="left" />
+		<eLabel text="Contact:" position="485,180" size="84,20" font="Regular; 18" halign="left" />
+		<eLabel text="Github: https://github.com/javilonas" position="581,212" size="342,24" font="Regular;20" halign="left" />
+		<eLabel text="Donations:" position="485,255" size="100,20" font="Regular; 18" halign="left" />
+		<eLabel text="Paypal: https://www.paypal.me/Javilonas" position="580,284" size="383,24" font="Regular;20" halign="left" />
+		<eLabel text="Support:" position="485,332" size="87,20" font="Regular; 18" halign="left" />
+		<eLabel text="https://www.lonasdigital.com" position="581,363" size="342,24" font="Regular;20" halign="left" />
+		<eLabel text="Thank you for trust in OpenLD ;)" position="567,548" size="554,42" font="Regular; 17" halign="center" zPosition="1" transparent="1" />
+	</screen>
+	<screen name="HardwareInfo" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
+		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
+		<panel name="PANEL_WINDOW_LARGE" />
+		<panel name="PANEL_BUTTONBAR_OK_X" />
+		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
+		<eLabel text="HardwareInfo" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+		<ePixmap position="510,105" zPosition="5" size="50,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/ram.png" alphatest="blend" />
+		<widget source="session.Event_Now" render="Progress" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/bar.png" position="580,105" size="545,20" transparent="1" zPosition="6">
+			<convert type="SpaceInfo">MemTotal</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" zPosition="6" position="580,129" size="545,26" halign="left" valign="center" font="Regular; 23" transparent="0">
+			<convert type="SpaceInfo">MemTotal,Full</convert>
+		</widget>
+		<ePixmap position="510,185" zPosition="1" size="50,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/swap.png" alphatest="blend" />
+		<widget source="session.Event_Now" render="Progress" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/bar.png" position="580,185" size="545,20" transparent="1" zPosition="6">
+			<convert type="SpaceInfo">SwapTotal</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" zPosition="6" position="580,209" size="545,26" halign="left" valign="center" font="Regular; 23" transparent="0">
+			<convert type="SpaceInfo">SwapTotal,Full</convert>
+		</widget>
+		<ePixmap position="510,265" zPosition="1" size="50,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/flash.png" alphatest="blend" />
+		<widget source="session.Event_Now" render="Progress" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/bar.png" position="580,265" size="545,20" transparent="1" zPosition="6">
+			<convert type="SpaceInfo">FleshInfo</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" zPosition="6" position="580,288" size="545,26" halign="left" valign="center" font="Regular; 23" transparent="0">
+			<convert type="SpaceInfo">Flesh,Full</convert>
+		</widget>
+		<ePixmap position="510,345" zPosition="1" size="50,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/hdd.png" alphatest="blend" />
+		<widget source="session.Event_Now" render="Progress" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/bar.png" position="581,345" size="545,20" transparent="1" zPosition="6">
+			<convert type="SpaceInfo">HddInfo</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" zPosition="6" position="580,368" size="545,26" halign="left" valign="center" font="Regular; 23" transparent="0">
+			<convert type="SpaceInfo">HddInfo,Full</convert>
+		</widget>
+		<ePixmap position="510,425" zPosition="1" size="50,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/usb.png" alphatest="blend" />
+		<widget source="session.Event_Now" render="Progress" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/LDteam/images/icons/bar.png" position="580,425" size="545,20" transparent="1" zPosition="6">
+			<convert type="SpaceInfo">UsbInfo</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" zPosition="6" position="580,448" size="545,26" halign="left" valign="center" font="Regular; 23" transparent="0">
+			<convert type="SpaceInfo">UsbInfo,Full</convert>
+		</widget>
+		<eLabel text="CPU:" position="511,511" size="58,25" font="Regular; 23" halign="left" />
+		<widget backgroundColor="layer-a-background" font="Regular; 23" foregroundColor="green" halign="left" position="580,514" render="Label" size="120,23" source="session.CurrentService" transparent="1" zPosition="1" valign="center">
+			<convert type="CpuUsage">Total</convert>
+		</widget>
+	</screen>
 	<screen name="FlashOnline" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
 		<panel name="PANEL_LD_MINITV" />
