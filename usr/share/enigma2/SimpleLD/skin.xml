@@ -2314,7 +2314,7 @@ MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (80, 80), png = 2),
 		<panel name="PANEL_LD_MINITV" />
 		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
-		<panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+		<panel name="PANEL_BUTTONBAR_OK_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
 		<widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
 		<widget name="hddlist" position="495,110" size="700,275" itemHeight="30" transparent="1" />
@@ -2324,10 +2324,10 @@ MultiContentEntryPixmapAlphaBlend(pos = (0, 0), size = (80, 80), png = 2),
 		<panel name="PANEL_LD_MINITV" />
 		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_WINDOW_LARGE" />
-		<panel name="PANEL_BUTTONBAR_RGYB_X" />
+		<panel name="PANEL_BUTTONBAR_OK_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
-		<eLabel text="Partitions" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
-		<widget name="label_disk" position="483,85" font="SetrixHD; 28" halign="center" size="725,40" valign="center" transparent="1" />
+		<eLabel text="Partitions" position="369,-1" size="540,46" font="Regular; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+		<widget name="label_disk" position="483,85" font="Regular; 28" halign="center" size="725,40" valign="center" transparent="1" />
 		<widget source="menu" render="Listbox" position="483,140" size="725,490" scrollbarMode="showOnDemand" transparent="1">
 			<convert type="TemplatedMultiContent">
 {"template": [
@@ -2348,7 +2348,7 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 		<panel name="PANEL_WINDOW_LARGE" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
 		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
-		<eLabel text="Device List" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+		<eLabel text="Device List" position="369,-1" size="540,46" font="Regular; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
 		<widget source="menu" render="Listbox" position="483,85" size="725,560" scrollbarMode="showOnDemand" transparent="1">
 			<convert type="TemplatedMultiContent">
 {"template": [
@@ -2361,6 +2361,30 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
 }
 			</convert>
 		</widget>
+	</screen>
+	<screen name="HarddiskSetup" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
+		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
+		<panel name="PANEL_WINDOW_LARGE" />
+		<panel name="PANEL_BUTTONBAR_OK_X" />
+		<eLabel text="Harddisk Setup" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+		<widget name="model" position="497,118" size="700,25" font="Regular;23" transparent="1" />
+		<widget name="capacity" position="498,159" size="700,25" font="Regular;23" transparent="1" />
+		<widget name="bus" position="499,208" size="700,25" font="Regular;23" transparent="1" />
+		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
+		<widget position="1069,685" size="30,30" zPosition="1" font="Regular; 20" backgroundColor="layer-a-background" transparent="1" text="-&gt;" />
+		<widget name="initializetext" position="833,685" size="234,30" zPosition="1" font="Regular; 20" backgroundColor="layer-a-background" transparent="1" />
+	</screen>
+	<screen name="HarddiskWait" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
+		<panel name="PANEL_LD_TOP" />
+		<panel name="PANEL_LD_MINITV" />
+		<panel name="PANEL_LD_BACKGROUND" />
+		<panel name="PANEL_WINDOW_LARGE" />
+		<panel name="PANEL_BUTTONBAR_OK_X" />
+		<ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
+		<widget source="Title" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+		<widget name="wait" position="491,100" size="708,546" transparent="1" />
 	</screen>
 	<screen name="FlashOnline" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
 		<panel name="PANEL_LD_TOP" />
