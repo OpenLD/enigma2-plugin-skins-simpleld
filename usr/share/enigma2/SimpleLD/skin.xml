@@ -48,6 +48,13 @@
 		<color name="layer-b-accent2" value="#007f7f7f" />
 		<color name="layer-b-background" value="#55001123" />
 		<color name="layer-b-clock-foreground" value="#00ffffff" />
+		<color name="layer-a-channelselection-foreground" value="#00FFFFFF" />
+		<color name="layer-a-channelselection-foregroundColorSelected" value="#00FFFFFF" />
+		<color name="layer-a-channelselection-foreground-ServiceDescription" value="#00FAFAFA" />
+		<color name="layer-a-channelselection-foreground-ServiceDescriptionSelected" value="#00BDBDBD" />
+		<color name="layer-a-channelselection-foreground-colorServiceRecorded" value="#00E51400" />
+		<color name="layer-a-channelselection-foreground-colorServicePseudoRecorded" value="#000000CD" />
+		<color name="layer-a-channelselection-foreground-colorServiceStreamed" value="#00C3461B" />
 		<color name="layer-b-foreground" value="#00ffffff" />
 		<color name="layer-b-progress" value="#27a61d4d" />
 		<color name="layer-c-background" value="#2770ad11" />
@@ -584,7 +591,7 @@
 		<eLabel position="426,58" zPosition="-1" size="835,612" backgroundColor="layer-a-background" />
 		<eLabel text="Channel selection" position="1,1" size="1,1" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
 		<widget source="Title" render="Label" position="360,6" size="550,45" font="Regular; 26" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
-		<widget name="list" position="435,62" size="820,604" scrollbarMode="showNever" colorServiceDescription="white" colorServiceDescriptionSelected="grey" foregroundColorEvent="white" foregroundColorEventSelected="simpleForeground" foregroundColorServiceSelected="grey" colorEventProgressbar="white" colorEventProgressbarSelected="simpleForeground" colorEventProgressbarBorder="un555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="un555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;24" serviceNameFont="SetrixHD;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-accent2" backgroundColor="layer-a-background" itemHeight="30" />
+		<widget name="list" position="435,62" size="820,604" scrollbarMode="showNever" colorServiceRecorded="layer-a-channelselection-foreground-colorServiceRecorded" colorServicePseudoRecorded="layer-a-channelselection-foreground-colorServicePseudoRecorded" colorServiceStreamed="layer-a-channelselection-foreground-colorServiceStreamed" colorServiceDescription="white" colorServiceDescriptionSelected="grey" foregroundColorEventSelected="simpleForeground" foregroundColorServiceSelected="grey" colorEventProgressbar="white" colorEventProgressbarSelected="simpleForeground" colorEventProgressbarBorder="un555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="un555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;24" serviceNameFont="SetrixHD;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-accent2" backgroundColor="layer-a-background" itemHeight="30" />
 		<widget source="ServiceEvent" render="Label" position="10,258" size="400,48" font="SetrixHD; 28" backgroundColor="layer-b-background" transparent="1" noWrap="1" halign="center" valign="center">
 			<convert type="EventName">Name</convert>
 		</widget>
