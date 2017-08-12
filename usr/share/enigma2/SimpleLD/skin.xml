@@ -1214,14 +1214,14 @@
 		<ePixmap pixmap="SimpleLD/construct/menu/main/setup.png" position="137,289" size="200,200" zPosition="2" transparent="1" alphatest="blend" />
 		<panel name="PANEL_SETTINGS_SETUP" />
 		<widget name="HelpWindow" position="120,460" size="1,1" transparent="1" alphatest="blend" />
-		<widget name="footnote" position="70,550" size="700,50" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+		<widget name="footnote" position="23,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<screen name="VideoSetup" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<ePixmap pixmap="SimpleLD/construct/menu/system/video.png" position="137,289" size="200,200" zPosition="2" transparent="1" alphatest="blend" />
 		<panel name="PANEL_SETTINGS_SETUP" />
 		<widget name="HelpWindow" position="120,460" size="1,1" transparent="1" alphatest="blend" />
-		<widget name="footnote" position="70,550" size="700,50" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+		<widget name="footnote" position="23,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<screen name="AutoResSetupMenu" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
@@ -1233,21 +1233,21 @@
 		<ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/menu/system/audio.png" transparent="1" alphatest="blend" />
 		<panel name="PANEL_SETTINGS_SETUP" />
 		<widget name="HelpWindow" position="120,460" size="1,1" transparent="1" alphatest="blend" />
-		<widget name="footnote" position="70,550" size="700,50" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+		<widget name="footnote" position="23,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<screen name="setup_subtitlesetup" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/menu/system/audio.png" transparent="1" alphatest="blend" />
 		<panel name="PANEL_SETTINGS_SETUP" />
 		<widget name="HelpWindow" position="120,460" size="1,1" transparent="1" alphatest="blend" />
-		<widget name="footnote" position="70,550" size="700,50" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+		<widget name="footnote" position="23,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<screen name="setup_autolanguagesetup" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
 		<ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/menu/system/audio.png" transparent="1" alphatest="blend" />
 		<panel name="PANEL_SETTINGS_SETUP" />
 		<widget name="HelpWindow" position="120,460" size="1,1" transparent="1" alphatest="blend" />
-		<widget name="footnote" position="70,550" size="700,50" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+		<widget name="footnote" position="23,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<screen name="ParentalControlSetup" position="0,0" size="1280,720" title="Parentalcontrol setup" flags="wfNoBorder" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
@@ -1259,7 +1259,7 @@
 		<ePixmap position="137,289" size="200,200" zPosition="2" pixmap="SimpleLD/construct/menu/system/ui.png" transparent="1" alphatest="blend" />
 		<panel name="PANEL_SETTINGS_SETUP" />
 		<widget name="HelpWindow" position="120,460" size="1,1" transparent="1" alphatest="blend" />
-		<widget name="footnote" position="70,550" size="700,50" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+		<widget name="footnote" position="23,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<!-- Messagebox -->
 	<screen name="MessageBoxTemplate">
