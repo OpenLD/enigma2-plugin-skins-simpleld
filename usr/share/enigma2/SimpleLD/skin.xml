@@ -4040,7 +4040,8 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 		<widget source="Title" render="Label" position="369,0" size="540,46" font="SetrixHD; 32" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
 		<eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
 		<widget source="total" render="Label" position="665,108" size="550,50" zPosition="1" transparent="1" font="SetrixHD; 24" halign="left" backgroundColor="layer-a-background" valign="top" />
-		<widget source="liste" render="Label" position="665,180" size="550,470" zPosition="1" transparent="1" font="SetrixHD; 22" halign="left" backgroundColor="layer-a-background" valign="top" noWrap="1" />
+		<widget name="menu" font="Regular;20" position="665,180" size="550,468" zPosition="1" />
+		<widget source="info" render="Label" position="665,180" size="550,470" zPosition="1" transparent="1" font="SetrixHD; 22" halign="left" backgroundColor="layer-a-background" valign="top" noWrap="1" />
 		<panel name="PANEL_BUTTONBAR_SOURCE_RB_X" />
 	</screen>
 	<screen name="MenuSort" position="0,0" size="1280,720" title="MenuSort" flags="wfNoBorder" backgroundColor="transparent">
