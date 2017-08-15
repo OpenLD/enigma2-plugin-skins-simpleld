@@ -1213,7 +1213,7 @@
 		<panel name="PANEL_LD_TOP" />
 		<ePixmap pixmap="SimpleLD/construct/menu/main/setup.png" position="137,289" size="200,200" zPosition="2" transparent="1" alphatest="blend" />
 		<panel name="PANEL_SETTINGS_SETUP" />
-		<widget name="HelpWindow" position="120,460" size="1,1" transparent="1" alphatest="blend" />
+		<widget name="HelpWindow" position="220,350" size="1,1" transparent="1" alphatest="blend" />
 		<widget name="footnote" position="23,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<screen name="VideoSetup" position="0,0" size="1280,720" title="Setup" flags="wfNoBorder" backgroundColor="transparent">
