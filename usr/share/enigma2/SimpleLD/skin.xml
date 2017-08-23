@@ -48,10 +48,10 @@
 		<color name="layer-b-accent2" value="#007f7f7f" />
 		<color name="layer-b-background" value="#55001123" />
 		<color name="layer-b-clock-foreground" value="#00ffffff" />
-		<color name="layer-a-channelselection-foreground" value="#00FFFFFF" />
-		<color name="layer-a-channelselection-foregroundColorSelected" value="#00FFFFFF" />
-		<color name="layer-a-channelselection-foreground-ServiceDescription" value="#00FAFAFA" />
-		<color name="layer-a-channelselection-foreground-ServiceDescriptionSelected" value="#00BDBDBD" />
+		<color name="layer-a-channelselection-foreground" value="#00e5dacb" />
+		<color name="layer-a-channelselection-foregroundColorSelected" value="#00000000" />
+		<color name="layer-a-channelselection-foreground-ServiceDescription" value="#00ffffff" />
+		<color name="layer-a-channelselection-foreground-ServiceDescriptionSelected" value="#00000000" />
 		<color name="layer-a-channelselection-foreground-colorServiceRecorded" value="#00E51400" />
 		<color name="layer-a-channelselection-foreground-colorServicePseudoRecorded" value="#000000CD" />
 		<color name="layer-a-channelselection-foreground-colorServiceStreamed" value="#00C3461B" />
@@ -233,8 +233,8 @@
 	</screen>
 	<screen name="PANEL_LD_MINITV">
 		<!-- Start Mini TV in ChannelSelecion -->
-		<eLabel position="13,66" size="394,188" zPosition="2" backgroundColor="un279e9fa4" foregroundColor="un31000000" />
-		<widget source="session.VideoPicture" render="Pig" position="15,68" size="390,184" zPosition="3" backgroundColor="unff000000" />
+		<eLabel position="21,61" size="404,158" zPosition="3" backgroundColor="un279e9fa4" foregroundColor="un31000000" />
+		<widget source="session.VideoPicture" render="Pig" position="23,63" size="400,154" zPosition="4" backgroundColor="unff000000" />
 		<!-- End Mini TV in ChannelSelecion -->
 	</screen>
 	<screen name="PANEL_SETTINGS_SETUP">
@@ -588,28 +588,27 @@
 		<panel name="PANEL_LD_BACKGROUND" />
 		<panel name="PANEL_BUTTONBAR_MENU" />
 		<panel name="PANEL_BUTTONBAR_RGYB_X" />
-		<eLabel position="0,75" zPosition="-10" size="1280,585" backgroundColor="layer-b-background" />
-		<eLabel position="426,58" zPosition="-1" size="835,612" backgroundColor="layer-a-background" />
+		<eLabel position="1,75" zPosition="-10" size="1279,584" backgroundColor="layer-b-background" />
+		<eLabel position="452,58" zPosition="-1" size="809,612" backgroundColor="layer-a-background" />
 		<eLabel text="Channel selection" position="1,1" size="1,1" font="SetrixHD; 35" transparent="1" valign="top" zPosition="0" backgroundColor="layer-a-background" />
 		<widget source="Title" render="Label" position="360,6" size="550,45" font="Regular; 26" backgroundColor="layer-a-background" transparent="1" noWrap="1" />
-		<widget name="list" position="435,62" size="820,604" scrollbarMode="showNever" colorServiceRecording="layer-a-channelselection-foreground-colorServiceRecorded" colorServiceRecorded="layer-a-channelselection-foreground-colorServiceRecorded" colorServicePseudoRecorded="layer-a-channelselection-foreground-colorServicePseudoRecorded" colorServiceStreamed="layer-a-channelselection-foreground-colorServiceStreamed" colorServiceDescription="layer-a-channelselection-foreground-ServiceDescription" colorServiceDescriptionSelected="layer-a-channelselection-foreground-ServiceDescriptionSelected" foregroundColorEventSelected="simpleForeground" foregroundColorServiceSelected="grey" colorEventProgressbar="white" colorEventProgressbarSelected="simpleForeground" colorEventProgressbarBorder="un555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="un555555" serviceItemHeight="30" serviceNumberFont="SetrixHD;24" serviceNameFont="SetrixHD;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-channelselection-foreground" backgroundColor="layer-a-background" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-channelselection-foregroundColorSelected" itemHeight="30" />
-		<widget source="ServiceEvent" render="Label" position="10,258" size="400,48" font="SetrixHD; 28" backgroundColor="layer-b-background" transparent="1" noWrap="1" halign="center" valign="center">
+		<widget name="list" position="458,62" size="797,604" scrollbarMode="showNever" colorServiceRecording="layer-a-channelselection-foreground-colorServiceRecorded" colorServiceRecorded="layer-a-channelselection-foreground-colorServiceRecorded" colorServicePseudoRecorded="layer-a-channelselection-foreground-colorServicePseudoRecorded" colorServiceStreamed="layer-a-channelselection-foreground-colorServiceStreamed" colorServiceDescription="layer-a-channelselection-foreground-ServiceDescription" colorServiceDescriptionSelected="layer-a-channelselection-foreground-ServiceDescriptionSelected" foregroundColorEventSelected="simpleForeground" foregroundColorServiceSelected="grey" colorEventProgressbar="#layer-a-channelselection-foreground" colorEventProgressbarSelected="simpleForeground" colorEventProgressbarBorder="un555555" colorEventProgressbarBorderSelected="layer-a-foreground" foregroundColorServiceNotAvail="un555555" serviceItemHeight="30" serviceNumberFont="Regular;24" serviceNameFont="Regular;24" serviceInfoFont="Regular;22" transparent="1" foregroundColor="layer-a-channelselection-foreground" backgroundColor="layer-a-background" backgroundColorSelected="layer-a-selection-background" foregroundColorSelected="layer-a-channelselection-foregroundColorSelected" itemHeight="30" />
+		<widget source="ServiceEvent" options="movetype=running,direction=left,startpoint=0,steptime=50,repeat=5,startdelay=3000,always=0,oneshot=1" render="RunningText" position="15,243" size="417,28" font="Regular; 20" backgroundColor="layer-b-background" transparent="1" noWrap="1" halign="center" valign="center">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="ServiceEvent" render="Label" position="8,308" size="64,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1" halign="right">
+		<widget source="ServiceEvent" render="Label" position="13,273" size="64,24" font="SetrixHD; 18" backgroundColor="layer-b-background" transparent="1" halign="right">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">Format:%H:%M</convert>
 		</widget>
-		<widget source="ServiceEvent" valign="bottom" render="NextEvent" position="16,590" size="389,65" font="Regular;18" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1" />
-		<widget source="ServiceEvent" render="Label" position="336,308" size="77,24" font="SetrixHD; 20" backgroundColor="layer-b-background" transparent="1">
+		<widget source="ServiceEvent" render="Label" position="356,273" size="77,24" font="SetrixHD; 18" backgroundColor="layer-b-background" transparent="1">
 			<convert type="EventTime">EndTime</convert>
 			<convert type="ClockToText">Format:%H:%M</convert>
 		</widget>
-		<eLabel position="77,322" size="256,1" backgroundColor="layer-b-accent1" foregroundColor="layer-b-accent1" />
-		<widget source="ServiceEvent" render="Progress" position="77,320" size="256,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
+		<eLabel position="82,287" size="267,1" backgroundColor="layer-b-accent1" foregroundColor="layer-b-accent1" />
+		<widget source="ServiceEvent" render="Progress" position="82,285" size="267,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
 			<convert type="EventTime">Progress</convert>
 		</widget>
-		<widget source="ServiceEvent" render="Label" position="16,337" size="390,248" font="Regular; 18" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
+		<widget source="ServiceEvent" options="movetype=running,direction=top,startpoint=0,startdelay=4000,wrap=1,always=0,repeat=5,oneshot=1" render="RunningText" position="15,301" size="417,152" font="Regular; 17" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<widget position="15,665" size="85,51" render="Picon" backgroundColor="transparent" transparent="0" source="ServiceEvent" alphatest="blend" zPosition="2">
@@ -618,6 +617,10 @@
 		<widget render="Label" position="112,665" size="215,50" font="Regular; 22" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1" noWrap="1" halign="left" valign="center" source="ServiceEvent">
 			<convert type="ServiceName">Name</convert>
 		</widget>
+		<widget source="ServiceEvent" render="Label" position="16,223" size="417,17" halign="center" font="Regular; 15" noWrap="1" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1">
+			<convert type="TransponderInfo" />
+		</widget>
+		<widget source="ServiceEvent" valign="bottom" halign="left" noWrap="1" render="SimpleSingleEpgList" position="15,457" size="417,200" font="Regular;15" backgroundColor="layer-b-background" foregroundColor="layer-a-foreground" transparent="1" />
 	</screen>
 	<screen name="MoviePlayer" flags="wfNoBorder" position="0,0" size="1283,723" title="InfoBar" backgroundColor="transparent">
 		<panel name="PANEL_LD_TOP" />
@@ -1369,7 +1372,7 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
 		<panel name="LDSTBINFO" />
 		<!-- InfoWidget -->
 		<ePixmap name="info-widget" position="840,521" size="440,36" pixmap="SimpleLD/construct/infowidget.png" alphatest="blend" zPosition="-1" />
-		<widget source="session.CurrentService" render="Label" position="962,524" size="313,28" font="Regular; 28" noWrap="1" backgroundColor="layer-c-background" transparent="1" zPosition="1">
+		<widget source="session.CurrentService" render="Label" position="962,524" size="315,30" font="Regular; 29" noWrap="1" backgroundColor="layer-c-background" transparent="1" zPosition="1">
 			<convert type="ServiceName">Name</convert>
 		</widget>
 		<widget source="session.CurrentService" render="ChannelNumber" position="869,524" size="73,29" font="SetrixHD; 34" halign="center" valign="center" noWrap="1" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
