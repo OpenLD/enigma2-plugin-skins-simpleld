@@ -367,14 +367,14 @@
     <widget backgroundColor="layer-a-background" position="1162,699" size="98,20" font="Regular; 13" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
       <convert type="STBinfo">RAMfree</convert>
     </widget>
-    <eLabel text="Bitrate video:" position="505,672" size="85,15" font="Regular; 12" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="5" />
+    <!--<eLabel text="Bitrate video:" position="505,672" size="85,15" font="Regular; 12" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="5" />
     <eLabel text="Bitrate audio:" position="655,672" size="85,15" font="Regular; 12" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="5" />
     <widget source="session.CurrentService" render="Label" position="577,672" size="100,15" font="Regular; 12" zPosition="6" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1">
       <convert type="LdBitrate">%V Kb/s</convert>
     </widget>
     <widget source="session.CurrentService" render="Label" position="729,672" size="100,15" font="Regular; 12" zPosition="6" backgroundColor="layer-a-background" transparent="1" halign="left" foregroundColor="layer-a-extendedinfo1">
       <convert type="LdBitrate">%A Kb/s</convert>
-    </widget>
+    </widget>-->
   </screen>
   <screen name="PANEL_BUTTONBAR_MENUEDIT">
     <ePixmap pixmap="SimpleLD/buttons/key_exit.png" name="" position="1183,680" size="94,40" alphatest="blend" transparent="1" zPosition="1" />
@@ -1535,11 +1535,21 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget source="Title" render="Label" position="369,0" size="560,46" font="SetrixHD; 35" transparent="1" valign="top" zPosition="100" backgroundColor="layer-a-background" noWrap="1" />
     <eLabel position="645,91" zPosition="-1" size="590,581" backgroundColor="layer-a-background" />
     <widget name="AboutScrollLabel" position="656,98" size="570,567" valign="top" font="Regular; 20" transparent="0" zPosition="1" />
-    <widget source="lab1" render="Label" position="126,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-    <widget source="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+    <widget source="lab1" render="Label" position="126,675" size="375,23" font="Regular; 18" halign="left" transparent="0" zPosition="1" />
+    <!-- <widget source="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
     <widget source="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
     <widget source="lab2" render="Label" position="126,597" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
-    <widget source="lab3" render="Label" position="656,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
+    <widget source="lab3" render="Label" position="656,675" size="375,23" font="RegularLight; 19" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" /> /-->
+    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+      <convert type="CpuUsage">$0</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">CPUload</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">RAMfree</convert>
+    </widget>
     <panel name="PANEL_BUTTONBAR_INFO_OK_X" />
     <ePixmap name="" position="1103,680" size="94,40" pixmap="SimpleLD/buttons/key_info.png" alphatest="blend" zPosition="0" />
   </screen>
@@ -1554,6 +1564,16 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget name="AboutScrollLabel" font="SetrixHD; 18" position="535,80" size="700,565" zPosition="2" halign="left" backgroundColor="layer-a-background" transparent="1" />
     <ePixmap position="1010,682" size="36,36" zPosition="10" pixmap="SimpleLD/construct/general/left.png" transparent="1" alphatest="blend" />
     <ePixmap position="1060,682" size="36,36" zPosition="10" pixmap="SimpleLD/construct/general/right.png" transparent="1" alphatest="blend" />
+    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+      <convert type="CpuUsage">$0</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">CPUload</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">RAMfree</convert>
+    </widget>
     <panel name="PANEL_BUTTONBAR_OK_X" />
   </screen>
   <screen name="SystemNetworkInfo" position="0,0" size="1280,720" title="SystemNetworkInfo" flags="wfNoBorder" backgroundColor="transparent">
@@ -1581,6 +1601,16 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget source="IF" render="Label" position="776,592" size="375,28" zPosition="10" font="Regular;20" halign="left" transparent="0" />
     <widget source="Statustext" render="Label" position="665,631" size="115,30" zPosition="10" font="Regular;20" halign="left" transparent="0" />
     <widget name="statuspic" pixmaps="skin_default/buttons/button_green.png,skin_default/buttons/button_green_off.png" position="785,636" zPosition="10" size="15,16" transparent="1" alphatest="on" />
+    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+      <convert type="CpuUsage">$0</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">CPUload</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">RAMfree</convert>
+    </widget>
     <panel name="PANEL_BUTTONBAR_OK_X" />
   </screen>
   <screen name="SystemMemoryInfo" position="0,0" size="1280,720" title="MemoryInfo" flags="wfNoBorder" backgroundColor="transparent">
@@ -1592,6 +1622,16 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <ePixmap pixmap="SimpleLD/construct/menu/system/system.png" position="237,289" size="200,200" alphatest="blend" />
     <eLabel position="645,91" zPosition="-1" size="590,580" backgroundColor="layer-a-background" />
     <widget name="AboutScrollLabel" position="665,100" size="570,560" font="Regular;20" transparent="0" zPosition="1" />
+    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+      <convert type="CpuUsage">$0</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">CPUload</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">RAMfree</convert>
+    </widget>
     <panel name="PANEL_BUTTONBAR_OK_X" />
   </screen>
   <screen name="Devices" position="0,0" size="1280,720" title="MemoryInfo" flags="wfNoBorder" backgroundColor="transparent">
@@ -1608,6 +1648,16 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
     <widget source="hdd" render="Label" position="660,330" size="560,140" font="Regular;18" transparent="0" zPosition="1" />
     <widget source="MountsHeader" render="Label" position="660,470" size="458,36" font="Regular;20" transparent="0" zPosition="1" />
     <widget source="mounts" render="Label" position="660,510" size="458,140" font="Regular;18" transparent="0" zPosition="1" />
+    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+      <convert type="CpuUsage">$0</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">CPUload</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">RAMfree</convert>
+    </widget>
     <panel name="PANEL_BUTTONBAR_OK_X" />
   </screen>
   <screen name="ExtensionsList" position="0,0" size="1280,720" title="Extensions" flags="wfNoBorder" backgroundColor="transparent">
@@ -2461,6 +2511,16 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
     <eLabel text="CPU:" position="511,511" size="58,25" font="Regular; 23" halign="left" />
     <widget backgroundColor="layer-a-background" font="Regular; 23" foregroundColor="green" halign="left" position="580,514" render="Label" size="120,23" source="session.CurrentService" transparent="1" zPosition="1" valign="center">
       <convert type="CpuUsage">Total</convert>
+    </widget>
+    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+      <convert type="CpuUsage">$0</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">CPUload</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">RAMfree</convert>
     </widget>
   </screen>
   <screen name="FlashOnline" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
@@ -4232,7 +4292,17 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
 		<widget name="lab4" render="Label" position="126,536" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
 		<widget name="lab5" render="Label" position="126,568" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" />
 		<widget name="lab3" render="Label" position="126,597" size="375,23" font="RegularLight; 18" backgroundColor="transparent" halign="left" transparent="1" zPosition="1" /> -->
-    <panel name="PANEL_BUTTONBAR_RG_X" />
+    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+      <convert type="CpuUsage">$0</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">CPUload</convert>
+    </widget>
+    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+      <convert type="STBinfo">RAMfree</convert>
+    </widget>
+		<panel name="PANEL_BUTTONBAR_RG_X" />
   </screen>
   <screen name="LDSettings" position="0,0" size="1280,720" title="OpenLD Settings" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
