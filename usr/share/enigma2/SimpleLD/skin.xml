@@ -1,5 +1,5 @@
 <skin>
-  <!-- SimpleLD v0.2 for OpenLD by Javilonas -->
+  <!-- SimpleLD v0.3 for OpenLD by Javilonas -->
   <!-- SimpleLD skin is based initial on GigabluePAX (mostly), GigablueUniverseHD and MetrixHD. -->
   <!-- You can modify and redistribute it as long as you keep this license and the original author for the skin and all of your modifications -->
   <output id="0">
@@ -2085,7 +2085,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
     <widget name="transponder" position="482,219" size="725,40" font="SetrixHD;32" backgroundColor="layer-a-background" transparent="0" />
     <widget name="scan_state" position="482,84" size="725,40" font="SetrixHD;32" backgroundColor="layer-a-background" transparent="0" />
     <widget name="pass" position="482,174" size="725,40" font="SetrixHD;32" backgroundColor="layer-a-background" transparent="0" />
-    <widget name="scan_progress" position="482,270" size="725,5" backgroundColor="layer-a-progress" pixmap="SimpleLD/colors/00a61d4d.png" transparent="0" zPosition="10" alphatest="blend" />
+    <widget name="scan_progress" position="482,270" size="725,5" borderColor="layer-a-accent1" foregroundColor="layer-a-progress" borderWidth="2" transparent="1" />
     <widget name="servicelist" position="482,286" size="725,361" itemHeight="30" selectionDisabled="1" transparent="0" />
     <eLabel name="" position="482,272" size="725,1" backgroundColor="layer-a-accent1" zPosition="-1" />
   </screen>
@@ -4193,85 +4193,85 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
   </screen>
   <!-- BluePanel-->
   <screen name="LDBluePanel" position="0,0" size="1280,720" title="Blue Panel" flags="wfNoBorder" backgroundColor="transparent">
-    <panel name="PANEL_LD_TOP" />
-    <panel name="PANEL_LD_MINITV" />
-    <panel name="PANEL_LD_BACKGROUND" />
-    <panel name="PANEL_WINDOW_LARGE" />
-    <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
-    <widget source="session.CurrentService" render="Label" position="730,6" size="250,20" font="Regular; 16" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="center">
-      <convert type="LdExtraInfo">TunerSystem</convert>
-    </widget>
-    <widget source="session.FrontendInfo" render="Label" position="730,23" size="250,20" font="Regular; 16" halign="center" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1">
-      <convert type="FrontendInfo">STRING,10</convert>
-    </widget>
-    <widget source="session.CurrentService" render="FixedLabel" text="IPTV" position="730,6" size="250,20" font="Regular; 16" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="center">
-      <convert type="ServiceInfo">IsStream</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap position="137,289" size="200,200" pixmap="SimpleLD/construct/menu/main/bluepanel.png" alphatest="blend" transparent="1" />
-    <ePixmap position="469,80" size="160,100" pixmap="SimpleLD/icons/smartcard.png" alphatest="blend" zPosition="1" />
-    <widget name="Ilab0" position="639,83" size="145,30" font="Regular; 20" halign="left" foregroundColor="white" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
-    <widget name="activecam" position="758,83" size="434,30" font="Regular; 20" halign="left" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
-    <widget name="list" position="640,118" size="580,30" zPosition="2" scrollbarMode="showNever" foregroundColor="white" backgroundColor="transpBlack" transparent="1" itemHeight="24" />
-    <widget name="lab1" position="640,152" size="230,32" font="Regular; 18" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" zPosition="3" />
-    <widget name="lab2" position="860,152" size="230,32" font="Regular; 18" foregroundColor="white" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
-    <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
-    <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
-      <convert type="CpuUsage">$0</convert>
-    </widget>
-    <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
-      <convert type="STBinfo">CPUload</convert>
-    </widget>
-    <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
-      <convert type="STBinfo">RAMfree</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="732,248" size="145,20" font="Regular; 15" backgroundColor="transpBlack" halign="left" transparent="1" zPosition="5">
-      <convert type="LdExtraInfo">CryptoNameCaid</convert>
-    </widget>
-    <widget source="session.CurrentService" position="875,248" size="345,20" render="Label" font="Regular; 15" halign="left" valign="top" backgroundColor="transpBlack" transparent="1" noWrap="1" zPosition="10">
-      <convert type="LdExtraInfo">EcmInfo2</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="1118,213" size="104,20" font="Regular; 15" backgroundColor="transpBlack" halign="center" transparent="1" zPosition="5">
-      <convert type="LdExtraInfo">E-C-N</convert>
-    </widget>
-    <eLabel backgroundColor="layer-a-background" name="new ePixmap" position="6,422" size="451,85" transparent="0" zPosition="-99" />
-    <widget source="session.CurrentService" position="472,645" size="750,17" render="Label" font="Regular; 14" halign="center" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1">
-      <convert type="LdExtraInfo">NetInfo</convert>
-    </widget>
-    <eLabel text="CRYPT:" position="472,248" size="65,16" font="Regular; 15" halign="left" backgroundColor="layer-a-background" transparent="1" />
-    <widget position="517,248" size="216,16" font="Regular; 15" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" source="session.CurrentService" render="Label" transparent="1" valign="center" zPosition="4">
-      <convert type="LdExtraInfo">CryptoBar</convert>
-    </widget>
-    <ePixmap position="1106,147" size="120,35" pixmap="SimpleLD/icons/bp_deko.png" alphatest="blend" zPosition="3" />
-    <eLabel position="471,188" size="750,2" backgroundColor="un202020" zPosition="0" />
-    <ePixmap pixmap="SimpleLD/icons/ico_crypt_off.png" position="476,195" size="52,38" zPosition="1" alphatest="blend" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="SimpleLD/icons/ico_crypt_on.png" position="475,195" size="52,38" zPosition="2" alphatest="blend">
-      <convert type="ServiceInfo">IsCrypted</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget name="Ilab1" position="546,213" size="295,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
-    <widget name="Ilab2" position="849,213" size="265,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
-    <widget name="Ilab3" position="849,190" size="260,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
-    <eLabel text="Videosize:" position="546,193" size="90,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
-    <widget source="session.CurrentService" render="Label" position="620,193" size="190,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2">
-      <convert type="LdExtraInfo">ResolutionString</convert>
-    </widget>
-    <eLabel position="472,240" size="750,2" backgroundColor="un202020" zPosition="0" />
-    <widget source="session.CurrentService" render="Label" position="472,272" size="750,295" font="Regular; 16" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
-      <convert type="LdExtraInfo">Ecmtext</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="472,380" size="750,189" font="Regular; 14" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
-      <convert type="LdExtraInfo">PIDtext</convert>
-    </widget>
-    <widget source="session.CurrentService" render="Label" position="472,461" size="750,189" font="Regular; 13" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
-      <convert type="LdExtraInfo">InfoPeer</convert>
-    </widget>
-    <eLabel text="Daemons" position="120,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
-    <eLabel text="Plugins" position="410,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
-    <eLabel text="Info" position="690,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
-    <eLabel text="Settings" position="960,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
-    <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
-  </screen>
+  <panel name="PANEL_LD_TOP" />
+  <panel name="PANEL_LD_MINITV" />
+  <panel name="PANEL_LD_BACKGROUND" />
+  <panel name="PANEL_WINDOW_LARGE" />
+  <widget source="Title" render="Label" position="373,0" size="525,50" font="SetrixHD;35" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" />
+  <widget source="session.CurrentService" render="Label" position="730,6" size="250,20" font="Regular; 16" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="center">
+    <convert type="LdExtraInfo">TunerSystem</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Label" position="730,23" size="250,20" font="Regular; 16" halign="center" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1">
+    <convert type="FrontendInfo">STRING,10</convert>
+  </widget>
+  <widget source="session.CurrentService" render="FixedLabel" text="IPTV" position="730,6" size="250,20" font="Regular; 16" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="center">
+    <convert type="ServiceInfo">IsStream</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap position="137,289" size="200,200" pixmap="SimpleLD/construct/menu/main/bluepanel.png" alphatest="blend" transparent="1" />
+  <ePixmap position="469,80" size="160,100" pixmap="SimpleLD/icons/smartcard.png" alphatest="blend" zPosition="1" />
+  <widget name="Ilab0" position="639,83" size="145,30" font="Regular; 20" halign="left" foregroundColor="white" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
+  <widget name="activecam" position="758,83" size="434,30" font="Regular; 20" halign="left" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
+  <widget name="list" position="640,118" size="580,30" zPosition="2" scrollbarMode="showNever" foregroundColor="white" backgroundColor="transpBlack" transparent="1" itemHeight="24" />
+  <widget name="lab1" position="640,152" size="230,32" font="Regular; 18" foregroundColor="layer-a-title-foreground" backgroundColor="layer-a-background" transparent="1" zPosition="3" />
+  <widget name="lab2" position="860,152" size="230,32" font="Regular; 18" foregroundColor="white" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
+  <eLabel text="CPU:" position="15,630" size="35,20" font="Regular; 14" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-extendedinfo1" zPosition="10" />
+  <widget source="session.CurrentService" render="Label" position="45,631" size="40,20" font="Regular; 14" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" zPosition="10">
+    <convert type="CpuUsage">$0</convert>
+  </widget>
+  <widget backgroundColor="layer-a-background" position="60,631" size="90,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+    <convert type="STBinfo">CPUload</convert>
+  </widget>
+  <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
+    <convert type="STBinfo">RAMfree</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="732,248" size="145,20" font="Regular; 15" backgroundColor="transpBlack" halign="left" transparent="1" zPosition="5">
+    <convert type="LdExtraInfo">CryptoNameCaid</convert>
+  </widget>
+  <widget source="session.CurrentService" position="875,248" size="345,20" render="Label" font="Regular; 15" halign="left" valign="top" backgroundColor="transpBlack" transparent="1" noWrap="1" zPosition="10">
+    <convert type="LdExtraInfo">EcmInfo2</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="1118,213" size="104,20" font="Regular; 15" backgroundColor="transpBlack" halign="center" transparent="1" zPosition="5">
+    <convert type="LdExtraInfo">E-C-N</convert>
+  </widget>
+  <eLabel backgroundColor="layer-a-background" name="new ePixmap" position="6,422" size="451,85" transparent="0" zPosition="-99" />
+  <widget source="session.CurrentService" position="472,645" size="750,17" render="Label" font="Regular; 13" halign="center" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1">
+    <convert type="LdExtraInfo">NetInfo</convert>
+  </widget>
+  <eLabel text="CRYPT:" position="472,248" size="65,16" font="Regular; 15" halign="left" backgroundColor="layer-a-background" transparent="1" />
+  <widget position="517,248" size="216,16" font="Regular; 15" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" source="session.CurrentService" render="Label" transparent="1" valign="center" zPosition="4">
+    <convert type="LdExtraInfo">CryptoBar</convert>
+  </widget>
+  <ePixmap position="1106,147" size="120,35" pixmap="SimpleLD/icons/bp_deko.png" alphatest="blend" zPosition="3" />
+  <eLabel position="471,188" size="750,2" backgroundColor="un202020" zPosition="0" />
+  <ePixmap pixmap="SimpleLD/icons/ico_crypt_off.png" position="476,195" size="52,38" zPosition="1" alphatest="blend" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="SimpleLD/icons/ico_crypt_on.png" position="475,195" size="52,38" zPosition="2" alphatest="blend">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget name="Ilab1" position="546,213" size="295,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
+  <widget name="Ilab2" position="849,213" size="265,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
+  <widget name="Ilab3" position="849,190" size="260,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
+  <eLabel text="Videosize:" position="546,193" size="90,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2" />
+  <widget source="session.CurrentService" render="Label" position="620,193" size="190,20" font="Regular; 16" backgroundColor="layer-a-background" transparent="1" zPosition="2">
+    <convert type="LdExtraInfo">ResolutionString</convert>
+  </widget>
+  <eLabel position="472,240" size="750,2" backgroundColor="un202020" zPosition="0" />
+  <widget source="session.CurrentService" render="Label" position="472,272" size="750,295" font="Regular; 15" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
+    <convert type="LdExtraInfo">Ecmtext</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="472,380" size="750,189" font="Regular; 13" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
+    <convert type="LdExtraInfo">PIDtext</convert>
+  </widget>
+  <widget source="session.CurrentService" render="Label" position="472,461" size="750,189" font="Regular; 12" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
+    <convert type="LdExtraInfo">InfoPeer</convert>
+  </widget>
+  <eLabel text="Daemons" position="120,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
+  <eLabel text="Plugins" position="410,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
+  <eLabel text="Info" position="690,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
+  <eLabel text="Settings" position="960,987" size="200,80" font="Regular;18" backgroundColor="layer-a-background" transparent="1" zPosition="1" />
+  <panel name="PANEL_BUTTONBAR_SOURCE_RGYB_X" />
+</screen>
   <screen name="startstopCam" position="center,center" size="600,200" title="SoftCam">
     <ePixmap position="10,45" size="160,100" pixmap="SimpleLD/icons/smartcard.png" alphatest="blend" zPosition="1" />
     <widget name="lab1" position="182,10" size="398,180" font="Regular;25" halign="center" valign="center" backgroundColor="header" transparent="1" zPosition="1" />
@@ -4302,7 +4302,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
     <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
       <convert type="STBinfo">RAMfree</convert>
     </widget>
-		<panel name="PANEL_BUTTONBAR_RG_X" />
+    <panel name="PANEL_BUTTONBAR_RG_X" />
   </screen>
   <screen name="LDSettings" position="0,0" size="1280,720" title="OpenLD Settings" flags="wfNoBorder" backgroundColor="transparent">
     <panel name="PANEL_LD_TOP" />
