@@ -2085,7 +2085,7 @@ MultiContentEntryPixmapAlphaTest(pos = (5, 1), size = (24, 24), png = 1),
     <widget name="transponder" position="482,219" size="725,40" font="SetrixHD;32" backgroundColor="layer-a-background" transparent="0" />
     <widget name="scan_state" position="482,84" size="725,40" font="SetrixHD;32" backgroundColor="layer-a-background" transparent="0" />
     <widget name="pass" position="482,174" size="725,40" font="SetrixHD;32" backgroundColor="layer-a-background" transparent="0" />
-    <widget name="scan_progress" position="482,270" size="725,5" borderColor="layer-a-accent1" foregroundColor="layer-a-progress" borderWidth="2" transparent="1" />
+    <widget name="scan_progress" position="482,270" size="725,5" borderColor="layer-a-accent1" foregroundColor="layer-a-progress" transparent="1" />
     <widget name="servicelist" position="482,286" size="725,361" itemHeight="30" selectionDisabled="1" transparent="0" />
     <eLabel name="" position="482,272" size="725,1" backgroundColor="layer-a-accent1" zPosition="-1" />
   </screen>
