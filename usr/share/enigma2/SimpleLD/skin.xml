@@ -191,17 +191,11 @@
   <!-- PANELS -->
   <screen name="PANEL_LD_TOP" position="0,0">
     <!-- MENU-TOP -->
-    <widget source="global.CurrentTime" render="Label" position="193,-5" size="200,35" font="RegularLight; 35" backgroundColor="layer-a-background" transparent="1" zPosition="1" valign="top" halign="center">
-      <convert type="ClockToText">Default</convert>
+    <widget source="session.CurrentTime" render="Label" position="193,-5" size="200,35" font="RegularLight; 32" backgroundColor="layer-a-background" transparent="1" zPosition="1" valign="top" halign="center">
+      <convert type="ClockToText">WithSeconds</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" position="199,32" size="75,18" font="Regular; 14" halign="right" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
-      <convert type="ClockToText">Format:%A</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="278,32" size="55,18" font="Regular; 14" halign="left" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
-      <convert type="ClockToText">Format:%e</convert>
-    </widget>
-    <widget source="global.CurrentTime" render="Label" position="298,32" size="69,18" font="Regular; 14" halign="left" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
-      <convert type="ClockToText">Format:%B</convert>
+    <widget source="session.CurrentTime" render="Label" position="199,32" size="175,18" font="Regular; 14" halign="center" foregroundColor="layer-a-clock-foreground" backgroundColor="layer-a-background" transparent="1">
+      <convert type="ClockToText">FullDate</convert>
     </widget>
     <ePixmap pixmap="SimpleLD/construct/menu-top.png" name="menu-top" position="0,0" size="942,53" alphatest="blend" transparent="1" zPosition="-2" />
     <!-- /* WEATHER WIDGET -->
