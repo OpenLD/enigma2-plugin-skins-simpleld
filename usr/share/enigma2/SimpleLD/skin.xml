@@ -612,7 +612,7 @@
     <widget source="ServiceEvent" render="Progress" position="82,320" size="267,5" borderWidth="0" backgroundColor="layer-b-background" foregroundColor="layer-b-progress" transparent="1" zPosition="1">
       <convert type="EventTime">Progress</convert>
     </widget>
-    <widget source="ServiceEvent" options="movetype=running,direction=top,startpoint=0,startdelay=4000,wrap=1,always=0,repeat=5,oneshot=1" render="RunningText" position="15,341" size="417,160" font="Regular; 17" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
+    <widget source="ServiceEvent" options="movetype=running,direction=top,startpoint=0,steptime=90,startdelay=4000,wrap=1,always=0,repeat=5,oneshot=1" render="RunningText" position="15,341" size="417,160" font="Regular; 17" backgroundColor="layer-b-background" transparent="1" valign="top" halign="left">
       <convert type="EventName">ExtendedDescription</convert>
     </widget>
     <widget position="15,665" size="85,51" render="Picon" backgroundColor="transparent" transparent="0" source="ServiceEvent" alphatest="blend" zPosition="2">
