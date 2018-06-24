@@ -1384,16 +1384,16 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="-" position="1194,562" size="15,28" font="Regular; 18" halign="center" backgroundColor="layer-a-background" transparent="1" />
-    <widget source="session.Event_Now" render="Label" position="1197,562" size="60,28" font="Regular; 18" halign="right" backgroundColor="layer-a-background" transparent="1">
+    <widget source="session.Event_Now" render="Label" position="1197,562" size="60,28" font="Regular; 17" halign="right" backgroundColor="layer-a-background" transparent="1">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget source="session.Event_Now" render="Label" position="255,562" size="879,49" font="SetrixHD; 39" halign="left" backgroundColor="layer-a-background" transparent="1" noWrap="1">
+    <widget source="session.Event_Now" render="Label" position="255,562" size="879,49" font="SetrixHD; 34" halign="left" backgroundColor="layer-a-background" transparent="1" noWrap="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="session.Event_Now" render="Label" position="1147,589" size="113,28" font="Regular; 18" halign="right" backgroundColor="layer-a-background" transparent="1">
-      <convert type="EventTime">Remaining</convert>
-      <convert type="RemainingToText">InMinutes</convert>
+    <widget source="session.Event_Now" render="Label" position="1047,589" size="213,28" font="Regular; 16" halign="right" backgroundColor="layer-a-background" transparent="1">
+      <convert type="EventTime">Duration</convert>
+      <convert type="ClockToText">HourMin</convert>
     </widget>
     <eLabel name="progressbar-back" position="258,620" size="1000,1" backgroundColor="layer-a-accent1" />
     <widget source="session.Event_Now" render="Progress" pixmap="SimpleLD/colors/00a61d4d.png" backgroundColor="layer-a-progress" position="257,618" size="1001,4" zPosition="7" transparent="1" alphatest="blend">
@@ -1404,16 +1404,16 @@ self.instance.move(ePoint((1920-wsizex), (1280-wsizex)/2, (720-wsizey)/(count &g
       <convert type="ClockToText">Default</convert>
     </widget>
     <eLabel text="-" position="1194,627" size="15,28" font="Regular; 15" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" noWrap="1" valign="top" />
-    <widget source="session.Event_Next" render="Label" position="1198,627" size="60,26" font="Regular; 15" halign="right" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" noWrap="1" valign="top">
+    <widget source="session.Event_Next" render="Label" position="1198,627" size="60,26" font="Regular; 16" halign="right" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1" noWrap="1" valign="top">
       <convert type="EventTime">EndTime</convert>
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget source="session.Event_Next" render="Label" position="255,626" size="877,41" font="Regular; 25" halign="left" backgroundColor="layer-a-background" transparent="1" foregroundColor="layer-a-accent1" valign="top" zPosition="-1" noWrap="1">
       <convert type="EventName">Name</convert>
     </widget>
-    <widget source="session.Event_Next" render="Label" position="1177,654" size="80,28" font="Regular; 15" halign="right" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1">
+    <widget source="session.Event_Next" render="Label" position="1067,652" size="190,28" font="Regular; 15" halign="right" backgroundColor="layer-a-background" foregroundColor="layer-a-accent1" transparent="1">
       <convert type="EventTime">Duration</convert>
-      <convert type="ClockToText">InMinutes</convert>
+      <convert type="ClockToText">HourMin</convert>
     </widget>
     <!-- IconBar -->
     <ePixmap pixmap="SimpleLD/construct/iconbar/rec-off.png" position="731,2" size="43,46" zPosition="1" alphatest="blend" />
