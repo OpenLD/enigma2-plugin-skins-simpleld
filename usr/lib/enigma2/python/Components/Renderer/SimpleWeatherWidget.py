@@ -11,15 +11,23 @@ from xml.dom.minidom import parseString
 from Components.config import config, configfile, ConfigSubsection, ConfigSelection, ConfigNumber, ConfigSelectionNumber, ConfigYesNo, ConfigText, ConfigDateTime, ConfigInteger
 from threading import Timer, Thread
 from time import time, strftime, localtime
+from twisted.web.client import getPage
+import sys
+#from twisted.python import log
+#log.startLogging(sys.stdout)
+
+import json
 
 g_updateRunning = False
+g_isRunning = False
 
 def initWeatherConfig():
 	config.plugins.SimpleWeather = ConfigSubsection()
 
 	#SimpleWeather
 	config.plugins.SimpleWeather.enabled = ConfigYesNo(default=False)
-	config.plugins.SimpleWeather.woeid = ConfigNumber(default=779304) #Location (visit http://weather.open-store.net/)
+	config.plugins.SimpleWeather.woeid = ConfigNumber(default=2510911) #Location (visit https://openweathermap.org/)
+	config.plugins.SimpleWeather.apikey = ConfigText(default="ba8e0e8e9042dcb7e1ba98cbdd21f6cf")
 	config.plugins.SimpleWeather.tempUnit = ConfigSelection(default="Celsius", choices = [
 		("Celsius", _("Celsius")),
 		("Fahrenheit", _("Fahrenheit"))
@@ -52,14 +60,18 @@ initWeatherConfig()
 
 class SimpleWeatherWidget(Renderer, VariableText, Thread):
 
-	def __init__(self):
+	def __init__(self, once=False, check=False):
 		Renderer.__init__(self)
 		VariableText.__init__(self)
 		Thread.__init__(self)
 		self.woeid = config.plugins.SimpleWeather.woeid.value
+		self.once = once
+		self.check = check
 		self.Timer = None
 		self.refreshcnt = 0
-		self.getWeather()
+		self.error = False
+		if not g_isRunning or self.once or self.check:
+			self.getWeather()
 
 	GUI_WIDGET = eLabel
 
@@ -67,7 +79,7 @@ class SimpleWeatherWidget(Renderer, VariableText, Thread):
 		try:
 			if self.Timer is not None:
 				self.Timer.cancel()
-		except AttributeError:
+		except:
 			pass
 
 	def startTimer(self, refresh=False):
@@ -83,9 +95,15 @@ class SimpleWeatherWidget(Renderer, VariableText, Thread):
 			else:
 				seconds=10
 
-		if self.Timer:
-			self.Timer.cancel()
-			self.Timer = None
+		try:
+			if self.Timer:
+				try:
+					self.Timer.cancel()
+					self.Timer = None
+				except:
+					pass
+		except:
+			pass
 
 		self.Timer = Timer(seconds, self.getWeather)
 		self.Timer.start()
@@ -102,87 +120,73 @@ class SimpleWeatherWidget(Renderer, VariableText, Thread):
 			return
 
 		global g_updateRunning
-		if g_updateRunning:
-			print "[SimpleWeather] lookup for ID " + str(self.woeid) + " skipped, allready running..."
-			return
+		#if g_updateRunning:
+		#	print "[SimpleWeather] lookup for ID " + str(self.woeid) + " skipped, allready running..."
+		#	return
 		g_updateRunning = True
 		Thread(target = self.getWeatherThread).start()
 
+	def error(self, error = None):
+		errormessage = ""
+		if error is not None:
+			errormessage = str(error.getErrorMessage())
+			print errormessage
+
 	def getWeatherThread(self):
 		global g_updateRunning
-		print "[SimpleWeather] lookup for ID " + str(self.woeid)
-		url = "http://query.yahooapis.com/v1/public/yql?q=select%20item%20from%20weather.forecast%20where%20woeid%3D%22"+str(self.woeid)+"%22&format=xml"
+		#try:
+		#	print "[SimpleWeather] lookup for ID " + str(self.woeid)
+		#except:
+		#	pass
+		#text = "[SimpleWeather] lookup for ID " + str(self.woeid)
+		#if self.check:
+		#	self.writeCheckFile(text)
+		#print text
 
-		# where location in (select id from weather.search where query="oslo, norway")
-		try:
-			file = urllib2.urlopen(url, timeout=2)
-			data = file.read()
-			file.close()
-		except Exception as error:
-			print "Cant get weather data: %r" % error
+		#http='api.openweathermap.org/data/2.5/weather?' #current weather
+		#http='api.openweathermap.org/data/2.5/forecast/daily?' #16day/daily forcast
 
-			# cancel weather function
-			config.plugins.SimpleWeather.currentWeatherDataValid.value = False
-			g_updateRunning = False
-			return
+		language = config.osd.language.value
+		apikey = "&appid=%s" % config.plugins.SimpleWeather.apikey.value
+		city="id=%s" % self.woeid
+		feedurl = "http://api.openweathermap.org/data/2.5/weather?%s&lang=%s&units=metric%s" % (city,language[:2],apikey)
+		getPage(feedurl).addCallback(self.jsonCallback).addErrback(self.error)
+		if not self.check:
+			feedurl = "http://api.openweathermap.org/data/2.5/forecast?%s&lang=%s&units=metric&cnt=1%s" % (city,language[:2],apikey)
+			getPage(feedurl).addCallback(self.jsonCallback).addErrback(self.error)
 
-
-		dom = parseString(data)
-		try:
-			title = self.getText(dom.getElementsByTagName('title')[0].childNodes)
-		except IndexError as error:
-			print "Cant get weather data: %r" % error
-			g_updateRunning = False
-			self.startTimer(True,30)
+	def jsonCallback(self, jsonstring):
+		d = json.loads(jsonstring)
+		if 'list' in d and 'cnt' in d:
+			temp_min_cnt_0 = d['list'][0]['main']['temp_min']
+			temp_max_cnt_0 = d['list'][0]['main']['temp_max']
+			weather_code_cnt_0 = d['list'][0]['weather'][0]['id']
+			config.plugins.SimpleWeather.forecastTomorrowTempMax.value = str(int(round(temp_max_cnt_0)))
+			config.plugins.SimpleWeather.forecastTomorrowTempMin.value = str(int(round(temp_min_cnt_0)))
+			config.plugins.SimpleWeather.forecastTomorrowCode.value = self.ConvertCondition(weather_code_cnt_0)
+		else:
+			if 'name' in d:
+				name = d['name']
+				config.plugins.SimpleWeather.currentLocation.value = str(name)
+			if 'id' in d:
+				id = d['id']
+			if 'main' in d and 'temp' in d['main']:
+				temp = d['main']['temp']
+				config.plugins.SimpleWeather.currentWeatherTemp.value = str(int(round(temp)))
+			if 'temp_max' in d['main']:
+				temp_max = d['main']['temp_max']
+				config.plugins.SimpleWeather.forecastTodayTempMax.value = str(int(round(temp_max)))
+			if 'temp_min' in d['main']:
+				temp_min = d['main']['temp_min']
+				config.plugins.SimpleWeather.forecastTodayTempMin.value = str(int(round(temp_min)))
+			if 'weather' in d:
+				weather_code = d['weather'][0]['id']
+				config.plugins.SimpleWeather.currentWeatherCode.value = self.ConvertCondition(weather_code)
 			if self.check:
-				#text = "%s\n%s|" % (str(error),data)
-				text = "%s|" % str(error)
+				text = "%s|%s|%s°|%s°|%s°" %(id,name,temp,temp_max,temp_min)
 				self.writeCheckFile(text)
-			return
-
-		config.plugins.SimpleWeather.currentLocation.value = str(title).split(',')[0].replace("Conditions for ","")
-
-		currentWeather = dom.getElementsByTagName('yweather:condition')[0]
-		t=time()
-		lastday = strftime("%d %b %Y", localtime(t-3600*24)).strip("0")
-		currday = strftime("%d %b %Y", localtime(t)).strip("0")
-		currentWeatherDate = currentWeather.getAttributeNode('date').nodeValue
-		config.plugins.SimpleWeather.currentWeatherDataValid.value = True
-		currentWeatherCode = currentWeather.getAttributeNode('code')
-		config.plugins.SimpleWeather.currentWeatherCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
-		currentWeatherTemp = currentWeather.getAttributeNode('temp')
-		config.plugins.SimpleWeather.currentWeatherTemp.value = self.getTemp(currentWeatherTemp.nodeValue)
-		currentWeatherText = currentWeather.getAttributeNode('text')
-		config.plugins.SimpleWeather.currentWeatherText.value = currentWeatherText.nodeValue
-
-		n = 0
-		currentWeather = dom.getElementsByTagName('yweather:forecast')[n]
-		if lastday in currentWeather.getAttributeNode('date').nodeValue and currday in currentWeatherDate:
-			n = 1
-			currentWeather = dom.getElementsByTagName('yweather:forecast')[n]
-		currentWeatherCode = currentWeather.getAttributeNode('code')
-		config.plugins.SimpleWeather.forecastTodayCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
-		currentWeatherTemp = currentWeather.getAttributeNode('high')
-		config.plugins.SimpleWeather.forecastTodayTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
-		currentWeatherTemp = currentWeather.getAttributeNode('low')
-		config.plugins.SimpleWeather.forecastTodayTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
-		currentWeatherText = currentWeather.getAttributeNode('text')
-		config.plugins.SimpleWeather.forecastTodayText.value = currentWeatherText.nodeValue
-		currentWeatherDay = currentWeather.getAttributeNode('day')
-		config.plugins.SimpleWeather.forecastTodayDay.value = currentWeatherDay.nodeValue
-
-		currentWeather = dom.getElementsByTagName('yweather:forecast')[n + 1]
-		currentWeatherCode = currentWeather.getAttributeNode('code')
-		config.plugins.SimpleWeather.forecastTomorrowCode.value = self.ConvertCondition(currentWeatherCode.nodeValue)
-		currentWeatherTemp = currentWeather.getAttributeNode('high')
-		config.plugins.SimpleWeather.forecastTomorrowTempMax.value = self.getTemp(currentWeatherTemp.nodeValue)
-		currentWeatherTemp = currentWeather.getAttributeNode('low')
-		config.plugins.SimpleWeather.forecastTomorrowTempMin.value = self.getTemp(currentWeatherTemp.nodeValue)
-		currentWeatherText = currentWeather.getAttributeNode('text')
-		config.plugins.SimpleWeather.forecastTomorrowText.value = currentWeatherText.nodeValue
-		currentWeatherDay = currentWeather.getAttributeNode('day')
-		config.plugins.SimpleWeather.forecastTomorrowDay.value = currentWeatherDay.nodeValue
-
+				g_updateRunning = False
+				return
 		self.save()
 		g_updateRunning = False
 		self.refreshcnt = 0
@@ -201,42 +205,42 @@ class SimpleWeatherWidget(Renderer, VariableText, Thread):
 	def ConvertCondition(self, c):
 		c = int(c)
 		condition = "("
-		if c == 0 or c == 1 or c == 2:
-			condition = "S"
-		elif c == 3 or c == 4:
-			condition = "Z"
-		elif c == 5  or c == 6 or c == 7 or c == 18:
-			condition = "U"
-		elif c == 8 or c == 10 or c == 25:
-			condition = "G"
-		elif c == 9:
-			condition = "Q"
-		elif c == 11 or c == 12 or c == 40:
-			condition = "R"
-		elif c == 13 or c == 14 or c == 15 or c == 16 or c == 41 or c == 46 or c == 42 or c == 43:
-			condition = "W"
-		elif c == 17 or c == 35:
-			condition = "X"
-		elif c == 19:
-			condition = "F"
-		elif c == 20 or c == 21 or c == 22:
-			condition = "L"
-		elif c == 23 or c == 24:
-			condition = "S"
-		elif c == 26 or c == 44:
-			condition = "N"
-		elif c == 27 or c == 29:
-			condition = "I"
-		elif c == 28 or c == 30:
-			condition = "H"
-		elif c == 31 or c == 33:
-			condition = "C"
-		elif c == 32 or c == 34:
-			condition = "B"
-		elif c == 36:
-			condition = "B"
-		elif c == 37 or c == 38 or c == 39 or c == 45 or c == 47:
-			condition = "0"
+		if c == 800:
+			condition = "B" # Sonne am Tag 
+		elif c == 801:
+			condition = "H" # Bewoelkt Sonning 
+		elif c == 802:
+			condition = "J" # Nebel Sonning
+		elif c == 711 or c == 721:
+			condition = "L" # Bewoelkt Nebeling
+		elif c == 701 or c == 731 or c == 741 or c == 751 or c == 761 or c == 762:
+			condition = "M" # Nebel
+		elif c == 803 or c == 804:
+			condition = "N" # Bewoelkt
+		elif c == 202 or c == 212 or c == 221:
+			condition = "O" # Gewitter
+		elif c == 200 or c == 210 or c == 230 or c == 231 or c == 232:
+			condition = "P " # Gewitter leicht
+		elif c == 500 or  c == 501:
+			condition = "Q" # Leicher Regen
+		elif c == 520 or c == 521 or c == 531 or c == 300 or c == 301 or c == 302 or c == 310 or c == 311 or c == 312 or c == 313 or c == 314 or c == 321:
+			condition = "R" # Mittlere Regen
+		elif c == 771 or c == 781:
+			condition = "S" # Starker Wind
+		elif c == 502:
+			condition = "T" # Wind und Regen
+		elif c == 531 or c == 531:
+			condition = "U" # Normaler Regen
+		elif c == 600 or c == 601 or c == 616 or c == 620:
+			condition = "V" # Schnee
+		elif c == 611 or c == 612 or c == 615:
+			condition = "W" # Schnee gefahr
+		elif c == 602 or c == 622 or c == 621 or c == 511:
+			condition = "X" # Starker Schnee
+		elif c == 504 or c == 503:
+			condition = "Y" # Stark Regen
+		elif c == 803 or c == 804:
+			condition = "Z" # Stark Bewoelkt
 		else:
 			condition = ")"
 		return str(condition)
