@@ -336,10 +336,10 @@
     <widget source="session.CurrentService" render="Label" position="251,672" zPosition="1" size="126,15" font="Regular; 12" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="left">
       <convert type="LdExtraInfo">E-C-N</convert>
     </widget>
-    <widget source="session.CurrentService" render="Label" position="973,672" zPosition="1" size="154,15" font="Regular; 12" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="left">
+    <widget source="session.CurrentService" render="Label" position="980,672" zPosition="1" size="158,15" font="Regular; 12" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="left">
       <convert type="AudioInfo">AudioCodec</convert>
     </widget>
-    <widget source="session.CurrentService" render="Label" position="878,672" zPosition="1" size="154,15" font="Regular; 12" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="left">
+    <widget source="session.CurrentService" render="Label" position="870,672" zPosition="1" size="158,15" font="Regular; 12" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" halign="left">
       <convert type="LdExtraInfo">VideoCodec</convert>
     </widget>
     <widget source="session.CurrentService" position="249,700" size="290,20" render="Label" font="Regular; 13" halign="left" valign="top" backgroundColor="layer-a-background" transparent="1" noWrap="1" foregroundColor="layer-a-extendedinfo1" zPosition="10">
