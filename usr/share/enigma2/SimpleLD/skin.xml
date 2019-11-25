@@ -201,7 +201,7 @@
     <!-- /* WEATHER WIDGET -->
     <widget render="SimpleWeatherWidget" source="global.CurrentTime" position="0,0" size="0,0" transparent="1" />
     <ePixmap pixmap="SimpleLD/construct/general/weather-back.png" name="weather-back" position="920,0" size="360,51" alphatest="blend" transparent="1" zPosition="-1" />
-    <widget backgroundColor="red" position="1201,1" size="2,50" source="session.CurrentService" render="FixedLabel" zPosition="10">
+    <widget backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" position="1201,1" size="4,50" source="session.CurrentService" render="FixedLabel" transparent="1" zPosition="10">
       <convert type="SimpleWeather">currentDataValid</convert>
       <convert type="ConditionalShowHide">Invert</convert>
     </widget>
@@ -276,23 +276,23 @@
   <screen name="LDINFOBAREXTENDEDINFO" position="0,0" size="1280,720">
     <!-- /* ECM -->
     <eLabel backgroundColor="layer-a-background" name="new ePixmap" position="6,422" size="451,85" transparent="0" zPosition="-99" />
-    <widget source="session.CurrentService" position="11,429" size="442,17" render="Label" font="Regular; 14" halign="left" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1">
+    <widget source="session.CurrentService" position="11,429" size="442,17" render="Label" font="Regular; 13" halign="left" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1">
       <convert type="LdExtraInfo">NetInfo</convert>
     </widget>
     <!-- ECM */-->
     <!-- /* CAMNAME -->
-    <widget backgroundColor="layer-a-background" position="11,478" size="160,30" font="Regular; 18" halign="left" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="session.CurrentService">
+    <widget backgroundColor="layer-a-background" position="11,478" size="160,30" font="Regular; 16" halign="left" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="session.CurrentService">
       <convert type="LdExtraInfo">CamName</convert>
     </widget>
     <!-- CAMNAME */-->
-    <widget backgroundColor="layer-a-background" position="10,449" size="245,30" font="Regular; 11" halign="left" valign="center" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1" zPosition="10" render="Label" source="session.CurrentService">
+    <widget backgroundColor="layer-a-background" position="10,449" size="245,30" font="Regular; 10" halign="left" valign="center" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1" zPosition="10" render="Label" source="session.CurrentService">
       <convert type="LdExtraInfo">ServiceRef</convert>
     </widget>
-    <widget backgroundColor="layer-a-background" position="260,450" size="195,30" font="Regular; 11" halign="left" valign="center" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1" zPosition="10" render="Label" source="session.CurrentService">
+    <widget backgroundColor="layer-a-background" position="260,450" size="195,30" font="Regular; 10" halign="left" valign="center" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1" zPosition="10" render="Label" source="session.CurrentService">
       <convert type="LdExtraInfo">PIDInfo</convert>
     </widget>
-    <eLabel text="CRYPT:" position="169,480" size="55,15" font="Regular; 15" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" />
-    <widget position="217,479" size="236,15" font="Regular; 15" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" source="session.CurrentService" render="Label" transparent="1" valign="center" zPosition="4">
+    <eLabel text="CRYPT:" position="189,480" size="55,15" font="Regular; 11" halign="left" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" />
+    <widget position="217,479" size="236,15" font="Regular; 11" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" source="session.CurrentService" render="Label" transparent="1" valign="center" zPosition="4">
       <convert type="LdExtraInfo">CryptoBar</convert>
     </widget>
   </screen>
@@ -3042,6 +3042,19 @@ MultiContentEntryText(pos = (100, 42), size = (520, 25), font=1, flags = RT_HALI
     </widget>
     <widget source="introduction" render="Label" position="483,600" size="725,30" font="SetrixHD;22" halign="center" backgroundColor="layer-b-background" transparent="1" zPosition="5" />
   </screen>
+  <screen name="NetworkPassword" position="0,0" size="1280,720" title="NetworkPassword" flags="wfNoBorder" backgroundColor="transparent">
+    <panel name="PANEL_LD_TOP" />
+    <panel name="PANEL_LD_MINITV" />
+    <panel name="PANEL_LD_BACKGROUND" />
+    <panel name="PANEL_WINDOW_LARGE" />
+    <panel name="PANEL_BUTTONBAR_SOURCE_RGY_X" />
+    <ePixmap pixmap="SimpleLD/construct/plugins/network.png" position="137,289" size="200,200" alphatest="blend" />
+    <widget source="Title" render="Label" position="369,-1" size="540,46" font="SetrixHD; 28" transparent="0" valign="top" zPosition="0" backgroundColor="layer-b-background" />
+    <widget name="config" position="480,90" size="730,500" zPosition="3" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" scrollbarMode="showOnDemand" />
+    <widget name="description" position="488,597" size="720,64" font="Regular; 18" halign="left" backgroundColor="layer-a-background" transparent="1" zPosition="2" valign="top" foregroundColor="unfcc000" />
+    <widget name="HelpWindow" position="480,460" size="1,1" transparent="1" alphatest="blend" />
+    <widget name="footnote" position="383,533" size="408,118" font="Regular; 20" backgroundColor="layer-a-background" foregroundColor="layer-a-foreground" transparent="1" />
+  </screen>
   <screen name="ScanIP" position="0, 0" flags="wfNoBorder" title="Network Neighbourhood" transparent="0" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
     <panel name="PANEL_LD_MINITV" />
@@ -4223,21 +4236,21 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
   <widget backgroundColor="layer-a-background" position="154,631" size="98,20" font="Regular; 14" halign="right" foregroundColor="layer-a-extendedinfo1" transparent="1" zPosition="10" render="Label" source="global.CurrentTime">
     <convert type="STBinfo">RAMfree</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="732,248" size="145,20" font="Regular; 15" backgroundColor="transpBlack" halign="left" transparent="1" zPosition="5">
+  <widget source="session.CurrentService" render="Label" position="732,248" size="145,20" font="Regular; 12" backgroundColor="transpBlack" halign="left" transparent="1" zPosition="5">
     <convert type="LdExtraInfo">CryptoNameCaid</convert>
   </widget>
-  <widget source="session.CurrentService" position="875,248" size="345,20" render="Label" font="Regular; 15" halign="left" valign="top" backgroundColor="transpBlack" transparent="1" noWrap="1" zPosition="10">
+  <widget source="session.CurrentService" position="875,248" size="345,20" render="Label" font="Regular; 12" halign="left" valign="top" backgroundColor="transpBlack" transparent="1" noWrap="1" zPosition="10">
     <convert type="LdExtraInfo">EcmInfo2</convert>
   </widget>
-  <widget source="session.CurrentService" render="Label" position="1118,213" size="104,20" font="Regular; 15" backgroundColor="transpBlack" halign="center" transparent="1" zPosition="5">
+  <widget source="session.CurrentService" render="Label" position="1118,213" size="104,20" font="Regular; 12" backgroundColor="transpBlack" halign="center" transparent="1" zPosition="5">
     <convert type="LdExtraInfo">E-C-N</convert>
   </widget>
   <eLabel backgroundColor="layer-a-background" name="new ePixmap" position="6,422" size="451,85" transparent="0" zPosition="-99" />
-  <widget source="session.CurrentService" position="472,645" size="750,17" render="Label" font="Regular; 13" halign="center" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1">
+  <widget source="session.CurrentService" position="472,645" size="750,17" render="Label" font="Regular; 12" halign="center" valign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" transparent="1" noWrap="1">
     <convert type="LdExtraInfo">NetInfo</convert>
   </widget>
-  <eLabel text="CRYPT:" position="472,248" size="65,16" font="Regular; 15" halign="left" backgroundColor="layer-a-background" transparent="1" />
-  <widget position="517,248" size="216,16" font="Regular; 15" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" source="session.CurrentService" render="Label" transparent="1" valign="center" zPosition="4">
+  <eLabel text="CRYPT:" position="482,248" size="65,16" font="Regular; 11" halign="left" backgroundColor="layer-a-background" transparent="1" />
+  <widget position="517,248" size="216,16" font="Regular; 11" halign="center" backgroundColor="layer-a-background" foregroundColor="layer-a-extendedinfo1" source="session.CurrentService" render="Label" transparent="1" valign="center" zPosition="4">
     <convert type="LdExtraInfo">CryptoBar</convert>
   </widget>
   <ePixmap position="1106,147" size="120,35" pixmap="SimpleLD/icons/bp_deko.png" alphatest="blend" zPosition="3" />
@@ -4255,7 +4268,7 @@ MultiContentEntryText(pos=(1,1), size=(540,22), text = 0, font = 0, flags = RT_H
     <convert type="LdExtraInfo">ResolutionString</convert>
   </widget>
   <eLabel position="472,240" size="750,2" backgroundColor="un202020" zPosition="0" />
-  <widget source="session.CurrentService" render="Label" position="472,272" size="750,295" font="Regular; 15" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
+  <widget source="session.CurrentService" render="Label" position="472,272" size="750,295" font="Regular; 14" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
     <convert type="LdExtraInfo">Ecmtext</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" position="472,380" size="750,189" font="Regular; 13" halign="left" backgroundColor="transpBlack" transparent="1" zPosition="2">
