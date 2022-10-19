@@ -2453,15 +2453,15 @@ MultiContentEntryText(pos = (405, 10), size = (125, 38), font=0, flags = RT_HALI
     <panel name="PANEL_BUTTONBAR_OK_X" />
     <ePixmap pixmap="SimpleLD/construct/plugins/devices.png" position="137,289" size="200,200" alphatest="blend" />
     <eLabel text="AboutTeam" position="369,-1" size="540,46" font="SetrixHD; 32" transparent="1" valign="top" zPosition="0" backgroundColor="layer-b-background" />
-    <eLabel text="Developer:" position="486,105" size="108,20" font="Regular; 18" halign="left" />
-    <eLabel text="Javilonas (Javier Sayago)" position="580,138" size="244,24" font="Regular; 20" halign="left" />
-    <eLabel text="Contact:" position="485,180" size="84,20" font="Regular; 18" halign="left" />
-    <eLabel text="Github: https://github.com/javilonas" position="581,212" size="342,24" font="Regular;20" halign="left" />
-    <eLabel text="Donations:" position="485,255" size="100,20" font="Regular; 18" halign="left" />
-    <eLabel text="Paypal: https://www.paypal.me/Javilonas" position="580,284" size="383,24" font="Regular;20" halign="left" />
-    <eLabel text="Support:" position="485,332" size="87,20" font="Regular; 18" halign="left" />
-    <eLabel text="https://www.lonasdigital.com" position="581,363" size="342,24" font="Regular;20" halign="left" />
-    <eLabel text="Thank you for trust in OpenLD ;)" position="567,548" size="554,42" font="Regular; 17" halign="center" zPosition="1" transparent="1" />
+    <eLabel text="Developer:" position="486,105" size="108,32" font="Regular; 22" halign="left" />
+    <eLabel text="Javilonas (Javier Sayago)" position="580,138" size="244,28" font="Regular; 20" halign="left" />
+    <eLabel text="Contact:" position="485,180" size="84,32" font="Regular; 22" halign="left" />
+    <eLabel text="Github: https://github.com/javilonas" position="581,212" size="342,28" font="Regular; 20" halign="left" />
+    <eLabel text="Donations:" position="485,255" size="100,32" font="Regular; 22" halign="left" />
+    <eLabel text="https://lonasdigital.com/donaciones" position="580,284" size="383,28" font="Regular; 20" halign="left" />
+    <eLabel text="Support:" position="485,332" size="87,32" font="Regular; 22" halign="left" />
+    <eLabel text="https://lonasdigital.com" position="581,363" size="342,28" font="Regular; 20" halign="left" />
+    <eLabel text="Thank you for trust in OpenLD ;)" position="567,548" size="554,42" font="Regular; 18" halign="center" zPosition="1" transparent="1" />
   </screen>
   <screen name="HardwareInfo" position="0, 0" flags="wfNoBorder" transparent="0" backgroundColor="transparent" size="1280, 720">
     <panel name="PANEL_LD_TOP" />
